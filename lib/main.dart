@@ -1,34 +1,40 @@
 import 'package:flutter/material.dart';
+import 'Pages/Home/home.dart';
+import 'Pages/Search/search.dart'; // nhớ đúng tên file nhé
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Từ Điển',
+      title: 'Từ Điển Flutter',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
+        fontFamily: 'Roboto',
+        scaffoldBackgroundColor: Color(0xFFF9F4FB),
       ),
-      home: HomeScreen(),
+      home: MainScreen(),
     );
   }
 }
 
-class HomeScreen extends StatefulWidget {
+class MainScreen extends StatefulWidget {
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<MainScreen> createState() => _MainScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
+    HomePage(),
     SearchPage(),
-    PlaceholderWidget('Từ đã lưu'),
-    PlaceholderWidget('Cá nhân'),
-    PlaceholderWidget('Cài đặt'),
+    PlaceholderWidget('Thông Báo'),
+    PlaceholderWidget('Hồ Sơ'),
   ];
 
   @override
@@ -37,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
-        selectedItemColor: Colors.blue,
+        selectedItemColor: Colors.deepPurple,
         unselectedItemColor: Colors.grey,
         type: BottomNavigationBarType.fixed,
         onTap: (index) {
@@ -48,19 +54,19 @@ class _HomeScreenState extends State<HomeScreen> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Trang chủ',
+            label: 'Trang Chủ',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.bookmark),
-            label: 'Từ đã lưu',
+            icon: Icon(Icons.search),
+            label: 'Tìm Kiếm',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications),
+            label: 'Thông Báo',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Cá nhân',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Cài đặt',
+            label: 'Hồ Sơ',
           ),
         ],
       ),
@@ -68,64 +74,18 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-// Màn hình chính
-class SearchPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Bộ Tìm Kiếm'),
-        leading: Icon(Icons.arrow_back),
-        centerTitle: true,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            // Ô tìm kiếm
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'Từ khóa...',
-                prefixIcon: Icon(Icons.search),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
-            ),
-            SizedBox(height: 20),
-
-            // Hai ô kết quả (giả lập)
-            buildBox('Kết quả 1'),
-            SizedBox(height: 10),
-            buildBox('Kết quả 2'),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget buildBox(String text) {
-    return Container(
-      width: double.infinity,
-      height: 60,
-      alignment: Alignment.centerLeft,
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey.shade400),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Text(text, style: TextStyle(fontSize: 16)),
-    );
-  }
-}
-
-// Placeholder cho các tab khác
 class PlaceholderWidget extends StatelessWidget {
   final String title;
+
   const PlaceholderWidget(this.title);
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text(title, style: TextStyle(fontSize: 24)));
+    return Center(
+      child: Text(
+        title,
+        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+      ),
+    );
   }
 }
