@@ -23,3 +23,31 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/images/home_icon.png
+    - assets/images/search_icon.png
+    - assets/images/notification_icon.png
+    - assets/images/profile_icon.png
+    - assets/images/Algebra_icon.png
+    - assets/images/Geometry_icon.png
+    - assets/images/Literature_icon.png
+    - assets/images/Spanish_icon.png
+    - assets/images/Technology_icon.png
+    - assets/images/Arts_icon.png
+    - assets/images/History_icon.png
+    - assets/images/Geography_icon.png
+    - assets/images/Civics_icon.png
+    - assets/images/Physics_icon.png
+    - assets/images/Biology_icon.png
+    - assets/images/Chemistry_icon.png
+    - assets/images/Physical_Education_icon.png
+    - assets/images/Economics_icon.png
+    - assets/images/Computer_Science_icon.png
+    - assets/images/Music_icon.png
+    - assets/images/Drama_icon.png
+    - assets/images/Special_Education_icon.png
+    - assets/images/Career_icon.png
+    - assets/images/Military_icon.png
+    - assets/images/40x40.png
+    - assets/images/60x60.png
