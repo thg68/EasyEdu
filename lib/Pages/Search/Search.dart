@@ -5,9 +5,6 @@ class SearchPage extends StatelessWidget {
     'Giải Tích',
     'Đại Số',
     'Ngữ Văn',
-    'Tiếng Anh',
-    'Vật Lý',
-    'Hóa Học',
   ];
 
   @override
@@ -17,6 +14,8 @@ class SearchPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 1,
+        centerTitle: true,
+        iconTheme: IconThemeData(color: Colors.black),
         title: Text(
           'Tìm Kiếm',
           style: TextStyle(
@@ -25,8 +24,11 @@ class SearchPage extends StatelessWidget {
             fontSize: 20,
           ),
         ),
-        centerTitle: true,
-        iconTheme: IconThemeData(color: Colors.black),
+        actions: [
+          SizedBox(
+              width:
+                  kToolbarHeight / 2), // thêm 1 SizedBox nhỏ cân lại nút Back
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
