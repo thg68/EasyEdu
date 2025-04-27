@@ -1,7 +1,81 @@
 import 'package:flutter/material.dart';
+import 'package:table_calendar/table_calendar.dart';
 
-class HomePage extends StatelessWidget {
+import '../../Utils/event.dart';
+import '../TeacherPages/createlesson.dart';
+
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePage();
+}
+
+class _HomePage extends State<HomePage> {
+  CalendarFormat _calendarFormat = CalendarFormat.week;
+  RangeSelectionMode _rangeSelectionMode = RangeSelectionMode.toggledOff;
+  DateTime _focusedDay = DateTime.now();
+  DateTime? _selectedDay;
+  DateTime? _rangeStart;
+  DateTime? _rangeEnd;
+  late final ValueNotifier<List<Event>> _selectedEvents;
+
+  @override
+  void initState() {
+    super.initState();
+    initCalendarEvents();
+    _selectedDay = _focusedDay;
+    _selectedEvents = ValueNotifier(_getEventsForDay(_selectedDay!));
+  }
+
+  @override
+  void dispose() {
+    _selectedEvents.dispose();
+    super.dispose();
+  }
+
+  void _onDaySelected(DateTime selectedDay, DateTime focusedDay) {
+    if (!isSameDay(_selectedDay, selectedDay)) {
+      setState(() {
+        _selectedDay = selectedDay;
+        _focusedDay = focusedDay;
+        _rangeStart = null; // Important to clean those
+        _rangeEnd = null;
+        _rangeSelectionMode = RangeSelectionMode.toggledOff;
+      });
+
+      _selectedEvents.value = _getEventsForDay(selectedDay);
+    }
+  }
+
+  void _onRangeSelected(DateTime? start, DateTime? end, DateTime focusedDay) {
+    setState(() {
+      _selectedDay = null;
+      _focusedDay = focusedDay;
+      _rangeStart = start;
+      _rangeEnd = end;
+      _rangeSelectionMode = RangeSelectionMode.toggledOn;
+    });
+
+    if (start != null && end != null) {
+      _selectedEvents.value = _getEventsForRange(start, end);
+    } else if (start != null) {
+      _selectedEvents.value = _getEventsForDay(start);
+    } else if (end != null) {
+      _selectedEvents.value = _getEventsForDay(end);
+    }
+  }
+
+  List<Event> _getEventsForDay(DateTime day) {
+    // Implementation example
+    return kEvents[day] ?? [];
+  }
+
+  List<Event> _getEventsForRange(DateTime start, DateTime end) {
+    final days = daysInRange(start, end);
+
+    return [for (final d in days) ..._getEventsForDay(d)];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +110,7 @@ class HomePage extends StatelessWidget {
       children: [
         // App Bar
         Container(
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+          padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 16),
           child: const Text(
             'Trang Chủ',
             style: TextStyle(
@@ -48,36 +122,61 @@ class HomePage extends StatelessWidget {
 
         // Thông tin học sinh
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+          padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 20),
           color: const Color(0xFFFEF7FF),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               _buildStudentProfile(),
               _buildGradeInfo('Điểm Số', 'A+'),
-              _buildGradeInfo('GPA', '3.7'),
+              _tempCreateLesson('GPA', '3.7'),
             ],
           ),
         ),
 
         // Divider
-        _buildDivider(),
+        _buildHDivider(),
 
         // Lịch học
         Container(
-          padding: const EdgeInsets.symmetric(vertical: 16),
-          color: const Color(0xFFFEF7FF),
-          child: _buildCalendar(),
+          width: double.infinity,
+          clipBehavior: Clip.antiAlias,
+          decoration: ShapeDecoration(
+            color: const Color(0xFFFEF7FF),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(28),
+            ),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Calendar Days
+              buildCalendarDays(),
+            ],
+          ),
         ),
 
         // Divider
-        _buildDivider(),
+        _buildHDivider(),
 
         // Môn học tiếp theo
-        _buildNextClassInfo(),
+        Container(
+          width: double.infinity,
+          height: 136,
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: 10,
+            children: [buildEventDisplay()],
+          ),
+        ),
 
         // Divider
-        _buildDivider(),
+        _buildHDivider(),
       ],
     );
   }
@@ -131,125 +230,423 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildDivider() {
-    return const Divider(
-      height: 1,
-      thickness: 1,
-      color: Color(0xFFCAC4D0),
-    );
-  }
-
-  Widget _buildCalendar() {
-    return Column(
-      children: [
-        // Ngày trong tuần
-        SizedBox(
-          height: 40,
-          child: Row(
-            children: ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'].map((day) {
-              return Expanded(
-                child: Center(
-                  child: Text(
-                    day,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
-              );
-            }).toList(),
-          ),
-        ),
-
-        // Ngày trong tháng
-        SizedBox(
-          height: 40,
-          child: Row(
-            children: List.generate(7, (index) {
-              final day = index + 7;
-              final isSelected = day == 11;
-              return Expanded(
-                child: Center(
-                  child: Container(
-                    width: 36,
-                    height: 36,
-                    decoration: BoxDecoration(
-                      color: isSelected ? const Color(0xFF65558F) : null,
-                      shape: BoxShape.circle,
-                    ),
-                    child: Center(
-                      child: Text(
-                        '$day',
-                        style: TextStyle(
-                          color: isSelected ? Colors.white : Colors.black,
-                          fontSize: isSelected ? 14 : 16,
-                          fontWeight:
-                              isSelected ? FontWeight.w500 : FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              );
-            }),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildNextClassInfo() {
+  Widget _buildHDivider() {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+      width: double.infinity,
+      height: 1,
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Text(
-            'Môn học Tiếp theo',
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-          const SizedBox(height: 12),
           Container(
-            padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              border: Border.all(color: const Color(0xFF65558F)),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Row(
-              children: [
-                // Thời gian và phòng học
-                const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('09:00 - 10:00'),
-                    SizedBox(height: 8),
-                    Text('P207 - B2'),
-                  ],
+            width: double.infinity,
+            decoration: const ShapeDecoration(
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  width: 1,
+                  strokeAlign: BorderSide.strokeAlignCenter,
+                  color: Color(0xFFCAC4D0),
                 ),
-
-                // Divider
-                const VerticalDivider(width: 20, thickness: 1),
-
-                // Môn học và giáo viên
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text('Môn: Vật lý'),
-                      const SizedBox(height: 8),
-                      const Text('Thầy Hữu Thế B'),
-                    ],
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Widget buildCalendarDays() {
+    return TableCalendar(
+      firstDay: kFirstDay,
+      lastDay: kLastDay,
+      focusedDay: _focusedDay,
+      selectedDayPredicate: (day) => isSameDay(_selectedDay, day),
+      rangeStartDay: _rangeStart,
+      rangeEndDay: _rangeEnd,
+      calendarFormat: _calendarFormat,
+      rangeSelectionMode: _rangeSelectionMode,
+      eventLoader: _getEventsForDay,
+      startingDayOfWeek: StartingDayOfWeek.monday,
+      calendarStyle: const CalendarStyle(
+        // Use `CalendarStyle` to customize the UI
+        outsideDaysVisible: false,
+        markerSize: 6,
+      ),
+      onDaySelected: _onDaySelected,
+      onRangeSelected: _onRangeSelected,
+      onFormatChanged: (format) {
+        if (_calendarFormat != format) {
+          setState(() {
+            _calendarFormat = format;
+          });
+        }
+      },
+      onPageChanged: (focusedDay) {
+        _focusedDay = focusedDay;
+      },
+    );
+  }
+
+  /*Widget buildNextSubject() {
+    return Container(
+      width: 400,
+      height: 116,
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            width: 340,
+            height: 25,
+            child: Text(
+              'Next Subject',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 14,
+                fontFamily: 'Roboto',
+                fontWeight: FontWeight.w500,
+                height: 1.43,
+                letterSpacing: 0.10,
+              ),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+              decoration: ShapeDecoration(
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(width: 2, color: const Color(0xFF65558F)),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 100,
+                    height: double.infinity,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 100,
+                          height: 15,
+                          child: Text(
+                            '09:00 - 10:00',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w500,
+                              height: 1.43,
+                              letterSpacing: 0.10,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        SizedBox(
+                          width: 100,
+                          height: 15,
+                          child: Text(
+                            'R207 - B2',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w500,
+                              height: 1.43,
+                              letterSpacing: 0.10,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  const VerticalDivider(
+                    width: 20,
+                    thickness: 1,
+                    color: Color(0xFFCAC4D0),
+                    indent: 10,
+                    endIndent: 10,
+                  ),
+
+                  Expanded(
+                    child: SizedBox(
+                      height: double.infinity,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            width: 179,
+                            height: 15,
+                            child: Text(
+                              'Subject: Physics',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.w500,
+                                height: 1.43,
+                                letterSpacing: 0.10,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 16),
+                          SizedBox(
+                            width: 179,
+                            height: 15,
+                            child: Text(
+                              'Mr. John Smith',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.w500,
+                                height: 1.43,
+                                letterSpacing: 0.10,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }*/
+
+  Widget buildEventDisplay() {
+    return ValueListenableBuilder<List<Event>>(
+      valueListenable: _selectedEvents,
+      builder: (context, events, _) {
+        if (events.isEmpty) {
+          return Container(
+            width: 400,
+            height: 116,
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: 340,
+                  height: 25,
+                  child: Text(
+                    'Không có môn học trong ngày này.',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w500,
+                      height: 1.43,
+                      letterSpacing: 0.10,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Center(
+                    child: Text(
+                      'Chọn ngày có sự kiện.',
+                      style: TextStyle(color: Colors.grey, fontSize: 14),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        }
+
+        final event = events[0];
+
+        return Container(
+          width: 400,
+          height: 116,
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: 340,
+                height: 25,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      events.length > 1
+                          ? 'Môn học tiếp theo (${events.length} môn)'
+                          : 'Môn học tiếp theo',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 14,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w500,
+                        height: 1.43,
+                        letterSpacing: 0.10,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 5,
+                  ),
+                  decoration: ShapeDecoration(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        width: 2,
+                        color: const Color(0xFF65558F),
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      // Left section: Time and Room
+                      SizedBox(
+                        width: 100,
+                        height: double.infinity,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              width: 100,
+                              height: 20,
+                              child: Text(
+                                event.timeRange.isNotEmpty
+                                    ? event.timeRange
+                                    : 'Chưa có thời gian cụ thể',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14,
+                                  fontFamily: 'Roboto',
+                                  fontWeight: FontWeight.w500,
+                                  height: 1.43,
+                                  letterSpacing: 0.10,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            SizedBox(
+                              width: 100,
+                              height: 20,
+                              child: Text(
+                                event.location.isNotEmpty
+                                    ? event.location
+                                    : 'Chưa có phòng cụ thể',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14,
+                                  fontFamily: 'Roboto',
+                                  fontWeight: FontWeight.w500,
+                                  height: 1.43,
+                                  letterSpacing: 0.10,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      // Vertical Divider
+                      const VerticalDivider(
+                        width: 30,
+                        thickness: 1,
+                        color: Color(0xFFCAC4D0),
+                        indent: 10,
+                        endIndent: 10,
+                      ),
+
+                      // Right section: Subject and Teacher
+                      Expanded(
+                        child: SizedBox(
+                          height: double.infinity,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: 179,
+                                height: 20,
+                                child: Text(
+                                  event.subject != null
+                                      ? 'Môn: ${event.subject}'
+                                      : event.title,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontFamily: 'Roboto',
+                                    fontWeight: FontWeight.w500,
+                                    height: 1.43,
+                                    letterSpacing: 0.10,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 6),
+                              SizedBox(
+                                width: 179,
+                                height: 20,
+                                child: Text(
+                                  event.teacher != null
+                                      ? event.teacher!
+                                      : (events.length > 1
+                                          ? 'Còn nhiều sự kiện khác'
+                                          : ''),
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontFamily: 'Roboto',
+                                    fontWeight: FontWeight.w500,
+                                    height: 1.43,
+                                    letterSpacing: 0.10,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 
@@ -320,35 +717,162 @@ class HomePage extends StatelessWidget {
         itemCount: subjects.length,
         itemBuilder: (context, index) {
           return _buildSubjectItem(
-              subjects[index]['name']!, subjects[index]['icon']!);
+            subjects[index]['name']!,
+            subjects[index]['icon']!,
+            () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      SubjectDetailPage(subjectName: subjects[index]['name']!),
+                ),
+              );
+            }, 80,
+          );
         },
       ),
     );
   }
 
-  Widget _buildSubjectItem(String name, String iconPath) {
-    return Column(
-      children: [
-        Container(
-          width: 60,
-          height: 60,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(iconPath),
-              fit: BoxFit.cover,
+  Widget _buildSubjectItem(
+    String subjectName,
+    String assetLocation,
+    VoidCallback onTap,
+      double subjectSize
+  ) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(8),
+      child: SizedBox(
+        //Should be customizable
+        width: subjectSize,
+        height: subjectSize+20,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(height: 5),
+            Container(
+              width: subjectSize-20,
+              height: subjectSize-20,
+              clipBehavior: Clip.antiAlias,
+              decoration: const BoxDecoration(),
+              child: Stack(
+                children: [
+                  Positioned(
+                    left: 0,
+                    top: 0,
+                    child: Container(
+                      width: subjectSize-20,
+                      height: subjectSize-20,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(assetLocation),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
+            SizedBox(
+              width: subjectSize,
+              child: Text(
+                subjectName,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 14,
+                  fontFamily: 'Roboto',
+                  fontWeight: FontWeight.w500,
+                  height: 1.43,
+                  letterSpacing: 0.10,
+                ),
+              ),
+            ),
+          ],
         ),
-        const SizedBox(height: 8),
-        Text(
-          name,
-          textAlign: TextAlign.center,
-          style: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
+      ),
+    );
+  }
+
+  Widget _tempCreateLesson(String title, String value) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const CreateLessonPage(),
           ),
+        );
+      },
+      child: Container(
+        width: 100,
+        height: 100,
+        decoration: BoxDecoration(
+          color: Colors.transparent,
+          borderRadius: BorderRadius.circular(8),
         ),
-      ],
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: 100,
+              height: 22.22,
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14,
+                  fontFamily: 'Roboto',
+                  fontWeight: FontWeight.w500,
+                  height: 1.43,
+                  letterSpacing: 0.10,
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 100,
+              height: 22.22,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    value,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 22,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w400,
+                      height: 1.27,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class SubjectDetailPage extends StatelessWidget {
+  final String subjectName;
+
+  const SubjectDetailPage({super.key, required this.subjectName});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(subjectName)),
+      body: Center(child: Text('Đây là trang $subjectName nhưng giờ chưa có gì cả :)')),
     );
   }
 }
