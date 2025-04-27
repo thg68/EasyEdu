@@ -1,30 +1,27 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:easy_edu/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Hiển thị tiêu đề đúng', (WidgetTester tester) async {
+    await tester.pumpWidget(MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Kiểm tra có tiêu đề "Bộ Tìm Kiếm"
+    expect(find.text('Bộ Tìm Kiếm'), findsOneWidget);
+  });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+  testWidgets('Có thanh tìm kiếm', (WidgetTester tester) async {
+    await tester.pumpWidget(MyApp());
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Kiểm tra xem có TextField với hint "Từ khóa"
+    expect(find.byType(TextField), findsOneWidget);
+    expect(find.text('Từ khóa'), findsOneWidget);
+  });
+
+  testWidgets('Có 4 icon trên thanh điều hướng', (WidgetTester tester) async {
+    await tester.pumpWidget(MyApp());
+
+    // Kiểm tra xem có 4 mục trong BottomNavigationBar
+    expect(find.byType(BottomNavigationBarItem), findsNWidgets(4));
   });
 }
