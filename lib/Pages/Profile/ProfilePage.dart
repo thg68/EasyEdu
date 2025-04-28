@@ -1,9 +1,25 @@
 import 'package:flutter/material.dart';
+import 'dart:io';
+import 'package:image_picker/image_picker.dart';
 import '../Home/home.dart'; // Thay bằng đường dẫn đến HomePage
 import '../Login/LoginPage.dart';
+import 'EditProfile.dart'; // Import trang EditProfilePage
+import 'Setting.dart';
+import 'AchievementProfile.dart';
+import 'TrackLearning.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
+
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  String _name = "Nguyễn Văn A"; // Tên mặc định
+  String _className = "Học sinh lớp 12"; // Lớp mặc định
+  File? _avatarImage; // Ảnh đại diện mặc định (null)
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,24 +49,34 @@ class ProfilePage extends StatelessWidget {
           Center(
             child: Column(
               children: [
-                CircleAvatar(
-                  radius: 60,
-                  backgroundImage: AssetImage(
-                    'assets/images/40x40.png',
-                  ), // Thay bằng đường dẫn ảnh của bạn
+                GestureDetector(
+                  onTap: _pickImage, // Chọn ảnh khi nhấn vào avatar
+                  child: CircleAvatar(
+                    radius: 60,
+                    backgroundImage: _avatarImage != null
+                        ? FileImage(_avatarImage!) as ImageProvider
+                        : const AssetImage('assets/images/40x40.png'),
+                    child: _avatarImage == null
+                        ? const Icon(
+                            Icons.camera_alt,
+                            size: 30,
+                            color: Colors.white,
+                          )
+                        : null,
+                  ),
                 ),
                 const SizedBox(height: 10),
-                const Text(
-                  'Nguyễn Văn A',
-                  style: TextStyle(
+                Text(
+                  _name,
+                  style: const TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
                     color: Colors.blue,
                   ),
                 ),
-                const Text(
-                  'Học sinh lớp 12',
-                  style: TextStyle(fontSize: 16, color: Colors.grey),
+                Text(
+                  _className,
+                  style: const TextStyle(color: Colors.grey),
                 ),
               ],
             ),
@@ -70,7 +96,10 @@ class ProfilePage extends StatelessWidget {
             title: 'Theo dõi học tập',
             color: Colors.green,
             onTap: () {
-              // Xử lý khi nhấn vào
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => TrackLearning()),
+              );
             },
           ),
           _buildProfileOption(
@@ -78,7 +107,10 @@ class ProfilePage extends StatelessWidget {
             title: 'Thành tích',
             color: Colors.purple,
             onTap: () {
-              // Xử lý khi nhấn vào
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AchievementProfile()),
+              );
             },
           ),
           _buildProfileOption(
@@ -86,7 +118,25 @@ class ProfilePage extends StatelessWidget {
             title: 'Chỉnh sửa trang cá nhân',
             color: Colors.red,
             onTap: () {
-              // Xử lý khi nhấn vào
+              // Điều hướng đến EditProfilePage
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => EditProfilePage(
+                    name: _name,
+                    className: _className,
+                  ),
+                ),
+              ).then((result) {
+                // Cập nhật thông tin nếu có dữ liệu trả về
+                if (result != null && result is Map<String, dynamic>) {
+                  setState(() {
+                    _name = result['name'] ?? _name;
+                    _className = result['className'] ?? _className;
+                    _avatarImage = result['avatar'] ?? _avatarImage;
+                  });
+                }
+              });
             },
           ),
           _buildProfileOption(
@@ -94,7 +144,10 @@ class ProfilePage extends StatelessWidget {
             title: 'Cài đặt',
             color: Colors.blueGrey,
             onTap: () {
-              // Xử lý khi nhấn vào
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SettingsPage()),
+              );
             },
           ),
           const Divider(),
@@ -140,5 +193,17 @@ class ProfilePage extends StatelessWidget {
         onTap: onTap,
       ),
     );
+  }
+
+  Future<void> _pickImage() async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? pickedFile =
+        await picker.pickImage(source: ImageSource.gallery);
+
+    if (pickedFile != null) {
+      setState(() {
+        _avatarImage = File(pickedFile.path);
+      });
+    }
   }
 }
