@@ -4,7 +4,6 @@ import 'package:file_picker/file_picker.dart';
 
 import '../../Utils/event.dart';
 
-
 class CreateLessonPage extends StatefulWidget {
   const CreateLessonPage({super.key});
 
@@ -65,10 +64,10 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
   }
 
   Future<void> _selectDate(
-      BuildContext context,
-      TextEditingController controller, {
-        bool isStartDate = true,
-      }) async {
+    BuildContext context,
+    TextEditingController controller, {
+    bool isStartDate = true,
+  }) async {
     final DateTime? pickedDate = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
@@ -127,12 +126,11 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
     if (_formKey.currentState!.validate()) {
       if (_startDateTime != null) {
         final startTimeStr = DateFormat('HH:mm').format(_startDateTime!);
-        final endTimeStr =
-        _endDateTime != null
+        final endTimeStr = _endDateTime != null
             ? DateFormat('HH:mm').format(_endDateTime!)
             : DateFormat(
-          'HH:mm',
-        ).format(_startDateTime!.add(const Duration(hours: 1)));
+                'HH:mm',
+              ).format(_startDateTime!.add(const Duration(hours: 1)));
 
         final eventDate = DateTime.utc(
           _startDateTime!.year,
@@ -145,13 +143,11 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
           startTime: startTimeStr,
           endTime: endTimeStr,
           room: _roomController.text.isNotEmpty ? _roomController.text : null,
-          building:
-          _buildingController.text.isNotEmpty
+          building: _buildingController.text.isNotEmpty
               ? _buildingController.text
               : null,
           subject: _subjectController.text,
-          teacher:
-          _teacherController.text.isNotEmpty
+          teacher: _teacherController.text.isNotEmpty
               ? _teacherController.text
               : null,
         );
@@ -205,7 +201,6 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
                 },
               ),
               const SizedBox(height: 20),
-
               TextFormField(
                 controller: _subjectController,
                 decoration: const InputDecoration(
@@ -220,7 +215,6 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
                 },
               ),
               const SizedBox(height: 20),
-
               TextFormField(
                 controller: _classController,
                 decoration: const InputDecoration(
@@ -235,7 +229,6 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
                 },
               ),
               const SizedBox(height: 20),
-
               DropdownButtonFormField<String>(
                 value: _selectedLessonType,
                 decoration: const InputDecoration(
@@ -243,7 +236,7 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
                   border: OutlineInputBorder(),
                 ),
                 items:
-                _lessonTypes.map<DropdownMenuItem<String>>((String value) {
+                    _lessonTypes.map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
                     child: Text(value),
@@ -258,7 +251,6 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
                 },
               ),
               const SizedBox(height: 20),
-
               DropdownButtonFormField<String>(
                 value: _selectedLessonForm,
                 decoration: const InputDecoration(
@@ -266,7 +258,7 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
                   border: OutlineInputBorder(),
                 ),
                 items:
-                _lessonForms.map<DropdownMenuItem<String>>((String value) {
+                    _lessonForms.map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
                     child: Text(value),
@@ -281,7 +273,6 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
                 },
               ),
               const SizedBox(height: 20),
-
               TextFormField(
                 controller: _startDateController,
                 decoration: InputDecoration(
@@ -289,8 +280,7 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
                   border: const OutlineInputBorder(),
                   suffixIcon: IconButton(
                     icon: const Icon(Icons.calendar_today),
-                    onPressed:
-                        () => _selectDate(
+                    onPressed: () => _selectDate(
                       context,
                       _startDateController,
                       isStartDate: true,
@@ -304,15 +294,13 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
                   }
                   return null;
                 },
-                onTap:
-                    () => _selectDate(
+                onTap: () => _selectDate(
                   context,
                   _startDateController,
                   isStartDate: true,
                 ),
               ),
               const SizedBox(height: 20),
-
               TextFormField(
                 controller: _endDateController,
                 decoration: InputDecoration(
@@ -320,8 +308,7 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
                   border: const OutlineInputBorder(),
                   suffixIcon: IconButton(
                     icon: const Icon(Icons.calendar_today),
-                    onPressed:
-                        () => _selectDate(
+                    onPressed: () => _selectDate(
                       context,
                       _endDateController,
                       isStartDate: false,
@@ -335,15 +322,13 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
                   }
                   return null;
                 },
-                onTap:
-                    () => _selectDate(
+                onTap: () => _selectDate(
                   context,
                   _endDateController,
                   isStartDate: false,
                 ),
               ),
               const SizedBox(height: 20),
-
               Row(
                 children: [
                   Expanded(
@@ -368,7 +353,6 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
                 ],
               ),
               const SizedBox(height: 20),
-
               TextFormField(
                 controller: _teacherController,
                 decoration: const InputDecoration(
@@ -377,7 +361,6 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
                 ),
               ),
               const SizedBox(height: 20),
-
               TextFormField(
                 controller: _descriptionController,
                 decoration: const InputDecoration(
@@ -388,7 +371,6 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
                 maxLines: 3,
               ),
               const SizedBox(height: 20),
-
               TextFormField(
                 controller: _contentController,
                 decoration: const InputDecoration(
@@ -405,7 +387,6 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
                 },
               ),
               const SizedBox(height: 20),
-
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -440,7 +421,6 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
                 ],
               ),
               const SizedBox(height: 30),
-
               TextFormField(
                 decoration: const InputDecoration(
                   labelText: 'Mục tiêu bài học',
@@ -450,41 +430,35 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
                 maxLines: 3,
               ),
               const SizedBox(height: 20),
-
               _nameController.text.isNotEmpty &&
-                  _subjectController.text.isNotEmpty
+                      _subjectController.text.isNotEmpty
                   ? Column(
-                children: [
-                  const SizedBox(height: 20),
-                  CalendarEventPreview(
-                    title: "$_selectedLessonType: ${_nameController.text}",
-                    subject: _subjectController.text,
-                    startTime:
-                    _startDateTime != null
-                        ? DateFormat('HH:mm').format(_startDateTime!)
-                        : null,
-                    endTime:
-                    _endDateTime != null
-                        ? DateFormat('HH:mm').format(_endDateTime!)
-                        : null,
-                    room:
-                    _roomController.text.isEmpty
-                        ? null
-                        : _roomController.text,
-                    building:
-                    _buildingController.text.isEmpty
-                        ? null
-                        : _buildingController.text,
-                    teacher:
-                    _teacherController.text.isEmpty
-                        ? null
-                        : _teacherController.text,
-                  ),
-                  const SizedBox(height: 20),
-                ],
-              )
+                      children: [
+                        const SizedBox(height: 20),
+                        CalendarEventPreview(
+                          title:
+                              "$_selectedLessonType: ${_nameController.text}",
+                          subject: _subjectController.text,
+                          startTime: _startDateTime != null
+                              ? DateFormat('HH:mm').format(_startDateTime!)
+                              : null,
+                          endTime: _endDateTime != null
+                              ? DateFormat('HH:mm').format(_endDateTime!)
+                              : null,
+                          room: _roomController.text.isEmpty
+                              ? null
+                              : _roomController.text,
+                          building: _buildingController.text.isEmpty
+                              ? null
+                              : _buildingController.text,
+                          teacher: _teacherController.text.isEmpty
+                              ? null
+                              : _teacherController.text,
+                        ),
+                        const SizedBox(height: 20),
+                      ],
+                    )
                   : const SizedBox.shrink(),
-
               SizedBox(
                 width: double.infinity,
                 height: 50,

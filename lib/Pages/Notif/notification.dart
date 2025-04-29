@@ -22,7 +22,9 @@ class _NotificationPageState extends State<NotificationPage> {
     final endDate = now.add(const Duration(days: 100));
 
     List<Event> events = [];
-    for (DateTime date = now; date.isBefore(endDate); date = date.add(const Duration(days: 1))) {
+    for (DateTime date = now;
+        date.isBefore(endDate);
+        date = date.add(const Duration(days: 1))) {
       final dayEvents = kEvents[date] ?? [];
       events.addAll(dayEvents);
     }
@@ -46,8 +48,7 @@ class _NotificationPageState extends State<NotificationPage> {
   }
 
   DateTime _getDateFromEvent(Event event) {
-    final eventDays =
-    kEvents.entries
+    final eventDays = kEvents.entries
         .where((entry) => entry.value.contains(event))
         .map((entry) => entry.key)
         .toList();
@@ -103,153 +104,150 @@ class _NotificationPageState extends State<NotificationPage> {
           IconButton(icon: const Icon(Icons.refresh), onPressed: _loadEvents),
         ],
       ),
-      body:
-      _upcomingEvents.isEmpty
+      body: _upcomingEvents.isEmpty
           ? const Center(child: Text('Không có sự kiện nào?'))
           : ListView.builder(
-        itemCount: _upcomingEvents.length,
-        itemBuilder: (context, index) {
-          final event = _upcomingEvents[index];
-          final eventDate = _getDateFromEvent(event);
-          final formattedDate = _formatEventDate(eventDate);
-          final bool showDateHeader =
-              index == 0 ||
-                  _getDateFromEvent(_upcomingEvents[index - 1]) !=
-                      eventDate;
+              itemCount: _upcomingEvents.length,
+              itemBuilder: (context, index) {
+                final event = _upcomingEvents[index];
+                final eventDate = _getDateFromEvent(event);
+                final formattedDate = _formatEventDate(eventDate);
+                final bool showDateHeader = index == 0 ||
+                    _getDateFromEvent(_upcomingEvents[index - 1]) != eventDate;
 
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              if (showDateHeader)
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 16.0,
-                    right: 16.0,
-                    top: 16.0,
-                    bottom: 8.0,
-                  ),
-                  child: Text(
-                    formattedDate,
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey[800],
-                    ),
-                  ),
-                ),
-              Card(
-                margin: const EdgeInsets.symmetric(
-                  horizontal: 16.0,
-                  vertical: 4.0,
-                ),
-                elevation: 2.0,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12.0),
-                  side: BorderSide(
-                    color: _getEventColor(event),
-                    width: 1.5,
-                  ),
-                ),
-                child: ListTile(
-                  contentPadding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                    vertical: 8.0,
-                  ),
-                  leading: Container(
-                    width: 48,
-                    height: 48,
-                    decoration: BoxDecoration(
-                      color: _getEventColor(
-                        event,
-                      ).withValues(alpha: 0.2),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Center(
-                      child: Icon(
-                        _getEventIcon(event),
-                        color: _getEventColor(event),
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (showDateHeader)
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 16.0,
+                          right: 16.0,
+                          top: 16.0,
+                          bottom: 8.0,
+                        ),
+                        child: Text(
+                          formattedDate,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey[800],
+                          ),
+                        ),
+                      ),
+                    Card(
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 16.0,
+                        vertical: 4.0,
+                      ),
+                      elevation: 2.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12.0),
+                        side: BorderSide(
+                          color: _getEventColor(event),
+                          width: 1.5,
+                        ),
+                      ),
+                      child: ListTile(
+                        contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 16.0,
+                          vertical: 8.0,
+                        ),
+                        leading: Container(
+                          width: 48,
+                          height: 48,
+                          decoration: BoxDecoration(
+                            color: _getEventColor(
+                              event,
+                            ).withValues(alpha: 0.2),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Center(
+                            child: Icon(
+                              _getEventIcon(event),
+                              color: _getEventColor(event),
+                            ),
+                          ),
+                        ),
+                        title: Text(
+                          event.subject != null
+                              ? '${event.subject}'
+                              : event.title,
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        subtitle: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const SizedBox(height: 4),
+                            if (event.timeRange.isNotEmpty)
+                              Row(
+                                children: [
+                                  const Icon(
+                                    Icons.access_time,
+                                    size: 14,
+                                    color: Colors.grey,
+                                  ),
+                                  const SizedBox(width: 4),
+                                  Text(
+                                    event.timeRange,
+                                    style: TextStyle(color: Colors.grey[700]),
+                                  ),
+                                ],
+                              ),
+                            if (event.location.isNotEmpty)
+                              Row(
+                                children: [
+                                  const Icon(
+                                    Icons.location_on,
+                                    size: 14,
+                                    color: Colors.grey,
+                                  ),
+                                  const SizedBox(width: 4),
+                                  Text(
+                                    event.location,
+                                    style: TextStyle(color: Colors.grey[700]),
+                                  ),
+                                ],
+                              ),
+                            if (event.teacher != null)
+                              Row(
+                                children: [
+                                  const Icon(
+                                    Icons.person,
+                                    size: 14,
+                                    color: Colors.grey,
+                                  ),
+                                  const SizedBox(width: 4),
+                                  Text(
+                                    event.teacher!,
+                                    style: TextStyle(color: Colors.grey[700]),
+                                  ),
+                                ],
+                              ),
+                          ],
+                        ),
+                        trailing: IconButton(
+                          icon: const Icon(Icons.notifications),
+                          onPressed: () {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  'Reminder set for ${event.title}',
+                                ),
+                                duration: const Duration(seconds: 2),
+                              ),
+                            );
+                          },
+                        ),
+                        onTap: () {
+                          _showEventDetails(context, event, eventDate);
+                        },
                       ),
                     ),
-                  ),
-                  title: Text(
-                    event.subject != null
-                        ? '${event.subject}'
-                        : event.title,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  subtitle: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const SizedBox(height: 4),
-                      if (event.timeRange.isNotEmpty)
-                        Row(
-                          children: [
-                            const Icon(
-                              Icons.access_time,
-                              size: 14,
-                              color: Colors.grey,
-                            ),
-                            const SizedBox(width: 4),
-                            Text(
-                              event.timeRange,
-                              style: TextStyle(color: Colors.grey[700]),
-                            ),
-                          ],
-                        ),
-                      if (event.location.isNotEmpty)
-                        Row(
-                          children: [
-                            const Icon(
-                              Icons.location_on,
-                              size: 14,
-                              color: Colors.grey,
-                            ),
-                            const SizedBox(width: 4),
-                            Text(
-                              event.location,
-                              style: TextStyle(color: Colors.grey[700]),
-                            ),
-                          ],
-                        ),
-                      if (event.teacher != null)
-                        Row(
-                          children: [
-                            const Icon(
-                              Icons.person,
-                              size: 14,
-                              color: Colors.grey,
-                            ),
-                            const SizedBox(width: 4),
-                            Text(
-                              event.teacher!,
-                              style: TextStyle(color: Colors.grey[700]),
-                            ),
-                          ],
-                        ),
-                    ],
-                  ),
-                  trailing: IconButton(
-                    icon: const Icon(Icons.notifications),
-                    onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text(
-                            'Reminder set for ${event.title}',
-                          ),
-                          duration: const Duration(seconds: 2),
-                        ),
-                      );
-                    },
-                  ),
-                  onTap: () {
-                    _showEventDetails(context, event, eventDate);
-                  },
-                ),
-              ),
-            ],
-          );
-        },
-      ),
+                  ],
+                );
+              },
+            ),
     );
   }
 
@@ -277,7 +275,8 @@ class _NotificationPageState extends State<NotificationPage> {
     if (subject.contains('Âm nhạc')) return Colors.lightGreen;
     if (subject.contains('Tư duy phản biện')) return Colors.black54;
     if (subject.contains('Trải nghiệm, hướng nghiệp')) return Colors.grey;
-    if (subject.contains('Giáo dục quốc phòng') || subject.contains('Giáo dục đặc biệt')) {
+    if (subject.contains('Giáo dục quốc phòng') ||
+        subject.contains('Giáo dục đặc biệt')) {
       return Colors.brown;
     }
 
@@ -320,7 +319,9 @@ class _NotificationPageState extends State<NotificationPage> {
     if (subject.contains('Mỹ thuật')) return Icons.palette;
     if (subject.contains('Âm nhạc')) return Icons.music_note;
     if (subject.contains('Tư duy phản biện')) return Icons.psychology;
-    if (subject.contains('Trải nghiệm, hướng nghiệp')) return Icons.work_outline;
+    if (subject.contains('Trải nghiệm, hướng nghiệp')) {
+      return Icons.work_outline;
+    }
     if (subject.contains('Giáo dục quốc phòng')) return Icons.military_tech;
     if (subject.contains('Giáo dục đặc biệt')) return Icons.accessibility;
 
@@ -328,10 +329,10 @@ class _NotificationPageState extends State<NotificationPage> {
   }
 
   void _showEventDetails(
-      BuildContext context,
-      Event event,
-      DateTime eventDate,
-      ) {
+    BuildContext context,
+    Event event,
+    DateTime eventDate,
+  ) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,

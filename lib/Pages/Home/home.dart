@@ -727,26 +727,23 @@ class _HomePage extends State<HomePage> {
                       SubjectDetailPage(subjectName: subjects[index]['name']!),
                 ),
               );
-            }, 80,
+            },
+            80,
           );
         },
       ),
     );
   }
 
-  Widget _buildSubjectItem(
-    String subjectName,
-    String assetLocation,
-    VoidCallback onTap,
-      double subjectSize
-  ) {
+  Widget _buildSubjectItem(String subjectName, String assetLocation,
+      VoidCallback onTap, double subjectSize) {
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(8),
       child: SizedBox(
         //Should be customizable
         width: subjectSize,
-        height: subjectSize+20,
+        height: subjectSize + 20,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -754,8 +751,8 @@ class _HomePage extends State<HomePage> {
           children: [
             const SizedBox(height: 5),
             Container(
-              width: subjectSize-20,
-              height: subjectSize-20,
+              width: subjectSize - 20,
+              height: subjectSize - 20,
               clipBehavior: Clip.antiAlias,
               decoration: const BoxDecoration(),
               child: Stack(
@@ -764,8 +761,8 @@ class _HomePage extends State<HomePage> {
                     left: 0,
                     top: 0,
                     child: Container(
-                      width: subjectSize-20,
-                      height: subjectSize-20,
+                      width: subjectSize - 20,
+                      height: subjectSize - 20,
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(assetLocation),
@@ -872,7 +869,8 @@ class SubjectDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(subjectName)),
-      body: Center(child: Text('Đây là trang $subjectName nhưng giờ chưa có gì cả :)')),
+      body: Center(
+          child: Text('Đây là trang $subjectName nhưng giờ chưa có gì cả :)')),
     );
   }
 }
