@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../DetailPages/DetailPage.dart'; // Import DetailPage
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -320,35 +321,45 @@ class HomePage extends StatelessWidget {
         itemCount: subjects.length,
         itemBuilder: (context, index) {
           return _buildSubjectItem(
-              subjects[index]['name']!, subjects[index]['icon']!);
+              context,
+              subjects[index]['name']!,
+              subjects[index]['icon']!);
         },
       ),
     );
   }
 
-  Widget _buildSubjectItem(String name, String iconPath) {
-    return Column(
-      children: [
-        Container(
-          width: 60,
-          height: 60,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(iconPath),
-              fit: BoxFit.cover,
+  Widget _buildSubjectItem(BuildContext context, String name, String iconPath) {
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => DetailPage(title: name)),
+        );
+      },
+      child: Column(
+        children: [
+          Container(
+            width: 60,
+            height: 60,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(iconPath),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
-        ),
-        const SizedBox(height: 8),
-        Text(
-          name,
-          textAlign: TextAlign.center,
-          style: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
+          const SizedBox(height: 8),
+          Text(
+            name,
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
