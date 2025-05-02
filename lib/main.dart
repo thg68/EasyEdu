@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'Pages/Home/home.dart'; // Import trang Home
-import 'Pages/Search/search.dart'; // Import trang Search
-//import 'Pages/Notification/notification.dart'; // Import trang Notification
+// Import trang Home
+// Import trang Search
+// Import trang Notification
 //import 'Pages/Profile/profile.dart'; // Import trang Profile
 import 'Pages/Login/LoginPage.dart'; // Import trang Login
+
 
 void main() {
   runApp(const MyApp());

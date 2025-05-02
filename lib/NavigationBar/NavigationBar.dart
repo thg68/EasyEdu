@@ -1,3 +1,4 @@
+import 'package:easy_edu/Pages/Notif/notification.dart';
 import 'package:flutter/material.dart';
 import '../Pages/Home/home.dart';
 import '../Pages/Search/search.dart';
@@ -15,9 +16,9 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
 
   // Danh sách các trang tương ứng với mỗi tab
   final List<Widget> _pages = [
-    const HomePage(),
+    HomePage(),
     SearchPage(),
-    const PlaceholderWidget("Thông Báo"),
+    NotificationPage(),
     const ProfilePage(),
   ];
 
