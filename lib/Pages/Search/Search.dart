@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../DetailPages/DetailPage.dart'; // Import DetailPage
 
 class SearchPage extends StatelessWidget {
   final List<String> searchResults = [
@@ -97,40 +98,6 @@ class SearchPage extends StatelessWidget {
             ),
             Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-// Trang Chi Tiết (Detail)
-class DetailPage extends StatelessWidget {
-  final String title;
-
-  const DetailPage({required this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFFF9F4FB),
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 1,
-        iconTheme: IconThemeData(color: Colors.black),
-        title: Text(
-          title,
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),
-        ),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(
-          'Chi tiết về "$title"',
-          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
         ),
       ),
     );
