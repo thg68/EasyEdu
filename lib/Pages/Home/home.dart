@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
+import '../DetailPages/DetailPage.dart'; // Import DetailPage
+
 
 import '../../Utils/event.dart';
 import '../TeacherPages/createlesson.dart';
@@ -871,6 +873,7 @@ class SubjectDetailPage extends StatelessWidget {
       appBar: AppBar(title: Text(subjectName)),
       body: Center(
           child: Text('Đây là trang $subjectName nhưng giờ chưa có gì cả :)')),
+
     );
   }
 }
