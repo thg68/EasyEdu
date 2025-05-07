@@ -55,7 +55,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     radius: 60,
                     backgroundImage: _avatarImage != null
                         ? FileImage(_avatarImage!) as ImageProvider
-                        : const AssetImage('assets/images/40x40.png'),
+                        : const AssetImage('assets/images/profile_icon.png'),
                     child: _avatarImage == null
                         ? const Icon(
                             Icons.camera_alt,
@@ -83,14 +83,14 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           const SizedBox(height: 20),
           // Danh sách chức năng
-          _buildProfileOption(
-            icon: Icons.book,
-            title: 'Khóa học của tôi',
-            color: Colors.orange,
-            onTap: () {
-              // Xử lý khi nhấn vào
-            },
-          ),
+          // _buildProfileOption(
+          //   icon: Icons.book,
+          //   title: 'Khóa học của tôi',
+          //   color: Colors.orange,
+          //   onTap: () {
+          //     // Xử lý khi nhấn vào
+          //   },
+          // ),
           _buildProfileOption(
             icon: Icons.bar_chart,
             title: 'Theo dõi học tập',
@@ -125,6 +125,8 @@ class _ProfilePageState extends State<ProfilePage> {
                   builder: (context) => EditProfilePage(
                     name: _name,
                     className: _className,
+                    // Truyền avatar hiện tại sang EditProfile
+                    avatarUrl: _avatarImage != null ? _avatarImage!.path : null,
                   ),
                 ),
               ).then((result) {
@@ -133,7 +135,8 @@ class _ProfilePageState extends State<ProfilePage> {
                   setState(() {
                     _name = result['name'] ?? _name;
                     _className = result['className'] ?? _className;
-                    _avatarImage = result['avatar'] ?? _avatarImage;
+                    // Cập nhật avatarFile thay vì avatar
+                    _avatarImage = result['avatarFile'] ?? _avatarImage;
                   });
                 }
               });

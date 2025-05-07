@@ -16,8 +16,13 @@ class AchievementProfile extends StatelessWidget {
               style: TextStyle(
                 fontSize: themeProvider.fontSize,
                 fontWeight: FontWeight.bold,
+                color: Colors.white,
               ),
             ),
+            backgroundColor: Colors.blue,
+            foregroundColor: Colors.white,
+            centerTitle: true,
+            elevation: 1,
           ),
           body: ListView(
             padding: const EdgeInsets.all(16.0),
@@ -25,7 +30,7 @@ class AchievementProfile extends StatelessWidget {
               _buildAchievementCard(
                 context,
                 title: 'Bài học đã hoàn thành',
-                value: '5',
+                value: '12',
                 icon: Icons.book,
                 color: Colors.blue,
                 themeProvider: themeProvider,
@@ -48,14 +53,61 @@ class AchievementProfile extends StatelessWidget {
               ),
               _buildAchievementSection(
                 context,
+                'Thành tích theo môn học',
+                [
+                  _buildSubjectAchievement(
+                    'Toán học', 
+                    '9.0', 
+                    'assets/images/Algebra_icon.png',
+                    themeProvider,
+                    '4 bài học đã hoàn thành',
+                  ),
+                  _buildSubjectAchievement(
+                    'Vật lý', 
+                    '8.5', 
+                    'assets/images/Physics_icon.png',
+                    themeProvider,
+                    '3 bài học đã hoàn thành',
+                  ),
+                  _buildSubjectAchievement(
+                    'Hóa học', 
+                    '7.5', 
+                    'assets/images/Chemistry_icon.png',
+                    themeProvider,
+                    '2 bài học đã hoàn thành',
+                  ),
+                  _buildSubjectAchievement(
+                    'Sinh học', 
+                    '8.0', 
+                    'assets/images/Biology_icon.png',
+                    themeProvider,
+                    '3 bài học đã hoàn thành',
+                  ),
+                ],
+                themeProvider,
+              ),
+              _buildAchievementSection(
+                context,
                 'Huy hiệu đạt được',
                 [
-                  _buildBadge('Người học chăm chỉ', 'assets/images/badge1.png',
-                      themeProvider),
-                  _buildBadge('Điểm cao nhất tuần', 'assets/images/badge2.png',
-                      themeProvider),
-                  _buildBadge('Chuỗi 7 ngày', 'assets/images/badge3.png',
-                      themeProvider),
+                  _buildBadge(
+                    'Người học chăm chỉ', 
+                    'assets/images/home_icon.png',
+                    themeProvider,
+                    'Hoàn thành 5 bài học liên tiếp'
+                  ),
+                  _buildBadge(
+                    'Điểm cao nhất tuần', 
+                    'assets/images/notification_icon.png',
+                    themeProvider,
+                    'Đạt điểm cao nhất trong tuần qua'
+                  ),
+                  _buildBadge(
+                    'Chuỗi 7 ngày', 
+                    'assets/images/profile_icon.png',
+                    themeProvider,
+                    'Học liên tục 7 ngày không gián đoạn'
+                  ),
                 ],
                 themeProvider,
               ),
@@ -64,13 +116,18 @@ class AchievementProfile extends StatelessWidget {
                 'Thành tích gần đây',
                 [
                   _buildRecentAchievement(
-                    'Tung Tung Sahur',
+                    'Hoàn thành bài học Đại số',
                     '2 ngày trước',
                     themeProvider,
                   ),
                   _buildRecentAchievement(
-                    'tralalero tralala',
+                    'Đạt điểm 9.0 trong bài kiểm tra Vật lý',
                     '1 tuần trước',
+                    themeProvider,
+                  ),
+                  _buildRecentAchievement(
+                    'Hoàn thành chuỗi học 7 ngày',
+                    '2 tuần trước',
                     themeProvider,
                   ),
                 ],
@@ -94,6 +151,7 @@ class AchievementProfile extends StatelessWidget {
     return Card(
       elevation: 4,
       margin: const EdgeInsets.only(bottom: 16),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Row(
@@ -117,6 +175,7 @@ class AchievementProfile extends StatelessWidget {
                     style: TextStyle(
                       fontSize: themeProvider.fontSize * 0.9,
                       color: Colors.grey[600],
+                      fontWeight: themeProvider.boldText ? FontWeight.bold : FontWeight.normal,
                     ),
                   ),
                   const SizedBox(height: 4),
@@ -152,6 +211,7 @@ class AchievementProfile extends StatelessWidget {
             style: TextStyle(
               fontSize: themeProvider.fontSize * 1.1,
               fontWeight: FontWeight.bold,
+              color: Colors.blue.shade800,
             ),
           ),
         ),
@@ -160,19 +220,120 @@ class AchievementProfile extends StatelessWidget {
     );
   }
 
+  Widget _buildSubjectAchievement(
+    String subject,
+    String score,
+    String iconPath,
+    ThemeProvider themeProvider,
+    String description,
+  ) {
+    return Card(
+      margin: const EdgeInsets.only(bottom: 12),
+      elevation: 2,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Row(
+          children: [
+            // Sử dụng ClipRRect để tránh lỗi hiển thị ảnh
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.asset(
+                iconPath,
+                width: 50 * (themeProvider.fontSize / 16),
+                height: 50 * (themeProvider.fontSize / 16),
+                errorBuilder: (context, error, stackTrace) {
+                  // Widget hiển thị khi lỗi
+                  return Container(
+                    width: 50 * (themeProvider.fontSize / 16),
+                    height: 50 * (themeProvider.fontSize / 16),
+                    color: Colors.grey.shade200,
+                    child: Icon(Icons.book, color: Colors.grey.shade400),
+                  );
+                },
+              ),
+            ),
+            const SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    subject,
+                    style: TextStyle(
+                      fontSize: themeProvider.fontSize * 0.95,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    description,
+                    style: TextStyle(
+                      fontSize: themeProvider.fontSize * 0.8,
+                      color: Colors.grey.shade600,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              decoration: BoxDecoration(
+                color: Colors.green.shade100,
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Text(
+                score,
+                style: TextStyle(
+                  fontSize: themeProvider.fontSize * 0.9,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green.shade700,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget _buildBadge(
-      String name, String imagePath, ThemeProvider themeProvider) {
+    String name, 
+    String imagePath, 
+    ThemeProvider themeProvider,
+    String description,
+  ) {
     return Card(
       margin: const EdgeInsets.only(bottom: 8),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: ListTile(
-        leading: Image.asset(
-          imagePath,
-          width: 40 * (themeProvider.fontSize / 16),
-          height: 40 * (themeProvider.fontSize / 16),
+        leading: ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: Image.asset(
+            imagePath,
+            width: 40 * (themeProvider.fontSize / 16),
+            height: 40 * (themeProvider.fontSize / 16),
+            errorBuilder: (context, error, stackTrace) {
+              return Container(
+                width: 40 * (themeProvider.fontSize / 16),
+                height: 40 * (themeProvider.fontSize / 16),
+                color: Colors.grey.shade200,
+                child: Icon(Icons.emoji_events, color: Colors.amber),
+              );
+            },
+          ),
         ),
         title: Text(
           name,
-          style: TextStyle(fontSize: themeProvider.fontSize),
+          style: TextStyle(
+            fontSize: themeProvider.fontSize,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        subtitle: Text(
+          description,
+          style: TextStyle(
+            fontSize: themeProvider.fontSize * 0.8,
+          ),
         ),
       ),
     );
@@ -185,10 +346,14 @@ class AchievementProfile extends StatelessWidget {
   ) {
     return Card(
       margin: const EdgeInsets.only(bottom: 8),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: ListTile(
         title: Text(
           achievement,
-          style: TextStyle(fontSize: themeProvider.fontSize),
+          style: TextStyle(
+            fontSize: themeProvider.fontSize,
+            fontWeight: themeProvider.boldText ? FontWeight.w500 : FontWeight.normal,
+          ),
         ),
         subtitle: Text(
           timeAgo,

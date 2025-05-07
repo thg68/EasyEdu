@@ -9,6 +9,7 @@ class SubjectProgress {
   final int totalLessons;
   final List<Lesson> lessons;
   final Color color;
+  final String iconPath;
 
   SubjectProgress({
     required this.name,
@@ -17,6 +18,7 @@ class SubjectProgress {
     required this.totalLessons,
     required this.lessons,
     required this.color,
+    required this.iconPath,
   });
 }
 
@@ -35,72 +37,125 @@ class Lesson {
 class TrackLearning extends StatelessWidget {
   final List<SubjectProgress> subjects = [
     SubjectProgress(
-      name: 'Lập trình Flutter',
-      progress: 0.75,
-      completedLessons: 15,
+      name: 'Toán học',
+      progress: 0.85,
+      completedLessons: 17,
       totalLessons: 20,
       color: Colors.blue,
+      iconPath: 'assets/images/Algebra_icon.png',
       lessons: [
         Lesson(
-          name: 'Giới thiệu Flutter',
+          name: 'Đại số tuyến tính',
           isCompleted: true,
-          completedDate: '20/04/2024',
+          completedDate: '02/05/2025',
         ),
         Lesson(
-          name: 'Widget cơ bản',
+          name: 'Giải tích cơ bản',
           isCompleted: true,
-          completedDate: '21/04/2024',
+          completedDate: '04/05/2025',
         ),
         Lesson(
-          name: 'State Management',
+          name: 'Xác suất thống kê',
           isCompleted: false,
           completedDate: '',
         ),
       ],
     ),
     SubjectProgress(
-      name: 'Lập trình Android',
+      name: 'Vật lý',
+      progress: 0.70,
+      completedLessons: 14,
+      totalLessons: 20,
+      color: Colors.purple,
+      iconPath: 'assets/images/Physics_icon.png',
+      lessons: [
+        Lesson(
+          name: 'Cơ học Newton',
+          isCompleted: true,
+          completedDate: '01/05/2025',
+        ),
+        Lesson(
+          name: 'Điện từ học',
+          isCompleted: true,
+          completedDate: '03/05/2025',
+        ),
+        Lesson(
+          name: 'Quang học hiện đại',
+          isCompleted: false,
+          completedDate: '',
+        ),
+      ],
+    ),
+    SubjectProgress(
+      name: 'Hóa học',
       progress: 0.60,
       completedLessons: 12,
       totalLessons: 20,
       color: Colors.green,
+      iconPath: 'assets/images/Chemistry_icon.png',
       lessons: [
         Lesson(
-          name: 'Activity và Intent',
+          name: 'Cấu tạo nguyên tử',
           isCompleted: true,
-          completedDate: '15/04/2024',
+          completedDate: '28/04/2025',
         ),
         Lesson(
-          name: 'Layout và Views',
+          name: 'Phản ứng hóa học',
           isCompleted: true,
-          completedDate: '16/04/2024',
+          completedDate: '30/04/2025',
         ),
         Lesson(
-          name: 'SQLite Database',
+          name: 'Hóa học hữu cơ',
           isCompleted: false,
           completedDate: '',
         ),
       ],
     ),
     SubjectProgress(
-      name: 'Lập trình Web',
-      progress: 0.45,
-      completedLessons: 9,
+      name: 'Sinh học',
+      progress: 0.50,
+      completedLessons: 10,
       totalLessons: 20,
-      color: Colors.orange,
+      color: Colors.teal,
+      iconPath: 'assets/images/Biology_icon.png',
       lessons: [
         Lesson(
-          name: 'HTML & CSS',
+          name: 'Tế bào học',
           isCompleted: true,
-          completedDate: '10/04/2024',
+          completedDate: '25/04/2025',
         ),
         Lesson(
-          name: 'JavaScript',
+          name: 'Di truyền học',
           isCompleted: true,
-          completedDate: '11/04/2024',
+          completedDate: '29/04/2025',
         ),
         Lesson(
-          name: 'React Framework',
+          name: 'Sinh thái học',
+          isCompleted: false,
+          completedDate: '',
+        ),
+      ],
+    ),
+    SubjectProgress(
+      name: 'Lịch sử',
+      progress: 0.65,
+      completedLessons: 13,
+      totalLessons: 20,
+      color: Colors.brown,
+      iconPath: 'assets/images/History_icon.png',
+      lessons: [
+        Lesson(
+          name: 'Lịch sử Việt Nam',
+          isCompleted: true,
+          completedDate: '26/04/2025',
+        ),
+        Lesson(
+          name: 'Lịch sử thế giới',
+          isCompleted: true,
+          completedDate: '02/05/2025',
+        ),
+        Lesson(
+          name: 'Văn minh thế giới',
           isCompleted: false,
           completedDate: '',
         ),
@@ -121,8 +176,13 @@ class TrackLearning extends StatelessWidget {
               style: TextStyle(
                 fontSize: themeProvider.fontSize,
                 fontWeight: FontWeight.bold,
+                color: Colors.white,
               ),
             ),
+            backgroundColor: Colors.blue,
+            foregroundColor: Colors.white,
+            centerTitle: true,
+            elevation: 1,
           ),
           body: ListView(
             padding: const EdgeInsets.all(16.0),
@@ -278,14 +338,41 @@ class TrackLearning extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(
-                  child: Text(
-                    subject.name,
-                    style: TextStyle(
-                      fontSize: themeProvider.fontSize,
-                      fontWeight: FontWeight.bold,
+                Row(
+                  children: [
+                    Container(
+                      width: 36 * (themeProvider.fontSize / 16),
+                      height: 36 * (themeProvider.fontSize / 16),
+                      decoration: BoxDecoration(
+                        color: subject.color.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.asset(
+                          subject.iconPath,
+                          width: 36 * (themeProvider.fontSize / 16),
+                          height: 36 * (themeProvider.fontSize / 16),
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) {
+                            return Icon(
+                              Icons.book,
+                              color: subject.color,
+                              size: 20 * (themeProvider.fontSize / 16),
+                            );
+                          },
+                        ),
+                      ),
                     ),
-                  ),
+                    const SizedBox(width: 12),
+                    Text(
+                      subject.name,
+                      style: TextStyle(
+                        fontSize: themeProvider.fontSize,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
                 Text(
                   '${(subject.progress * 100).toInt()}%',
@@ -297,7 +384,7 @@ class TrackLearning extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 12),
             LinearProgressIndicator(
               value: subject.progress,
               backgroundColor: subject.color.withOpacity(0.2),
