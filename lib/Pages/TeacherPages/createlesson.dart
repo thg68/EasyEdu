@@ -157,7 +157,6 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
         } else {
           kEvents[eventDate] = [newEvent];
         }
-        saveEventsToFile();
 
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(

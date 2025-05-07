@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
-import '../DetailPages/DetailPage.dart';
+import '../DetailPages/DetailPage.dart'; // Import DetailPage
+
+
 import '../../Utils/event.dart';
 import '../TeacherPages/createlesson.dart';
 
@@ -18,34 +20,15 @@ class _HomePage extends State<HomePage> {
   DateTime? _selectedDay;
   DateTime? _rangeStart;
   DateTime? _rangeEnd;
-  late ValueNotifier<List<Event>> _selectedEvents;
-  bool _isLoading = true; // Track loading state
+  late final ValueNotifier<List<Event>> _selectedEvents;
+  final double subjectGridSize = 80; //scale at 60-110, 80 looks best
 
   @override
   void initState() {
     super.initState();
+    initCalendarEvents();
     _selectedDay = _focusedDay;
-    _selectedEvents = ValueNotifier<List<Event>>([]);
-
-    // Initialize events and update UI when done
-    _initEvents();
-  }
-
-  // Initialize events asynchronously
-  Future<void> _initEvents() async {
-    setState(() {
-      _isLoading = true;
-    });
-
-    await initCalendarEvents();
-
-    // Update selected day events after loading
-    _selectedEvents.value = _getEventsForDay(_selectedDay!);
-
-    // Update UI
-    setState(() {
-      _isLoading = false;
-    });
+    _selectedEvents = ValueNotifier(_getEventsForDay(_selectedDay!));
   }
 
   @override
@@ -87,12 +70,12 @@ class _HomePage extends State<HomePage> {
   }
 
   List<Event> _getEventsForDay(DateTime day) {
-    // Implementation example
     return kEvents[day] ?? [];
   }
 
   List<Event> _getEventsForRange(DateTime start, DateTime end) {
     final days = daysInRange(start, end);
+
     return [for (final d in days) ..._getEventsForDay(d)];
   }
 
@@ -289,7 +272,6 @@ class _HomePage extends State<HomePage> {
       eventLoader: _getEventsForDay,
       startingDayOfWeek: StartingDayOfWeek.monday,
       calendarStyle: const CalendarStyle(
-        // Use `CalendarStyle` to customize the UI
         outsideDaysVisible: false,
         markerSize: 6,
       ),
@@ -709,7 +691,7 @@ class _HomePage extends State<HomePage> {
       {'name': 'Âm Nhạc', 'icon': 'assets/images/Music_icon.png'},
       {'name': 'Tư Duy Phản Biện', 'icon': 'assets/images/Drama_icon.png'},
       {
-        'name': 'Trải Nghiệm và Hướng Nghiệp',
+        'name': 'Trải Nghiệm Hướng Việc',
         'icon': 'assets/images/Career_icon.png'
       },
       {
@@ -727,8 +709,8 @@ class _HomePage extends State<HomePage> {
       child: GridView.builder(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: (240/subjectGridSize).toInt(),
           childAspectRatio: 0.9,
           mainAxisSpacing: 12,
           crossAxisSpacing: 12,
@@ -747,7 +729,7 @@ class _HomePage extends State<HomePage> {
                 ),
               );
             },
-            80,
+            subjectGridSize,
           );
         },
       ),
@@ -760,9 +742,8 @@ class _HomePage extends State<HomePage> {
       onTap: onTap,
       borderRadius: BorderRadius.circular(8),
       child: SizedBox(
-        //Should be customizable
         width: subjectSize,
-        height: subjectSize + 20,
+        height: subjectSize,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -770,8 +751,8 @@ class _HomePage extends State<HomePage> {
           children: [
             const SizedBox(height: 5),
             Container(
-              width: subjectSize - 20,
-              height: subjectSize - 20,
+              width: subjectSize - 10,
+              height: subjectSize - 10,
               clipBehavior: Clip.antiAlias,
               decoration: const BoxDecoration(),
               child: Stack(
@@ -780,8 +761,8 @@ class _HomePage extends State<HomePage> {
                     left: 0,
                     top: 0,
                     child: Container(
-                      width: subjectSize - 20,
-                      height: subjectSize - 20,
+                      width: subjectSize - 10,
+                      height: subjectSize - 10,
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(assetLocation),
@@ -794,13 +775,13 @@ class _HomePage extends State<HomePage> {
               ),
             ),
             SizedBox(
-              width: subjectSize,
+              width: subjectSize+10,
               child: Text(
                 subjectName,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.black,
-                  fontSize: 14,
+                  fontSize: subjectSize/5,
                   fontFamily: 'Roboto',
                   fontWeight: FontWeight.w500,
                   height: 1.43,
