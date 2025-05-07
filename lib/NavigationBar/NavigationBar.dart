@@ -40,10 +40,14 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             });
           },
           selectedIndex: _currentPageIndex,
-          backgroundColor: const Color(0xFFF3EDF7),
-          height: 65 *
-              (themeProvider.fontSize /
-                  16), // Điều chỉnh chiều cao theo fontSize
+          backgroundColor: themeProvider.highContrast
+              ? Colors.black
+              : const Color(0xFFF3EDF7),
+          height: 65 * (themeProvider.fontSize / 16),
+          labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+          indicatorColor: themeProvider.highContrast
+              ? Colors.white.withOpacity(0.1)
+              : const Color(0xFFE8DEF8),
           destinations: [
             _buildNavigationDestination(
               iconPath: 'assets/images/home_icon.png',
@@ -93,6 +97,9 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             image: DecorationImage(
               image: AssetImage(iconPath),
               fit: BoxFit.contain,
+              colorFilter: themeProvider.highContrast
+                  ? const ColorFilter.mode(Colors.white, BlendMode.srcIn)
+                  : null,
             ),
           ),
         );
@@ -107,7 +114,9 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         return Container(
           padding: EdgeInsets.all(padding),
           decoration: ShapeDecoration(
-            color: const Color(0xFFE8DEF8),
+            color: themeProvider.highContrast
+                ? Colors.white.withOpacity(0.1)
+                : const Color(0xFFE8DEF8),
             shape: RoundedRectangleBorder(
               borderRadius:
                   BorderRadius.circular(16 * (themeProvider.fontSize / 16)),
