@@ -129,8 +129,8 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
         final endTimeStr = _endDateTime != null
             ? DateFormat('HH:mm').format(_endDateTime!)
             : DateFormat(
-                'HH:mm',
-              ).format(_startDateTime!.add(const Duration(hours: 1)));
+          'HH:mm',
+        ).format(_startDateTime!.add(const Duration(hours: 1)));
 
         final eventDate = DateTime.utc(
           _startDateTime!.year,
@@ -157,6 +157,7 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
         } else {
           kEvents[eventDate] = [newEvent];
         }
+        saveEventsToFile();
 
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(

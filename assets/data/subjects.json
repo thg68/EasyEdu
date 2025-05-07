@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Đại Số",
+    "tchr": "Trần Thanh Hoa",
+    "romm": "P301",
+    "bdng": "C2",
+    "icon": "assets/images/Algebra_icon.png"
+  },
+  {
+    "name": "Giải Tích",
+    "tchr": "Lê Minh Tuấn",
+    "romm": "P302",
+    "bdng": "C2",
+    "icon": "assets/images/Geometry_icon.png"
+  },
+  {
+    "name": "Ngữ Văn",
+    "tchr": "Phạm Thị Lan",
+    "romm": "P201",
+    "bdng": "B1",
+    "icon": "assets/images/Literature_icon.png"
+  },
+  {
+    "name": "Tiếng Anh",
+    "tchr": "Nguyễn Thị Lan Hạnh",
+    "romm": "P202",
+    "bdng": "B1",
+    "icon": "assets/images/Spanish_icon.png"
+  },
+  {
+    "name": "Vật Lý",
+    "tchr": "Đỗ Văn Hùng",
+    "romm": "P101",
+    "bdng": "B2",
+    "icon": "assets/images/Physics_icon.png"
+  },
+  {
+    "name": "Hóa Học",
+    "tchr": "Vũ Thu Thủy",
+    "romm": "P102",
+    "bdng": "B3",
+    "icon": "assets/images/Chemistry_icon.png"
+  },
+  {
+    "name": "Sinh Học",
+    "tchr": "Hoàng Văn Nam",
+    "romm": "P201",
+    "bdng": "B2",
+    "icon": "assets/images/Biology_icon.png"
+  },
+  {
+    "name": "Lịch Sử",
+    "tchr": "Bùi Kiều",
+    "romm": "P104",
+    "bdng": "B1",
+    "icon": "assets/images/History_icon.png"
+  },
+  {
+    "name": "Địa Lý",
+    "tchr": "Phan Tiến Đức",
+    "romm": "P106",
+    "bdng": "B1",
+    "icon": "assets/images/Geography_icon.png"
+  },
+  {
+    "name": "Giáo Dục Công Dân",
+    "tchr": "Trịnh Thị Mai",
+    "romm": "P107",
+    "bdng": "B1",
+    "icon": "assets/images/Civics_icon.png"
+  },
+  {
+    "name": "Tin Học",
+    "tchr": "Trần Quốc Sơn",
+    "romm": "PM203",
+    "bdng": "Tech",
+    "icon": "assets/images/Computer_Science_icon.png"
+  },
+  {
+    "name": "Công Nghệ",
+    "tchr": "Lê Thị Thanh Phương",
+    "romm": "PM202",
+    "bdng": "Tech",
+    "icon": "assets/images/Technology_icon.png"
+  },
+  {
+    "name": "Giáo Dục Thể Chất",
+    "tchr": "Nguyễn Đưc Bình",
+    "romm": "Sân cỏ",
+    "bdng": "Sân cỏ",
+    "icon": "assets/images/Physical_Education_icon.png"
+  },
+  {
+    "name": "Kinh Tế và Pháp Luật",
+    "tchr": "Phạm Mai An",
+    "romm": "P301",
+    "bdng": "B1",
+    "icon": "assets/images/Economics_icon.png"
+  },
+  {
+    "name": "Mỹ Thuật",
+    "tchr": "Võ Huyền Ngọc",
+    "romm": "P202",
+    "bdng": "C1",
+    "icon": "assets/images/Arts_icon.png"
+  },
+  {
+    "name": "Âm Nhạc",
+    "tchr": "Nguyễn Thị Ly",
+    "romm": "P201",
+    "bdng": "C1",
+    "icon": "assets/images/Music_icon.png"
+  },
+  {
+    "name": "Tư Duy Phản Biện",
+    "tchr": "Hoàng Thị Hạnh",
+    "romm": "R202",
+    "bdng": "B2",
+    "icon": "assets/images/Drama_icon.png"
+  },
+  {
+    "name": "Trải Nghiệm và Hướng Nghiệp",
+    "tchr": "Lê Văn Quang",
+    "romm": "P302",
+    "bdng": "C3",
+    "icon": "assets/images/Career_icon.png"
+  },
+  {
+    "name": "Giáo Dục Quốc Phòng",
+    "tchr": "Đặng Thị Ban Oanh",
+    "romm": "Sân cỏ",
+    "bdng": "Hola",
+    "icon": "assets/images/Military_icon.png"
+  },
+  {
+    "name": "Giáo Dục Đặc Biệt",
+    "tchr": "Phan Thị Lan",
+    "romm": "P103",
+    "bdng": "B3",
+    "icon": "assets/images/Special_Education_icon.png"
+  }
+]

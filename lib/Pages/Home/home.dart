@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
-import '../DetailPages/DetailPage.dart'; // Import DetailPage
-
-
+import '../DetailPages/DetailPage.dart';
 import '../../Utils/event.dart';
 import '../TeacherPages/createlesson.dart';
 
@@ -20,14 +18,34 @@ class _HomePage extends State<HomePage> {
   DateTime? _selectedDay;
   DateTime? _rangeStart;
   DateTime? _rangeEnd;
-  late final ValueNotifier<List<Event>> _selectedEvents;
+  late ValueNotifier<List<Event>> _selectedEvents;
+  bool _isLoading = true; // Track loading state
 
   @override
   void initState() {
     super.initState();
-    initCalendarEvents();
     _selectedDay = _focusedDay;
-    _selectedEvents = ValueNotifier(_getEventsForDay(_selectedDay!));
+    _selectedEvents = ValueNotifier<List<Event>>([]);
+
+    // Initialize events and update UI when done
+    _initEvents();
+  }
+
+  // Initialize events asynchronously
+  Future<void> _initEvents() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    await initCalendarEvents();
+
+    // Update selected day events after loading
+    _selectedEvents.value = _getEventsForDay(_selectedDay!);
+
+    // Update UI
+    setState(() {
+      _isLoading = false;
+    });
   }
 
   @override
@@ -41,7 +59,7 @@ class _HomePage extends State<HomePage> {
       setState(() {
         _selectedDay = selectedDay;
         _focusedDay = focusedDay;
-        _rangeStart = null; // Important to clean those
+        _rangeStart = null;
         _rangeEnd = null;
         _rangeSelectionMode = RangeSelectionMode.toggledOff;
       });
@@ -75,7 +93,6 @@ class _HomePage extends State<HomePage> {
 
   List<Event> _getEventsForRange(DateTime start, DateTime end) {
     final days = daysInRange(start, end);
-
     return [for (final d in days) ..._getEventsForDay(d)];
   }
 
@@ -667,40 +684,40 @@ class _HomePage extends State<HomePage> {
   }
 
   Widget _buildSubjectsGrid() {
-    final subjects = [
-      {'name': 'Đại số', 'icon': 'assets/images/Algebra_icon.png'},
-      {'name': 'Giải tích', 'icon': 'assets/images/Geometry_icon.png'},
-      {'name': 'Ngữ văn', 'icon': 'assets/images/Literature_icon.png'},
+    final defaultSubjects = [
+      {'name': 'Đại Số', 'icon': 'assets/images/Algebra_icon.png'},
+      {'name': 'Giải Tích', 'icon': 'assets/images/Geometry_icon.png'},
+      {'name': 'Ngữ Văn', 'icon': 'assets/images/Literature_icon.png'},
       {'name': 'Tiếng Anh', 'icon': 'assets/images/Spanish_icon.png'},
-      {'name': 'Vật lý', 'icon': 'assets/images/Physics_icon.png'},
-      {'name': 'Hóa học', 'icon': 'assets/images/Chemistry_icon.png'},
-      {'name': 'Sinh học', 'icon': 'assets/images/Biology_icon.png'},
-      {'name': 'Lịch sử', 'icon': 'assets/images/History_icon.png'},
-      {'name': 'Địa lý', 'icon': 'assets/images/Geography_icon.png'},
-      {'name': 'Giáo dục công dân', 'icon': 'assets/images/Civics_icon.png'},
-      {'name': 'Tin học', 'icon': 'assets/images/Computer_Science_icon.png'},
-      {'name': 'Công nghệ', 'icon': 'assets/images/Technology_icon.png'},
+      {'name': 'Vật Lý', 'icon': 'assets/images/Physics_icon.png'},
+      {'name': 'Hóa Học', 'icon': 'assets/images/Chemistry_icon.png'},
+      {'name': 'Sinh Học', 'icon': 'assets/images/Biology_icon.png'},
+      {'name': 'Lịch Sử', 'icon': 'assets/images/History_icon.png'},
+      {'name': 'Địa Lý', 'icon': 'assets/images/Geography_icon.png'},
+      {'name': 'Giáo Dục Công Dân', 'icon': 'assets/images/Civics_icon.png'},
+      {'name': 'Tin Học', 'icon': 'assets/images/Computer_Science_icon.png'},
+      {'name': 'Công Nghệ', 'icon': 'assets/images/Technology_icon.png'},
       {
-        'name': 'Giáo dục thể chất',
+        'name': 'Giáo Dục Thể Chất',
         'icon': 'assets/images/Physical_Education_icon.png'
       },
       {
-        'name': 'Kinh tế và Pháp luật',
+        'name': 'Kinh Tế và Pháp Luật',
         'icon': 'assets/images/Economics_icon.png'
       },
-      {'name': 'Mỹ thuật', 'icon': 'assets/images/Arts_icon.png'},
-      {'name': 'Âm nhạc', 'icon': 'assets/images/Music_icon.png'},
-      {'name': 'Tư duy phản biện', 'icon': 'assets/images/Drama_icon.png'},
+      {'name': 'Mỹ Thuật', 'icon': 'assets/images/Arts_icon.png'},
+      {'name': 'Âm Nhạc', 'icon': 'assets/images/Music_icon.png'},
+      {'name': 'Tư Duy Phản Biện', 'icon': 'assets/images/Drama_icon.png'},
       {
-        'name': 'Trải nghiệm, hướng nghiệp',
+        'name': 'Trải Nghiệm và Hướng Nghiệp',
         'icon': 'assets/images/Career_icon.png'
       },
       {
-        'name': 'Giáo dục quốc phòng',
+        'name': 'Giáo Dục Quốc Phòng',
         'icon': 'assets/images/Military_icon.png'
       },
       {
-        'name': 'Giáo dục đặc biệt',
+        'name': 'Giáo Dục Đặc Biệt',
         'icon': 'assets/images/Special_Education_icon.png'
       },
     ];
@@ -716,17 +733,17 @@ class _HomePage extends State<HomePage> {
           mainAxisSpacing: 12,
           crossAxisSpacing: 12,
         ),
-        itemCount: subjects.length,
+        itemCount: defaultSubjects.length,
         itemBuilder: (context, index) {
           return _buildSubjectItem(
-            subjects[index]['name']!,
-            subjects[index]['icon']!,
+            defaultSubjects[index]['name']!,
+            defaultSubjects[index]['icon']!,
             () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      SubjectDetailPage(subjectName: subjects[index]['name']!),
+                      SubjectDetailPage(subjectName: defaultSubjects[index]['name']!),
                 ),
               );
             },

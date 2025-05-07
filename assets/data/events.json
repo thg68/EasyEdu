@@ -1,0 +1,3212 @@
+{
+  "2025-02-07": [
+    {
+      "title": "Đại Số Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    },
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    }
+  ],
+  "2025-02-08": [
+    {
+      "title": "Giải Tích Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-02-10": [
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    },
+    {
+      "title": "Sinh Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    },
+    {
+      "title": "Âm Nhạc Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P201",
+      "building": "C1",
+      "subject": "Âm Nhạc",
+      "teacher": "Nguyễn Thị Ly"
+    }
+  ],
+  "2025-02-11": [
+    {
+      "title": "Vật Lý Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P101",
+      "building": "B2",
+      "subject": "Vật Lý",
+      "teacher": "Đỗ Văn Hùng"
+    },
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    }
+  ],
+  "2025-02-12": [
+    {
+      "title": "Hóa Học H Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P102",
+      "building": "B3",
+      "subject": "Hóa Học H",
+      "teacher": "Vũ Thu Thủy"
+    },
+    {
+      "title": "Địa Lý Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-02-13": [
+    {
+      "title": "Sinh Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    },
+    {
+      "title": "Giáo Dục Công Dân Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P107",
+      "building": "B1",
+      "subject": "Giáo Dục Công Dân",
+      "teacher": "Trịnh Thị Mai"
+    }
+  ],
+  "2025-02-14": [
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    },
+    {
+      "title": "Tin Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    }
+  ],
+  "2025-02-15": [
+    {
+      "title": "Địa Lý Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    },
+    {
+      "title": "Tư Duy Phản Biện Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "R202",
+      "building": "B2",
+      "subject": "Tư Duy Phản Biện",
+      "teacher": "Hoàng Thị Hạnh"
+    }
+  ],
+  "2025-02-17": [
+    {
+      "title": "Tin Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    },
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    }
+  ],
+  "2025-02-18": [
+    {
+      "title": "Công Nghệ Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "PM202",
+      "building": "Tech",
+      "subject": "Công Nghệ",
+      "teacher": "Lê Thị Thanh Phương"
+    },
+    {
+      "title": "Đại Số Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    }
+  ],
+  "2025-02-19": [
+    {
+      "title": "Giáo Dục Thể Chất Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "Sân cỏ",
+      "building": "Sân cỏ",
+      "subject": "Giáo Dục Thể Chất",
+      "teacher": "Nguyễn Đưc Bình"
+    },
+    {
+      "title": "Giải Tích Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-02-20": [
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    },
+    {
+      "title": "Ngữ Văn Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B1",
+      "subject": "Ngữ Văn",
+      "teacher": "Phạm Thị Lan"
+    },
+    {
+      "title": "Trải Nghiệm và Hướng Nghiệp Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P302",
+      "building": "C3",
+      "subject": "Trải Nghiệm và Hướng Nghiệp",
+      "teacher": "Lê Văn Quang"
+    }
+  ],
+  "2025-02-21": [
+    {
+      "title": "Đại Số Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    },
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    }
+  ],
+  "2025-02-22": [
+    {
+      "title": "Giải Tích Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-02-24": [
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    },
+    {
+      "title": "Sinh Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    }
+  ],
+  "2025-02-25": [
+    {
+      "title": "Vật Lý Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P101",
+      "building": "B2",
+      "subject": "Vật Lý",
+      "teacher": "Đỗ Văn Hùng"
+    },
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    },
+    {
+      "title": "Giáo Dục Quốc Phòng Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "Sân cỏ",
+      "building": "Hola",
+      "subject": "Giáo Dục Quốc Phòng",
+      "teacher": "Đặng Thị Ban Oanh"
+    }
+  ],
+  "2025-02-26": [
+    {
+      "title": "Hóa Học H Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P102",
+      "building": "B3",
+      "subject": "Hóa Học H",
+      "teacher": "Vũ Thu Thủy"
+    },
+    {
+      "title": "Địa Lý Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-02-27": [
+    {
+      "title": "Sinh Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    },
+    {
+      "title": "Giáo Dục Công Dân Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P107",
+      "building": "B1",
+      "subject": "Giáo Dục Công Dân",
+      "teacher": "Trịnh Thị Mai"
+    }
+  ],
+  "2025-02-28": [
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    },
+    {
+      "title": "Tin Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    },
+    {
+      "title": "Giáo Dục Đặc Biệt Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P103",
+      "building": "B3",
+      "subject": "Giáo Dục Đặc Biệt",
+      "teacher": "Phan Thị Lan"
+    }
+  ],
+  "2025-03-01": [
+    {
+      "title": "Địa Lý Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-03-03": [
+    {
+      "title": "Tin Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    },
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    }
+  ],
+  "2025-03-04": [
+    {
+      "title": "Công Nghệ Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "PM202",
+      "building": "Tech",
+      "subject": "Công Nghệ",
+      "teacher": "Lê Thị Thanh Phương"
+    },
+    {
+      "title": "Đại Số Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    }
+  ],
+  "2025-03-05": [
+    {
+      "title": "Giáo Dục Thể Chất Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "Sân cỏ",
+      "building": "Sân cỏ",
+      "subject": "Giáo Dục Thể Chất",
+      "teacher": "Nguyễn Đưc Bình"
+    },
+    {
+      "title": "Giải Tích Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    },
+    {
+      "title": "Mỹ Thuật Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P202",
+      "building": "C1",
+      "subject": "Mỹ Thuật",
+      "teacher": "Võ Huyền Ngọc"
+    }
+  ],
+  "2025-03-06": [
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    },
+    {
+      "title": "Ngữ Văn Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B1",
+      "subject": "Ngữ Văn",
+      "teacher": "Phạm Thị Lan"
+    }
+  ],
+  "2025-03-07": [
+    {
+      "title": "Đại Số Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    },
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    }
+  ],
+  "2025-03-08": [
+    {
+      "title": "Giải Tích Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-03-10": [
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    },
+    {
+      "title": "Sinh Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    },
+    {
+      "title": "Âm Nhạc Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P201",
+      "building": "C1",
+      "subject": "Âm Nhạc",
+      "teacher": "Nguyễn Thị Ly"
+    }
+  ],
+  "2025-03-11": [
+    {
+      "title": "Vật Lý Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P101",
+      "building": "B2",
+      "subject": "Vật Lý",
+      "teacher": "Đỗ Văn Hùng"
+    },
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    }
+  ],
+  "2025-03-12": [
+    {
+      "title": "Hóa Học H Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P102",
+      "building": "B3",
+      "subject": "Hóa Học H",
+      "teacher": "Vũ Thu Thủy"
+    },
+    {
+      "title": "Địa Lý Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-03-13": [
+    {
+      "title": "Sinh Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    },
+    {
+      "title": "Giáo Dục Công Dân Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P107",
+      "building": "B1",
+      "subject": "Giáo Dục Công Dân",
+      "teacher": "Trịnh Thị Mai"
+    }
+  ],
+  "2025-03-14": [
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    },
+    {
+      "title": "Tin Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    }
+  ],
+  "2025-03-15": [
+    {
+      "title": "Địa Lý Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    },
+    {
+      "title": "Tư Duy Phản Biện Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "R202",
+      "building": "B2",
+      "subject": "Tư Duy Phản Biện",
+      "teacher": "Hoàng Thị Hạnh"
+    }
+  ],
+  "2025-03-17": [
+    {
+      "title": "Tin Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    },
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    }
+  ],
+  "2025-03-18": [
+    {
+      "title": "Công Nghệ Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "PM202",
+      "building": "Tech",
+      "subject": "Công Nghệ",
+      "teacher": "Lê Thị Thanh Phương"
+    },
+    {
+      "title": "Đại Số Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    }
+  ],
+  "2025-03-19": [
+    {
+      "title": "Giáo Dục Thể Chất Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "Sân cỏ",
+      "building": "Sân cỏ",
+      "subject": "Giáo Dục Thể Chất",
+      "teacher": "Nguyễn Đưc Bình"
+    },
+    {
+      "title": "Giải Tích Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-03-20": [
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    },
+    {
+      "title": "Ngữ Văn Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B1",
+      "subject": "Ngữ Văn",
+      "teacher": "Phạm Thị Lan"
+    },
+    {
+      "title": "Trải Nghiệm và Hướng Nghiệp Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P302",
+      "building": "C3",
+      "subject": "Trải Nghiệm và Hướng Nghiệp",
+      "teacher": "Lê Văn Quang"
+    }
+  ],
+  "2025-03-21": [
+    {
+      "title": "Đại Số Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    },
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    }
+  ],
+  "2025-03-22": [
+    {
+      "title": "Giải Tích Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-03-24": [
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    },
+    {
+      "title": "Sinh Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    }
+  ],
+  "2025-03-25": [
+    {
+      "title": "Vật Lý Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P101",
+      "building": "B2",
+      "subject": "Vật Lý",
+      "teacher": "Đỗ Văn Hùng"
+    },
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    },
+    {
+      "title": "Giáo Dục Quốc Phòng Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "Sân cỏ",
+      "building": "Hola",
+      "subject": "Giáo Dục Quốc Phòng",
+      "teacher": "Đặng Thị Ban Oanh"
+    }
+  ],
+  "2025-03-26": [
+    {
+      "title": "Hóa Học H Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P102",
+      "building": "B3",
+      "subject": "Hóa Học H",
+      "teacher": "Vũ Thu Thủy"
+    },
+    {
+      "title": "Địa Lý Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-03-27": [
+    {
+      "title": "Sinh Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    },
+    {
+      "title": "Giáo Dục Công Dân Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P107",
+      "building": "B1",
+      "subject": "Giáo Dục Công Dân",
+      "teacher": "Trịnh Thị Mai"
+    }
+  ],
+  "2025-03-28": [
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    },
+    {
+      "title": "Tin Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    }
+  ],
+  "2025-03-29": [
+    {
+      "title": "Địa Lý Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-03-31": [
+    {
+      "title": "Tin Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    },
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    },
+    {
+      "title": "Giáo Dục Đặc Biệt Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P103",
+      "building": "B3",
+      "subject": "Giáo Dục Đặc Biệt",
+      "teacher": "Phan Thị Lan"
+    }
+  ],
+  "2025-04-01": [
+    {
+      "title": "Công Nghệ Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "PM202",
+      "building": "Tech",
+      "subject": "Công Nghệ",
+      "teacher": "Lê Thị Thanh Phương"
+    },
+    {
+      "title": "Đại Số Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    }
+  ],
+  "2025-04-02": [
+    {
+      "title": "Giáo Dục Thể Chất Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "Sân cỏ",
+      "building": "Sân cỏ",
+      "subject": "Giáo Dục Thể Chất",
+      "teacher": "Nguyễn Đưc Bình"
+    },
+    {
+      "title": "Giải Tích Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-04-03": [
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    },
+    {
+      "title": "Ngữ Văn Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B1",
+      "subject": "Ngữ Văn",
+      "teacher": "Phạm Thị Lan"
+    }
+  ],
+  "2025-04-04": [
+    {
+      "title": "Đại Số Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    },
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    }
+  ],
+  "2025-04-05": [
+    {
+      "title": "Giải Tích Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    },
+    {
+      "title": "Mỹ Thuật Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P202",
+      "building": "C1",
+      "subject": "Mỹ Thuật",
+      "teacher": "Võ Huyền Ngọc"
+    }
+  ],
+  "2025-04-07": [
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    },
+    {
+      "title": "Sinh Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    }
+  ],
+  "2025-04-08": [
+    {
+      "title": "Vật Lý Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P101",
+      "building": "B2",
+      "subject": "Vật Lý",
+      "teacher": "Đỗ Văn Hùng"
+    },
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    }
+  ],
+  "2025-04-09": [
+    {
+      "title": "Hóa Học H Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P102",
+      "building": "B3",
+      "subject": "Hóa Học H",
+      "teacher": "Vũ Thu Thủy"
+    },
+    {
+      "title": "Địa Lý Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-04-10": [
+    {
+      "title": "Sinh Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    },
+    {
+      "title": "Giáo Dục Công Dân Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P107",
+      "building": "B1",
+      "subject": "Giáo Dục Công Dân",
+      "teacher": "Trịnh Thị Mai"
+    },
+    {
+      "title": "Âm Nhạc Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P201",
+      "building": "C1",
+      "subject": "Âm Nhạc",
+      "teacher": "Nguyễn Thị Ly"
+    }
+  ],
+  "2025-04-11": [
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    },
+    {
+      "title": "Tin Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    }
+  ],
+  "2025-04-12": [
+    {
+      "title": "Địa Lý Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-04-14": [
+    {
+      "title": "Tin Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    },
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    }
+  ],
+  "2025-04-15": [
+    {
+      "title": "Công Nghệ Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "PM202",
+      "building": "Tech",
+      "subject": "Công Nghệ",
+      "teacher": "Lê Thị Thanh Phương"
+    },
+    {
+      "title": "Đại Số Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    },
+    {
+      "title": "Tư Duy Phản Biện Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "R202",
+      "building": "B2",
+      "subject": "Tư Duy Phản Biện",
+      "teacher": "Hoàng Thị Hạnh"
+    }
+  ],
+  "2025-04-16": [
+    {
+      "title": "Giáo Dục Thể Chất Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "Sân cỏ",
+      "building": "Sân cỏ",
+      "subject": "Giáo Dục Thể Chất",
+      "teacher": "Nguyễn Đưc Bình"
+    },
+    {
+      "title": "Giải Tích Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-04-17": [
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    },
+    {
+      "title": "Ngữ Văn Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B1",
+      "subject": "Ngữ Văn",
+      "teacher": "Phạm Thị Lan"
+    }
+  ],
+  "2025-04-18": [
+    {
+      "title": "Đại Số Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    },
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    }
+  ],
+  "2025-04-19": [
+    {
+      "title": "Giải Tích Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-04-21": [
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    },
+    {
+      "title": "Sinh Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    },
+    {
+      "title": "Trải Nghiệm và Hướng Nghiệp Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P302",
+      "building": "C3",
+      "subject": "Trải Nghiệm và Hướng Nghiệp",
+      "teacher": "Lê Văn Quang"
+    }
+  ],
+  "2025-04-22": [
+    {
+      "title": "Vật Lý Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P101",
+      "building": "B2",
+      "subject": "Vật Lý",
+      "teacher": "Đỗ Văn Hùng"
+    },
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    }
+  ],
+  "2025-04-23": [
+    {
+      "title": "Hóa Học H Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P102",
+      "building": "B3",
+      "subject": "Hóa Học H",
+      "teacher": "Vũ Thu Thủy"
+    },
+    {
+      "title": "Địa Lý Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-04-24": [
+    {
+      "title": "Sinh Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    },
+    {
+      "title": "Giáo Dục Công Dân Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P107",
+      "building": "B1",
+      "subject": "Giáo Dục Công Dân",
+      "teacher": "Trịnh Thị Mai"
+    }
+  ],
+  "2025-04-25": [
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    },
+    {
+      "title": "Tin Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    },
+    {
+      "title": "Giáo Dục Quốc Phòng Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "Sân cỏ",
+      "building": "Hola",
+      "subject": "Giáo Dục Quốc Phòng",
+      "teacher": "Đặng Thị Ban Oanh"
+    }
+  ],
+  "2025-04-26": [
+    {
+      "title": "Địa Lý Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-04-28": [
+    {
+      "title": "Tin Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    },
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    }
+  ],
+  "2025-04-29": [
+    {
+      "title": "Công Nghệ Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "PM202",
+      "building": "Tech",
+      "subject": "Công Nghệ",
+      "teacher": "Lê Thị Thanh Phương"
+    },
+    {
+      "title": "Đại Số Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    }
+  ],
+  "2025-04-30": [
+    {
+      "title": "Giáo Dục Thể Chất Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "Sân cỏ",
+      "building": "Sân cỏ",
+      "subject": "Giáo Dục Thể Chất",
+      "teacher": "Nguyễn Đưc Bình"
+    },
+    {
+      "title": "Giải Tích Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    },
+    {
+      "title": "Giáo Dục Đặc Biệt Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P103",
+      "building": "B3",
+      "subject": "Giáo Dục Đặc Biệt",
+      "teacher": "Phan Thị Lan"
+    }
+  ],
+  "2025-05-01": [
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    },
+    {
+      "title": "Ngữ Văn Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B1",
+      "subject": "Ngữ Văn",
+      "teacher": "Phạm Thị Lan"
+    }
+  ],
+  "2025-05-02": [
+    {
+      "title": "Đại Số Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    },
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    }
+  ],
+  "2025-05-03": [
+    {
+      "title": "Giải Tích Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-05-05": [
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    },
+    {
+      "title": "Sinh Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    },
+    {
+      "title": "Mỹ Thuật Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P202",
+      "building": "C1",
+      "subject": "Mỹ Thuật",
+      "teacher": "Võ Huyền Ngọc"
+    }
+  ],
+  "2025-05-06": [
+    {
+      "title": "Vật Lý Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P101",
+      "building": "B2",
+      "subject": "Vật Lý",
+      "teacher": "Đỗ Văn Hùng"
+    },
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    }
+  ],
+  "2025-05-07": [
+    {
+      "title": "Hóa Học H Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P102",
+      "building": "B3",
+      "subject": "Hóa Học H",
+      "teacher": "Vũ Thu Thủy"
+    },
+    {
+      "title": "Địa Lý Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-05-08": [
+    {
+      "title": "Sinh Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    },
+    {
+      "title": "Giáo Dục Công Dân Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P107",
+      "building": "B1",
+      "subject": "Giáo Dục Công Dân",
+      "teacher": "Trịnh Thị Mai"
+    }
+  ],
+  "2025-05-09": [
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    },
+    {
+      "title": "Tin Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    }
+  ],
+  "2025-05-10": [
+    {
+      "title": "Địa Lý Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    },
+    {
+      "title": "Âm Nhạc Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P201",
+      "building": "C1",
+      "subject": "Âm Nhạc",
+      "teacher": "Nguyễn Thị Ly"
+    }
+  ],
+  "2025-05-12": [
+    {
+      "title": "Tin Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    },
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    }
+  ],
+  "2025-05-13": [
+    {
+      "title": "Công Nghệ Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "PM202",
+      "building": "Tech",
+      "subject": "Công Nghệ",
+      "teacher": "Lê Thị Thanh Phương"
+    },
+    {
+      "title": "Đại Số Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    }
+  ],
+  "2025-05-14": [
+    {
+      "title": "Giáo Dục Thể Chất Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "Sân cỏ",
+      "building": "Sân cỏ",
+      "subject": "Giáo Dục Thể Chất",
+      "teacher": "Nguyễn Đưc Bình"
+    },
+    {
+      "title": "Giải Tích Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-05-15": [
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    },
+    {
+      "title": "Ngữ Văn Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B1",
+      "subject": "Ngữ Văn",
+      "teacher": "Phạm Thị Lan"
+    },
+    {
+      "title": "Tư Duy Phản Biện Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "R202",
+      "building": "B2",
+      "subject": "Tư Duy Phản Biện",
+      "teacher": "Hoàng Thị Hạnh"
+    }
+  ],
+  "2025-05-16": [
+    {
+      "title": "Đại Số Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    },
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    }
+  ],
+  "2025-05-17": [
+    {
+      "title": "Giải Tích Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-05-19": [
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    },
+    {
+      "title": "Sinh Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    }
+  ],
+  "2025-05-20": [
+    {
+      "title": "Vật Lý Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P101",
+      "building": "B2",
+      "subject": "Vật Lý",
+      "teacher": "Đỗ Văn Hùng"
+    },
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    },
+    {
+      "title": "Trải Nghiệm và Hướng Nghiệp Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P302",
+      "building": "C3",
+      "subject": "Trải Nghiệm và Hướng Nghiệp",
+      "teacher": "Lê Văn Quang"
+    }
+  ],
+  "2025-05-21": [
+    {
+      "title": "Hóa Học H Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P102",
+      "building": "B3",
+      "subject": "Hóa Học H",
+      "teacher": "Vũ Thu Thủy"
+    },
+    {
+      "title": "Địa Lý Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-05-22": [
+    {
+      "title": "Sinh Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    },
+    {
+      "title": "Giáo Dục Công Dân Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P107",
+      "building": "B1",
+      "subject": "Giáo Dục Công Dân",
+      "teacher": "Trịnh Thị Mai"
+    }
+  ],
+  "2025-05-23": [
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    },
+    {
+      "title": "Tin Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    }
+  ],
+  "2025-05-24": [
+    {
+      "title": "Địa Lý Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-05-26": [
+    {
+      "title": "Tin Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    },
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    },
+    {
+      "title": "Giáo Dục Quốc Phòng Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "Sân cỏ",
+      "building": "Hola",
+      "subject": "Giáo Dục Quốc Phòng",
+      "teacher": "Đặng Thị Ban Oanh"
+    }
+  ],
+  "2025-05-27": [
+    {
+      "title": "Công Nghệ Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "PM202",
+      "building": "Tech",
+      "subject": "Công Nghệ",
+      "teacher": "Lê Thị Thanh Phương"
+    },
+    {
+      "title": "Đại Số Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    }
+  ],
+  "2025-05-28": [
+    {
+      "title": "Giáo Dục Thể Chất Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "Sân cỏ",
+      "building": "Sân cỏ",
+      "subject": "Giáo Dục Thể Chất",
+      "teacher": "Nguyễn Đưc Bình"
+    },
+    {
+      "title": "Giải Tích Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-05-29": [
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    },
+    {
+      "title": "Ngữ Văn Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B1",
+      "subject": "Ngữ Văn",
+      "teacher": "Phạm Thị Lan"
+    }
+  ],
+  "2025-05-30": [
+    {
+      "title": "Đại Số Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    },
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    }
+  ],
+  "2025-05-31": [
+    {
+      "title": "Giải Tích Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    },
+    {
+      "title": "Giáo Dục Đặc Biệt Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P103",
+      "building": "B3",
+      "subject": "Giáo Dục Đặc Biệt",
+      "teacher": "Phan Thị Lan"
+    }
+  ],
+  "2025-06-02": [
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    },
+    {
+      "title": "Sinh Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    }
+  ],
+  "2025-06-03": [
+    {
+      "title": "Vật Lý Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P101",
+      "building": "B2",
+      "subject": "Vật Lý",
+      "teacher": "Đỗ Văn Hùng"
+    },
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    }
+  ],
+  "2025-06-04": [
+    {
+      "title": "Hóa Học H Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P102",
+      "building": "B3",
+      "subject": "Hóa Học H",
+      "teacher": "Vũ Thu Thủy"
+    },
+    {
+      "title": "Địa Lý Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-06-05": [
+    {
+      "title": "Sinh Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    },
+    {
+      "title": "Giáo Dục Công Dân Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P107",
+      "building": "B1",
+      "subject": "Giáo Dục Công Dân",
+      "teacher": "Trịnh Thị Mai"
+    },
+    {
+      "title": "Mỹ Thuật Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P202",
+      "building": "C1",
+      "subject": "Mỹ Thuật",
+      "teacher": "Võ Huyền Ngọc"
+    }
+  ],
+  "2025-06-06": [
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    },
+    {
+      "title": "Tin Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    }
+  ],
+  "2025-06-07": [
+    {
+      "title": "Địa Lý Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-06-09": [
+    {
+      "title": "Tin Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    },
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    }
+  ],
+  "2025-06-10": [
+    {
+      "title": "Công Nghệ Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "PM202",
+      "building": "Tech",
+      "subject": "Công Nghệ",
+      "teacher": "Lê Thị Thanh Phương"
+    },
+    {
+      "title": "Đại Số Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    },
+    {
+      "title": "Âm Nhạc Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P201",
+      "building": "C1",
+      "subject": "Âm Nhạc",
+      "teacher": "Nguyễn Thị Ly"
+    }
+  ],
+  "2025-06-11": [
+    {
+      "title": "Giáo Dục Thể Chất Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "Sân cỏ",
+      "building": "Sân cỏ",
+      "subject": "Giáo Dục Thể Chất",
+      "teacher": "Nguyễn Đưc Bình"
+    },
+    {
+      "title": "Giải Tích Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-06-12": [
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    },
+    {
+      "title": "Ngữ Văn Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B1",
+      "subject": "Ngữ Văn",
+      "teacher": "Phạm Thị Lan"
+    }
+  ],
+  "2025-06-13": [
+    {
+      "title": "Đại Số Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    },
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    }
+  ],
+  "2025-06-14": [
+    {
+      "title": "Giải Tích Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-06-16": [
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    },
+    {
+      "title": "Sinh Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    },
+    {
+      "title": "Tư Duy Phản Biện Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "R202",
+      "building": "B2",
+      "subject": "Tư Duy Phản Biện",
+      "teacher": "Hoàng Thị Hạnh"
+    }
+  ],
+  "2025-06-17": [
+    {
+      "title": "Vật Lý Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P101",
+      "building": "B2",
+      "subject": "Vật Lý",
+      "teacher": "Đỗ Văn Hùng"
+    },
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    }
+  ],
+  "2025-06-18": [
+    {
+      "title": "Hóa Học H Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P102",
+      "building": "B3",
+      "subject": "Hóa Học H",
+      "teacher": "Vũ Thu Thủy"
+    },
+    {
+      "title": "Địa Lý Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-06-19": [
+    {
+      "title": "Sinh Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    },
+    {
+      "title": "Giáo Dục Công Dân Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P107",
+      "building": "B1",
+      "subject": "Giáo Dục Công Dân",
+      "teacher": "Trịnh Thị Mai"
+    }
+  ],
+  "2025-06-20": [
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    },
+    {
+      "title": "Tin Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    },
+    {
+      "title": "Trải Nghiệm và Hướng Nghiệp Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P302",
+      "building": "C3",
+      "subject": "Trải Nghiệm và Hướng Nghiệp",
+      "teacher": "Lê Văn Quang"
+    }
+  ],
+  "2025-06-21": [
+    {
+      "title": "Địa Lý Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-06-23": [
+    {
+      "title": "Tin Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    },
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    }
+  ],
+  "2025-06-24": [
+    {
+      "title": "Công Nghệ Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "PM202",
+      "building": "Tech",
+      "subject": "Công Nghệ",
+      "teacher": "Lê Thị Thanh Phương"
+    },
+    {
+      "title": "Đại Số Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    }
+  ],
+  "2025-06-25": [
+    {
+      "title": "Giáo Dục Thể Chất Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "Sân cỏ",
+      "building": "Sân cỏ",
+      "subject": "Giáo Dục Thể Chất",
+      "teacher": "Nguyễn Đưc Bình"
+    },
+    {
+      "title": "Giải Tích Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    },
+    {
+      "title": "Giáo Dục Quốc Phòng Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "Sân cỏ",
+      "building": "Hola",
+      "subject": "Giáo Dục Quốc Phòng",
+      "teacher": "Đặng Thị Ban Oanh"
+    }
+  ],
+  "2025-06-26": [
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    },
+    {
+      "title": "Ngữ Văn Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B1",
+      "subject": "Ngữ Văn",
+      "teacher": "Phạm Thị Lan"
+    }
+  ],
+  "2025-06-27": [
+    {
+      "title": "Đại Số Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    },
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    }
+  ],
+  "2025-06-28": [
+    {
+      "title": "Giải Tích Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-06-30": [
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    },
+    {
+      "title": "Sinh Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    },
+    {
+      "title": "Giáo Dục Đặc Biệt Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P103",
+      "building": "B3",
+      "subject": "Giáo Dục Đặc Biệt",
+      "teacher": "Phan Thị Lan"
+    }
+  ],
+  "2025-07-01": [
+    {
+      "title": "Vật Lý Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P101",
+      "building": "B2",
+      "subject": "Vật Lý",
+      "teacher": "Đỗ Văn Hùng"
+    },
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    }
+  ],
+  "2025-07-02": [
+    {
+      "title": "Hóa Học H Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P102",
+      "building": "B3",
+      "subject": "Hóa Học H",
+      "teacher": "Vũ Thu Thủy"
+    },
+    {
+      "title": "Địa Lý Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-07-03": [
+    {
+      "title": "Sinh Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    },
+    {
+      "title": "Giáo Dục Công Dân Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P107",
+      "building": "B1",
+      "subject": "Giáo Dục Công Dân",
+      "teacher": "Trịnh Thị Mai"
+    }
+  ],
+  "2025-07-04": [
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    },
+    {
+      "title": "Tin Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    }
+  ],
+  "2025-07-05": [
+    {
+      "title": "Địa Lý Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    },
+    {
+      "title": "Mỹ Thuật Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P202",
+      "building": "C1",
+      "subject": "Mỹ Thuật",
+      "teacher": "Võ Huyền Ngọc"
+    }
+  ],
+  "2025-07-07": [
+    {
+      "title": "Tin Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    },
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    }
+  ],
+  "2025-07-08": [
+    {
+      "title": "Công Nghệ Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "PM202",
+      "building": "Tech",
+      "subject": "Công Nghệ",
+      "teacher": "Lê Thị Thanh Phương"
+    },
+    {
+      "title": "Đại Số Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    }
+  ],
+  "2025-07-09": [
+    {
+      "title": "Giáo Dục Thể Chất Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "Sân cỏ",
+      "building": "Sân cỏ",
+      "subject": "Giáo Dục Thể Chất",
+      "teacher": "Nguyễn Đưc Bình"
+    },
+    {
+      "title": "Giải Tích Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-07-10": [
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    },
+    {
+      "title": "Ngữ Văn Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B1",
+      "subject": "Ngữ Văn",
+      "teacher": "Phạm Thị Lan"
+    },
+    {
+      "title": "Âm Nhạc Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P201",
+      "building": "C1",
+      "subject": "Âm Nhạc",
+      "teacher": "Nguyễn Thị Ly"
+    }
+  ],
+  "2025-07-11": [
+    {
+      "title": "Đại Số Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    },
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    }
+  ],
+  "2025-07-12": [
+    {
+      "title": "Giải Tích Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-07-14": [
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    },
+    {
+      "title": "Sinh Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    }
+  ],
+  "2025-07-15": [
+    {
+      "title": "Vật Lý Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P101",
+      "building": "B2",
+      "subject": "Vật Lý",
+      "teacher": "Đỗ Văn Hùng"
+    },
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    },
+    {
+      "title": "Tư Duy Phản Biện Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "R202",
+      "building": "B2",
+      "subject": "Tư Duy Phản Biện",
+      "teacher": "Hoàng Thị Hạnh"
+    }
+  ],
+  "2025-07-16": [
+    {
+      "title": "Hóa Học H Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P102",
+      "building": "B3",
+      "subject": "Hóa Học H",
+      "teacher": "Vũ Thu Thủy"
+    },
+    {
+      "title": "Địa Lý Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-07-17": [
+    {
+      "title": "Sinh Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    },
+    {
+      "title": "Giáo Dục Công Dân Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P107",
+      "building": "B1",
+      "subject": "Giáo Dục Công Dân",
+      "teacher": "Trịnh Thị Mai"
+    }
+  ],
+  "2025-07-18": [
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    },
+    {
+      "title": "Tin Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    }
+  ],
+  "2025-07-19": [
+    {
+      "title": "Địa Lý Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-07-21": [
+    {
+      "title": "Tin Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    },
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    },
+    {
+      "title": "Trải Nghiệm và Hướng Nghiệp Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P302",
+      "building": "C3",
+      "subject": "Trải Nghiệm và Hướng Nghiệp",
+      "teacher": "Lê Văn Quang"
+    }
+  ],
+  "2025-07-22": [
+    {
+      "title": "Công Nghệ Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "PM202",
+      "building": "Tech",
+      "subject": "Công Nghệ",
+      "teacher": "Lê Thị Thanh Phương"
+    },
+    {
+      "title": "Đại Số Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    }
+  ],
+  "2025-07-23": [
+    {
+      "title": "Giáo Dục Thể Chất Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "Sân cỏ",
+      "building": "Sân cỏ",
+      "subject": "Giáo Dục Thể Chất",
+      "teacher": "Nguyễn Đưc Bình"
+    },
+    {
+      "title": "Giải Tích Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-07-24": [
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    },
+    {
+      "title": "Ngữ Văn Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B1",
+      "subject": "Ngữ Văn",
+      "teacher": "Phạm Thị Lan"
+    }
+  ],
+  "2025-07-25": [
+    {
+      "title": "Đại Số Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    },
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    },
+    {
+      "title": "Giáo Dục Quốc Phòng Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "Sân cỏ",
+      "building": "Hola",
+      "subject": "Giáo Dục Quốc Phòng",
+      "teacher": "Đặng Thị Ban Oanh"
+    }
+  ],
+  "2025-07-26": [
+    {
+      "title": "Giải Tích Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-07-28": [
+    {
+      "title": "Tiếng Anh Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P202",
+      "building": "B1",
+      "subject": "Tiếng Anh",
+      "teacher": "Nguyễn Thị Lan Hạnh"
+    },
+    {
+      "title": "Sinh Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    }
+  ],
+  "2025-07-29": [
+    {
+      "title": "Vật Lý Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P101",
+      "building": "B2",
+      "subject": "Vật Lý",
+      "teacher": "Đỗ Văn Hùng"
+    },
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    }
+  ],
+  "2025-07-30": [
+    {
+      "title": "Hóa Học H Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P102",
+      "building": "B3",
+      "subject": "Hóa Học H",
+      "teacher": "Vũ Thu Thủy"
+    },
+    {
+      "title": "Địa Lý Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-07-31": [
+    {
+      "title": "Sinh Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P201",
+      "building": "B2",
+      "subject": "Sinh Học",
+      "teacher": "Hoàng Văn Nam"
+    },
+    {
+      "title": "Giáo Dục Công Dân Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P107",
+      "building": "B1",
+      "subject": "Giáo Dục Công Dân",
+      "teacher": "Trịnh Thị Mai"
+    },
+    {
+      "title": "Giáo Dục Đặc Biệt Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P103",
+      "building": "B3",
+      "subject": "Giáo Dục Đặc Biệt",
+      "teacher": "Phan Thị Lan"
+    }
+  ],
+  "2025-08-01": [
+    {
+      "title": "Lịch Sử Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "P104",
+      "building": "B1",
+      "subject": "Lịch Sử",
+      "teacher": "Bùi Kiều"
+    },
+    {
+      "title": "Tin Học Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    }
+  ],
+  "2025-08-02": [
+    {
+      "title": "Địa Lý Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "P106",
+      "building": "B1",
+      "subject": "Địa Lý",
+      "teacher": "Phan Tiến Đức"
+    }
+  ],
+  "2025-08-04": [
+    {
+      "title": "Tin Học Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "PM203",
+      "building": "Tech",
+      "subject": "Tin Học",
+      "teacher": "Trần Quốc Sơn"
+    },
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    }
+  ],
+  "2025-08-05": [
+    {
+      "title": "Công Nghệ Class",
+      "startTime": "10:10",
+      "endTime": "11:30",
+      "room": "PM202",
+      "building": "Tech",
+      "subject": "Công Nghệ",
+      "teacher": "Lê Thị Thanh Phương"
+    },
+    {
+      "title": "Đại Số Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P301",
+      "building": "C2",
+      "subject": "Đại Số",
+      "teacher": "Trần Thanh Hoa S"
+    },
+    {
+      "title": "Mỹ Thuật Session",
+      "startTime": "15:35",
+      "endTime": "16:55",
+      "room": "P202",
+      "building": "C1",
+      "subject": "Mỹ Thuật",
+      "teacher": "Võ Huyền Ngọc"
+    }
+  ],
+  "2025-08-06": [
+    {
+      "title": "Giáo Dục Thể Chất Class",
+      "startTime": "07:00",
+      "endTime": "08:20",
+      "room": "Sân cỏ",
+      "building": "Sân cỏ",
+      "subject": "Giáo Dục Thể Chất",
+      "teacher": "Nguyễn Đưc Bình"
+    },
+    {
+      "title": "Giải Tích Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P302",
+      "building": "C2",
+      "subject": "Giải Tích",
+      "teacher": "Lê Minh Tuấn"
+    }
+  ],
+  "2025-08-07": [
+    {
+      "title": "Kinh Tế và Pháp Luật Class",
+      "startTime": "08:35",
+      "endTime": "09:55",
+      "room": "P301",
+      "building": "B1",
+      "subject": "Kinh Tế và Pháp Luật",
+      "teacher": "Phạm Mai An"
+    },
+    {
+      "title": "Ngữ Văn Class",
+      "startTime": "14:00",
+      "endTime": "15:20",
+      "room": "P201",
+      "building": "B1",
+      "subject": "Ngữ Văn",
+      "teacher": "Phạm Thị Lan"
+    }
+  ]
+}

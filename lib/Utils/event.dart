@@ -1,7 +1,7 @@
 import 'dart:collection';
 
-//import 'dart:math';
 import 'package:table_calendar/table_calendar.dart';
+import '../../Utils/filemanager.dart';
 
 class Event {
   final String title;
@@ -40,153 +40,33 @@ class Event {
     return '';
   }
 
+  Map<String, dynamic> toJson() {
+    return {
+      'title': title,
+      'startTime': startTime,
+      'endTime': endTime,
+      'room': room,
+      'building': building,
+      'subject': subject,
+      'teacher': teacher,
+    };
+  }
+
+  factory Event.fromJson(Map<String, dynamic> json) {
+    return Event(
+      title: json['title'],
+      startTime: json['startTime'],
+      endTime: json['endTime'],
+      room: json['room'],
+      building: json['building'],
+      subject: json['subject'],
+      teacher: json['teacher'],
+    );
+  }
+
   @override
   String toString() => title;
 }
-
-// List of subjects with icons
-final subjects = [
-  {
-    'name': 'Đại số',
-    'tchr': 'Trần Thanh Hoa',
-    'romm': 'P301',
-    'bdng': 'C2',
-    'icon': 'assets/images/Algebra_icon.png'
-  },
-  {
-    'name': 'Giải tích',
-    'tchr': 'Lê Minh Tuấn',
-    'romm': 'P302',
-    'bdng': 'C2',
-    'icon': 'assets/images/Geometry_icon.png'
-  },
-  {
-    'name': 'Ngữ văn',
-    'tchr': 'Phạm Thị Lan',
-    'romm': 'P201',
-    'bdng': 'B1',
-    'icon': 'assets/images/Literature_icon.png'
-  },
-  {
-    'name': 'Tiếng Anh',
-    'tchr': 'Nguyễn Thị Lan Hạnh',
-    'romm': 'P202',
-    'bdng': 'B1',
-    'icon': 'assets/images/Spanish_icon.png'
-  },
-  {
-    'name': 'Vật lý',
-    'tchr': 'Đỗ Văn Hùng',
-    'romm': 'P101',
-    'bdng': 'B2',
-    'icon': 'assets/images/Physics_icon.png'
-  },
-  {
-    'name': 'Hóa học',
-    'tchr': 'Vũ Thu Thủy',
-    'romm': 'P102',
-    'bdng': 'B3',
-    'icon': 'assets/images/Chemistry_icon.png'
-  },
-  {
-    'name': 'Sinh học',
-    'tchr': 'Hoàng Văn Nam',
-    'romm': 'P201',
-    'bdng': 'B2',
-    'icon': 'assets/images/Biology_icon.png'
-  },
-  {
-    'name': 'Lịch sử',
-    'tchr': 'Bùi Kiều',
-    'romm': 'P104',
-    'bdng': 'B1',
-    'icon': 'assets/images/History_icon.png'
-  },
-  {
-    'name': 'Địa lý',
-    'tchr': 'Phan Tiến Đức',
-    'romm': 'P106',
-    'bdng': 'B1',
-    'icon': 'assets/images/Geography_icon.png'
-  },
-  {
-    'name': 'Giáo dục công dân',
-    'tchr': 'Trịnh Thị Mai',
-    'romm': 'P107',
-    'bdng': 'B1',
-    'icon': 'assets/images/Civics_icon.png'
-  },
-  {
-    'name': 'Tin học',
-    'tchr': 'Trần Quốc Sơn',
-    'romm': 'PM203',
-    'bdng': 'Tech',
-    'icon': 'assets/images/Computer_Science_icon.png'
-  },
-  {
-    'name': 'Công nghệ',
-    'tchr': 'Lê Thị Thanh Phương',
-    'romm': 'PM202',
-    'bdng': 'Tech',
-    'icon': 'assets/images/Technology_icon.png'
-  },
-  {
-    'name': 'Giáo dục thể chất',
-    'tchr': 'Nguyễn Đưc Bình',
-    'romm': 'Sân cỏ',
-    'bdng': 'Sân cỏ',
-    'icon': 'assets/images/Physical_Education_icon.png'
-  },
-  {
-    'name': 'Kinh tế và Pháp luật',
-    'tchr': 'Phạm Mai An',
-    'romm': 'P301',
-    'bdng': 'B1',
-    'icon': 'assets/images/Economics_icon.png'
-  },
-  {
-    'name': 'Mỹ thuật',
-    'tchr': 'Võ Huyền Ngọc',
-    'romm': 'P202',
-    'bdng': 'C1',
-    'icon': 'assets/images/Arts_icon.png'
-  },
-  {
-    'name': 'Âm nhạc',
-    'tchr': 'Nguyễn Thị Ly',
-    'romm': 'P201',
-    'bdng': 'C1',
-    'icon': 'assets/images/Music_icon.png'
-  },
-  {
-    'name': 'Tư duy phản biện',
-    'tchr': 'Hoàng Thị Hạnh',
-    'romm': 'R202',
-    'bdng': 'B2',
-    'icon': 'assets/images/Drama_icon.png'
-  },
-  {
-    'name': 'Trải nghiệm, hướng nghiệp',
-    'tchr': 'Lê Văn Quang',
-    'romm': 'P302',
-    'bdng': 'C3',
-    'icon': 'assets/images/Career_icon.png'
-  },
-  {
-    'name': 'Giáo dục quốc phòng',
-    'tchr': 'Đặng Thị Ban Oanh',
-    'romm': 'Sân cỏ',
-    'bdng': 'Hola',
-    'icon': 'assets/images/Military_icon.png'
-  },
-  {
-    'name': 'Giáo dục đặc biệt',
-    'tchr': 'Phan Thị Lan',
-    'romm': 'P103',
-    'bdng': 'B3',
-    'icon': 'assets/images/Special_Education_icon.png'
-  },
-];
 
 void addEventToCalendar(Event event, DateTime date) {
   final eventDate = DateTime.utc(date.year, date.month, date.day);
@@ -195,6 +75,18 @@ void addEventToCalendar(Event event, DateTime date) {
   } else {
     kEvents[eventDate] = [event];
   }
+  saveEventsToFile();
+}
+
+Future<void> saveEventsToFile() async {
+  final Map<String, List<Map<String, dynamic>>> eventsMap = {};
+
+  kEvents.forEach((date, events) {
+    final dateStr = '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}';
+    eventsMap[dateStr] = events.map((event) => event.toJson()).toList();
+  });
+
+  await SubjectFileManager.writeEvents(eventsMap);
 }
 
 Event createLessonEvent({
@@ -217,6 +109,23 @@ Event createLessonEvent({
   );
 }
 
+Future<void> deleteEventFromCalendar(Event event, DateTime date) async {
+  final eventDate = DateTime.utc(date.year, date.month, date.day);
+  if (kEvents.containsKey(eventDate)) {
+    kEvents[eventDate]!.removeWhere((e) =>
+    e.title == event.title &&
+        e.startTime == event.startTime &&
+        e.endTime == event.endTime
+    );
+
+    if (kEvents[eventDate]!.isEmpty) {
+      kEvents.remove(eventDate);
+    }
+
+    await saveEventsToFile();
+  }
+}
+
 int getHashCode(DateTime key) =>
     key.day * 1000000 + key.month * 10000 + key.year;
 
@@ -224,7 +133,7 @@ List<DateTime> daysInRange(DateTime first, DateTime last) {
   final dayCount = last.difference(first).inDays + 1;
   return List.generate(
     dayCount,
-    (index) => DateTime.utc(first.year, first.month, first.day + index),
+        (index) => DateTime.utc(first.year, first.month, first.day + index),
   );
 }
 
@@ -237,7 +146,33 @@ final kEvents = LinkedHashMap<DateTime, List<Event>>(
   hashCode: getHashCode,
 );
 
-void populateStudentSchedule() {
+Future<void> loadEventsFromFile() async {
+  kEvents.clear();
+
+  final eventsMap = await SubjectFileManager.readEvents();
+
+  eventsMap.forEach((dateKey, eventsData) {
+    final parts = dateKey.split('-');
+    if (parts.length == 3) {
+      final year = int.parse(parts[0]);
+      final month = int.parse(parts[1]);
+      final day = int.parse(parts[2]);
+      final date = DateTime.utc(year, month, day);
+
+      kEvents[date] = eventsData
+          .map((eventData) => Event.fromJson(Map<String, dynamic>.from(eventData)))
+          .toList();
+    }
+  });
+}
+
+//Custom populate the events with subjects,
+// rotating schedule weekly, only morning session on Saturday
+// monthly spread on days 5, 10, 15, 20, 25, last day,
+
+Future<void> populateStudentSchedule() async {
+  final List<Map<String, String>> subjects = await SubjectFileManager.readSubjects();
+
   final weeklySubjects = subjects.sublist(0, subjects.length - 6);
   final monthlySubjects = subjects.sublist(subjects.length - 6);
 
@@ -250,14 +185,12 @@ void populateStudentSchedule() {
     {'start': '14:00', 'end': '15:20'},
   ];
 
-  // Weekly: rotating schedule
   final allDays = daysInRange(kFirstDay, kLastDay);
   for (var date in allDays) {
     if (date.weekday == DateTime.sunday) continue;
     final idxBase = date.difference(kFirstDay).inDays % weeklySubjects.length;
 
     if (date.weekday == DateTime.saturday) {
-      // Saturday: one morning
       final subj = weeklySubjects[idxBase];
       final slot = morningSlots[0];
       addEventToCalendar(
@@ -273,7 +206,6 @@ void populateStudentSchedule() {
         date,
       );
     } else {
-      // Weekday: one morning, one afternoon
       final subjM = weeklySubjects[idxBase];
       final slotM = morningSlots[date.weekday % morningSlots.length];
       addEventToCalendar(
@@ -305,7 +237,6 @@ void populateStudentSchedule() {
     }
   }
 
-  // Monthly: spread on days 5, 10, 15, 20, 25, last day
   for (var i = 0; i < monthlySubjects.length; i++) {
     final subj = monthlySubjects[i];
     for (var m = 0;; m++) {
@@ -332,9 +263,13 @@ void populateStudentSchedule() {
       );
     }
   }
+  await saveEventsToFile();
 }
 
-void initCalendarEvents() {
+Future<void> initCalendarEvents() async {
   kEvents.clear();
-  populateStudentSchedule();
+  await loadEventsFromFile();
+  if (kEvents.isEmpty) {
+    await populateStudentSchedule();
+  }
 }
