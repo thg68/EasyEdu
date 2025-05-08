@@ -105,15 +105,10 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
   }
 
   Future<void> _addAttachment() async {
-    FilePickerResult? result = await FilePicker.platform.pickFiles(
-      allowMultiple: true,
-    );
-
-    if (result != null) {
-      setState(() {
-        _attachments.addAll(result.files.map((file) => file.name).toList());
-      });
-    }
+    // Tạm thời thêm một file mẫu
+    setState(() {
+      _attachments.add('Tài liệu đính kèm ${_attachments.length + 1}');
+    });
   }
 
   void _removeAttachment(int index) {

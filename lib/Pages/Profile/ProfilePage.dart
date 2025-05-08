@@ -126,7 +126,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     name: _name,
                     className: _className,
                     // Truyền avatar hiện tại sang EditProfile
-                    avatarUrl: _avatarImage != null ? _avatarImage!.path : null,
+                    avatarUrl: _avatarImage?.path,
                   ),
                 ),
               ).then((result) {

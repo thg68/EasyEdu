@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'ThemeProvider.dart';
 
 class AchievementProfile extends StatelessWidget {
-  const AchievementProfile({Key? key}) : super(key: key);
+  const AchievementProfile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -56,29 +56,29 @@ class AchievementProfile extends StatelessWidget {
                 'Thành tích theo môn học',
                 [
                   _buildSubjectAchievement(
-                    'Toán học', 
-                    '9.0', 
+                    'Toán học',
+                    '9.0',
                     'assets/images/Algebra_icon.png',
                     themeProvider,
                     '4 bài học đã hoàn thành',
                   ),
                   _buildSubjectAchievement(
-                    'Vật lý', 
-                    '8.5', 
+                    'Vật lý',
+                    '8.5',
                     'assets/images/Physics_icon.png',
                     themeProvider,
                     '3 bài học đã hoàn thành',
                   ),
                   _buildSubjectAchievement(
-                    'Hóa học', 
-                    '7.5', 
+                    'Hóa học',
+                    '7.5',
                     'assets/images/Chemistry_icon.png',
                     themeProvider,
                     '2 bài học đã hoàn thành',
                   ),
                   _buildSubjectAchievement(
-                    'Sinh học', 
-                    '8.0', 
+                    'Sinh học',
+                    '8.0',
                     'assets/images/Biology_icon.png',
                     themeProvider,
                     '3 bài học đã hoàn thành',
@@ -91,23 +91,17 @@ class AchievementProfile extends StatelessWidget {
                 'Huy hiệu đạt được',
                 [
                   _buildBadge(
-                    'Người học chăm chỉ', 
-                    'assets/images/home_icon.png',
-                    themeProvider,
-                    'Hoàn thành 5 bài học liên tiếp'
-                  ),
+                      'Người học chăm chỉ',
+                      'assets/images/home_icon.png',
+                      themeProvider,
+                      'Hoàn thành 5 bài học liên tiếp'),
                   _buildBadge(
-                    'Điểm cao nhất tuần', 
-                    'assets/images/notification_icon.png',
-                    themeProvider,
-                    'Đạt điểm cao nhất trong tuần qua'
-                  ),
-                  _buildBadge(
-                    'Chuỗi 7 ngày', 
-                    'assets/images/profile_icon.png',
-                    themeProvider,
-                    'Học liên tục 7 ngày không gián đoạn'
-                  ),
+                      'Điểm cao nhất tuần',
+                      'assets/images/notification_icon.png',
+                      themeProvider,
+                      'Đạt điểm cao nhất trong tuần qua'),
+                  _buildBadge('Chuỗi 7 ngày', 'assets/images/profile_icon.png',
+                      themeProvider, 'Học liên tục 7 ngày không gián đoạn'),
                 ],
                 themeProvider,
               ),
@@ -175,7 +169,9 @@ class AchievementProfile extends StatelessWidget {
                     style: TextStyle(
                       fontSize: themeProvider.fontSize * 0.9,
                       color: Colors.grey[600],
-                      fontWeight: themeProvider.boldText ? FontWeight.bold : FontWeight.normal,
+                      fontWeight: themeProvider.boldText
+                          ? FontWeight.bold
+                          : FontWeight.normal,
                     ),
                   ),
                   const SizedBox(height: 4),
@@ -297,8 +293,8 @@ class AchievementProfile extends StatelessWidget {
   }
 
   Widget _buildBadge(
-    String name, 
-    String imagePath, 
+    String name,
+    String imagePath,
     ThemeProvider themeProvider,
     String description,
   ) {
@@ -352,7 +348,8 @@ class AchievementProfile extends StatelessWidget {
           achievement,
           style: TextStyle(
             fontSize: themeProvider.fontSize,
-            fontWeight: themeProvider.boldText ? FontWeight.w500 : FontWeight.normal,
+            fontWeight:
+                themeProvider.boldText ? FontWeight.w500 : FontWeight.normal,
           ),
         ),
         subtitle: Text(

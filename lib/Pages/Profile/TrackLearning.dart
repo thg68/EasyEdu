@@ -163,7 +163,7 @@ class TrackLearning extends StatelessWidget {
     ),
   ];
 
-  TrackLearning({Key? key}) : super(key: key);
+  TrackLearning({super.key});
 
   @override
   Widget build(BuildContext context) {

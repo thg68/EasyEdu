@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'ThemeProvider.dart'; // Import ThemeProvider
 
 class SettingsPage extends StatefulWidget {
-  const SettingsPage({Key? key}) : super(key: key);
+  const SettingsPage({super.key});
 
   @override
   _SettingsPageState createState() => _SettingsPageState();
@@ -171,7 +171,8 @@ class _SettingsPageState extends State<SettingsPage> {
                                     : Colors.grey,
                                 onPressed: themeProvider.fontSize != 22.0
                                     ? () {
-                                        themeProvider.updateSettings(fontSize: 22.0);
+                                        themeProvider.updateSettings(
+                                            fontSize: 22.0);
                                       }
                                     : null,
                                 tooltip: 'Đặt lại kích thước mặc định',

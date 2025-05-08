@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'Pages/Home/home.dart';
-import 'Pages/Search/search.dart';
 import 'Pages/Login/LoginPage.dart';
 import 'Pages/Profile/ThemeProvider.dart';
 
