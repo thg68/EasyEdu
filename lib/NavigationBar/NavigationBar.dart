@@ -1,9 +1,11 @@
+import 'package:easy_edu/Pages/Notif/notification.dart';
 import 'package:flutter/material.dart';
 import '../Pages/Home/home.dart';
 import '../Pages/Search/search.dart';
 import '../Pages/Profile/profilePage.dart';
 import 'package:provider/provider.dart';
 import '../Pages/Profile/ThemeProvider.dart';
+
 
 class MainNavigationScreen extends StatefulWidget {
   const MainNavigationScreen({super.key});
@@ -16,9 +18,9 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _currentPageIndex = 0;
 
   final List<Widget> _pages = [
-    const HomePage(),
+    HomePage(),
     SearchPage(),
-    const PlaceholderWidget("Thông Báo"),
+    NotificationPage(),
     const ProfilePage(),
   ];
 
