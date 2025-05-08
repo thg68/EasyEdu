@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
-import '../DetailPages/DetailPage.dart'; // Import DetailPage
-
 
 import '../../Utils/event.dart';
 import '../TeacherPages/createlesson.dart';
+import '../DetailPages/DetailPage.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -719,84 +719,86 @@ class _HomePage extends State<HomePage> {
         itemCount: subjects.length,
         itemBuilder: (context, index) {
           return _buildSubjectItem(
-            subjects[index]['name']!,
-            subjects[index]['icon']!,
-            () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      SubjectDetailPage(subjectName: subjects[index]['name']!),
-                ),
-              );
-            },
-            80,
-          );
+            context: context,
+            subjectName: subjects[index]['name']!,
+            assetLocation: subjects[index]['icon']!,
+          );   
         },
       ),
     );
   }
 
-  Widget _buildSubjectItem(String subjectName, String assetLocation,
-      VoidCallback onTap, double subjectSize) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(8),
-      child: SizedBox(
-        //Should be customizable
-        width: subjectSize,
-        height: subjectSize + 20,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(height: 5),
-            Container(
-              width: subjectSize - 20,
-              height: subjectSize - 20,
-              clipBehavior: Clip.antiAlias,
-              decoration: const BoxDecoration(),
-              child: Stack(
-                children: [
-                  Positioned(
-                    left: 0,
-                    top: 0,
-                    child: Container(
-                      width: subjectSize - 20,
-                      height: subjectSize - 20,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(assetLocation),
-                          fit: BoxFit.cover,
-                        ),
+ Widget _buildSubjectItem({
+  required BuildContext context,
+  required String subjectName,
+  required String assetLocation,
+  double subjectSize = 60.0,
+  VoidCallback? onTap,
+}) {
+  return InkWell(
+    onTap: onTap ??
+        () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailPage(title: subjectName),
+            ),
+          );
+        },
+    borderRadius: BorderRadius.circular(8),
+    child: SizedBox(
+      width: subjectSize,
+      height: subjectSize + 20,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const SizedBox(height: 5),
+          Container(
+            width: subjectSize - 20,
+            height: subjectSize - 20,
+            clipBehavior: Clip.antiAlias,
+            decoration: const BoxDecoration(),
+            child: Stack(
+              children: [
+                Positioned(
+                  left: 0,
+                  top: 0,
+                  child: Container(
+                    width: subjectSize - 20,
+                    height: subjectSize - 20,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(assetLocation),
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
-                ],
-              ),
-            ),
-            SizedBox(
-              width: subjectSize,
-              child: Text(
-                subjectName,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 14,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w500,
-                  height: 1.43,
-                  letterSpacing: 0.10,
                 ),
+              ],
+            ),
+          ),
+          SizedBox(
+            width: subjectSize,
+            child: Text(
+              subjectName,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.black,
+                fontSize: 14,
+                fontFamily: 'Roboto',
+                fontWeight: FontWeight.w500,
+                height: 1.43,
+                letterSpacing: 0.10,
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
-    );
-  }
-
+    ),
+  );
+}
   Widget _tempCreateLesson(String title, String value) {
     return GestureDetector(
       onTap: () {
@@ -862,18 +864,6 @@ class _HomePage extends State<HomePage> {
   }
 }
 
-class SubjectDetailPage extends StatelessWidget {
-  final String subjectName;
 
-  const SubjectDetailPage({super.key, required this.subjectName});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(subjectName)),
-      body: Center(
-          child: Text('Đây là trang $subjectName nhưng giờ chưa có gì cả :)')),
 
-    );
-  }
-}
