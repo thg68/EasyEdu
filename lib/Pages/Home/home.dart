@@ -118,12 +118,13 @@ class _HomePage extends State<HomePage> {
       children: [
         // App Bar
         Container(
-          padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 16),
+          padding: const EdgeInsets.fromLTRB(16, 14, 16, 2),
           child: const Text(
             'Trang Chủ',
             style: TextStyle(
-              fontSize: 20,
+              color: Colors.black,
               fontWeight: FontWeight.bold,
+              fontSize: 20,
             ),
           ),
         ),
@@ -727,7 +728,7 @@ class _HomePage extends State<HomePage> {
             context: context,
             subjectName: subjects[index]['name']!,
             assetLocation: subjects[index]['icon']!,
-            subjectGridSize,
+            subjectSize: subjectGridSize,
           );
         },
       ),
@@ -790,7 +791,7 @@ class _HomePage extends State<HomePage> {
               child: Text(
                 subjectName,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.black,
                   fontSize: subjectSize/5,
                   fontFamily: 'Roboto',

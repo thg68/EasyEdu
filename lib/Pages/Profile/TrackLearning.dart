@@ -215,7 +215,7 @@ class TrackLearning extends StatelessWidget {
             const SizedBox(height: 16),
             LinearProgressIndicator(
               value: 0.7,
-              backgroundColor: Colors.blue.withOpacity(0.2),
+              backgroundColor: Colors.blue.withValues(alpha: 0.2),
               valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
               minHeight: 10,
             ),
@@ -344,7 +344,7 @@ class TrackLearning extends StatelessWidget {
                       width: 36 * (themeProvider.fontSize / 16),
                       height: 36 * (themeProvider.fontSize / 16),
                       decoration: BoxDecoration(
-                        color: subject.color.withOpacity(0.1),
+                        color: subject.color.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: ClipRRect(
@@ -387,7 +387,7 @@ class TrackLearning extends StatelessWidget {
             const SizedBox(height: 12),
             LinearProgressIndicator(
               value: subject.progress,
-              backgroundColor: subject.color.withOpacity(0.2),
+              backgroundColor: subject.color.withValues(alpha: 0.2),
               valueColor: AlwaysStoppedAnimation<Color>(subject.color),
               minHeight: 8,
             ),

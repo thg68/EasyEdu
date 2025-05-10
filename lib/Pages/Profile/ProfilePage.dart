@@ -27,7 +27,11 @@ class _ProfilePageState extends State<ProfilePage> {
         backgroundColor: Colors.blue,
         title: const Text(
           'Trang Cá Nhân',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
         ),
         centerTitle: true,
         leading: IconButton(
@@ -185,7 +189,7 @@ class _ProfilePageState extends State<ProfilePage> {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: ListTile(
         leading: CircleAvatar(
-          backgroundColor: color.withOpacity(0.2),
+          backgroundColor: color.withValues(alpha: 0.2),
           child: Icon(icon, color: color),
         ),
         title: Text(

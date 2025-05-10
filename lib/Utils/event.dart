@@ -166,7 +166,7 @@ final subjects = [
     "icon": "assets/images/Drama_icon.png"
   },
   {
-    "name": "Trải Nghiệm và Hướng Nghiệp",
+    "name": "Trải Nghiệm Hướng Việc",
     "tchr": "Lê Văn Quang",
     "romm": "P302",
     "bdng": "C3",

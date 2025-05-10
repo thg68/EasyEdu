@@ -7,10 +7,10 @@ class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
 
   @override
-  _SettingsPageState createState() => _SettingsPageState();
+  SettingsPageState createState() => SettingsPageState();
 }
 
-class _SettingsPageState extends State<SettingsPage> {
+class SettingsPageState extends State<SettingsPage> {
   bool _isTextToSpeechEnabled = false;
 
   @override
@@ -42,9 +42,9 @@ class _SettingsPageState extends State<SettingsPage> {
       padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
       margin: const EdgeInsets.only(bottom: 10.0),
       decoration: BoxDecoration(
-        color: Colors.blue.withOpacity(0.1),
+        color: Colors.blue.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8.0),
-        border: Border.all(color: Colors.blue.withOpacity(0.2)),
+        border: Border.all(color: Colors.blue.withValues(alpha: 0.2)),
       ),
       child: Text(
         'AaBbCc - Văn bản ví dụ',
@@ -112,7 +112,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               max: 32.0,
                               divisions: 10,
                               activeColor: Colors.blue,
-                              inactiveColor: Colors.blue.withOpacity(0.2),
+                              inactiveColor: Colors.blue.withValues(alpha: 0.2),
                               label: _formatFontSize(themeProvider.fontSize),
                               onChanged: (double value) {
                                 themeProvider.updateSettings(fontSize: value);

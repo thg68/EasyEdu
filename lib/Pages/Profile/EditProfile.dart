@@ -163,7 +163,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                         border: Border.all(color: Colors.blue, width: 2),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
+                            color: Colors.black.withValues(alpha: 0.1),
                             blurRadius: 8,
                             offset: const Offset(0, 2),
                           ),
@@ -236,7 +236,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           // Giả lập việc lưu dữ liệu
                           await Future.delayed(const Duration(milliseconds: 800));
                           // Trả dữ liệu về ProfilePage
-                          if (mounted) {
+                          if (context.mounted) {
                             Navigator.pop(context, {
                               'name': _nameController.text,
                               'className': _classController.text,
@@ -304,7 +304,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
         const SizedBox(height: 8),
         Material(
           elevation: 2,
-          shadowColor: Colors.grey.withOpacity(0.2),
+          shadowColor: Colors.grey.withValues(alpha: 0.2),
           borderRadius: BorderRadius.circular(16),
           child: TextField(
             controller: controller,

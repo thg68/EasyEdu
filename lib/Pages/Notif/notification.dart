@@ -99,7 +99,15 @@ class _NotificationPageState extends State<NotificationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Thông báo'),
+        title: const Text(
+          'Thông báo',
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
+        ),
+        centerTitle: true,
         actions: [
           IconButton(icon: const Icon(Icons.refresh), onPressed: _loadEvents),
         ],
@@ -274,7 +282,7 @@ class _NotificationPageState extends State<NotificationPage> {
     if (subject.contains('mỹ thuật')) return Colors.purpleAccent;
     if (subject.contains('âm nhạc')) return Colors.lightGreen;
     if (subject.contains('tư duy phản biện')) return Colors.black54;
-    if (subject.contains('trải nghiệm và hướng nghiệp')) return Colors.grey;
+    if (subject.contains('trải nghiệm')) return Colors.grey;
     if (subject.contains('giáo dục quốc phòng') ||
         subject.contains('giáo dục đặc biệt')) {
       return Colors.brown;
@@ -306,7 +314,7 @@ class _NotificationPageState extends State<NotificationPage> {
     if (subject.contains('mỹ thuật')) return Icons.palette;
     if (subject.contains('âm nhạc')) return Icons.music_note;
     if (subject.contains('tư duy phản biện')) return Icons.psychology;
-    if (subject.contains('trải nghiệm và hướng nghiệp')) {
+    if (subject.contains('trải nghiệm')) {
       return Icons.work_outline;
     }
     if (subject.contains('giáo dục quốc phòng')) return Icons.military_tech;
@@ -390,8 +398,6 @@ class _NotificationPageState extends State<NotificationPage> {
                       );
                     },
                   ),
-
-
                   ElevatedButton.icon(
                     icon: const Icon(Icons.delete),
                     label: const Text('Xóa'),
