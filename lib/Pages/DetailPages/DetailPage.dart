@@ -4,7 +4,7 @@ import 'LessonPage.dart';
 
 class DetailPage extends StatelessWidget {
   final String title;
-  
+
   const DetailPage({required this.title});
 
   @override
@@ -60,7 +60,7 @@ class DetailPage extends StatelessWidget {
       ],
     );
   }
-  
+
   Widget _buildStatusInfoItem(IconData icon, String label, Color color) {
     return Column(
       children: [
@@ -80,19 +80,22 @@ class DetailPage extends StatelessWidget {
 
   Widget _buildLessonSection() {
     final lessons = [
-      {'name': 'Bài 1: Hàm số', 'status' : 'Chưa học'},
+      {'name': 'Bài 1: Hàm số', 'status': 'Chưa học'},
       {'name': 'Bài 2: Giới hạn hàm số', 'status': 'Đang học'},
-      {'name': 'Bài kiểm tra số 1', 'status' : 'Bài kiểm tra'},
+      {'name': 'Bài kiểm tra số 1', 'status': 'Bài kiểm tra'},
       {'name': 'Bài 3: Vô cùng lớn, vô cùng bé', 'status': 'Đã học'},
       {'name': 'Bài 4: Đạo hàm vi phân', 'status': 'Chưa học'},
-      {'name': 'Bài kiểm tra số 2', 'status' : 'Bài kiểm tra'},
+      {'name': 'Bài kiểm tra số 2', 'status': 'Bài kiểm tra'},
       {'name': 'Bài 5: Khảo sát hàm số', 'status': 'Đã học'},
       {'name': 'Bài 6: Tích phân', 'status': 'Chưa học'},
-      {'name': 'Bài 7: Định lý cơ bản của phép tính tích phân', 'status': 'Đã học'},
-      {'name': 'Bài kiểm tra số 3', 'status' : 'Bài kiểm tra'},
+      {
+        'name': 'Bài 7: Định lý cơ bản của phép tính tích phân',
+        'status': 'Đã học'
+      },
+      {'name': 'Bài kiểm tra số 3', 'status': 'Bài kiểm tra'},
       {'name': 'Bài 8: Tích phân xác định', 'status': 'Chưa học'},
       {'name': 'Bài 9: Tích phân bất định', 'status': 'Đã học'},
-      {'name': 'Bài kiểm tra số 4', 'status' : 'Bài kiểm tra'}
+      {'name': 'Bài kiểm tra số 4', 'status': 'Bài kiểm tra'}
     ];
 
     return Column(
@@ -106,9 +109,8 @@ class DetailPage extends StatelessWidget {
           itemCount: lessons.length,
           separatorBuilder: (context, index) => SizedBox(height: 16),
           itemBuilder: (context, index) {
-            return buildLessonItem(context, 
-              lessons[index]['name']!,
-              lessons[index]['status']!);
+            return buildLessonItem(
+                context, lessons[index]['name']!, lessons[index]['status']!);
           },
         ),
       ],
@@ -123,19 +125,15 @@ class DetailPage extends StatelessWidget {
       case 'Chưa học':
         statusIcon = Icons.hourglass_empty;
         statusColor = Colors.grey;
-        break;
       case 'Đang học':
         statusIcon = Icons.hourglass_top;
         statusColor = Colors.blue;
-        break;
       case 'Đã học':
         statusIcon = Icons.check_circle;
         statusColor = Colors.green;
-        break;
       case 'Bài kiểm tra':
         statusIcon = Icons.quiz;
         statusColor = Colors.orange;
-        break;
       default:
         statusIcon = Icons.help_outline;
         statusColor = Colors.black;

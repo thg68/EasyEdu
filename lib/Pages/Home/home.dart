@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:table_calendar/table_calendar.dart';
-import '../DetailPages/DetailPage.dart'; // Import DetailPage
-
+import 'package:table_calendar/table_calendar.dart'
+    show
+        CalendarFormat,
+        CalendarStyle,
+        RangeSelectionMode,
+        StartingDayOfWeek,
+        TableCalendar,
+        isSameDay;
 
 import '../../Utils/event.dart';
 import '../TeacherPages/createlesson.dart';
+import '../DetailPages/DetailPage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -718,17 +724,9 @@ class _HomePage extends State<HomePage> {
         itemCount: defaultSubjects.length,
         itemBuilder: (context, index) {
           return _buildSubjectItem(
-            defaultSubjects[index]['name']!,
-            defaultSubjects[index]['icon']!,
-            () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      SubjectDetailPage(subjectName: defaultSubjects[index]['name']!),
-                ),
-              );
-            },
+            context: context,
+            subjectName: subjects[index]['name']!,
+            assetLocation: subjects[index]['icon']!,
             subjectGridSize,
           );
         },
@@ -736,10 +734,23 @@ class _HomePage extends State<HomePage> {
     );
   }
 
-  Widget _buildSubjectItem(String subjectName, String assetLocation,
-      VoidCallback onTap, double subjectSize) {
+  Widget _buildSubjectItem({
+    required BuildContext context,
+    required String subjectName,
+    required String assetLocation,
+    required double subjectSize,
+    VoidCallback? onTap,
+  }) {
     return InkWell(
-      onTap: onTap,
+      onTap: onTap ??
+              () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailPage(title: subjectName),
+              ),
+            );
+          },
       borderRadius: BorderRadius.circular(8),
       child: SizedBox(
         width: subjectSize,
@@ -779,7 +790,7 @@ class _HomePage extends State<HomePage> {
               child: Text(
                 subjectName,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.black,
                   fontSize: subjectSize/5,
                   fontFamily: 'Roboto',
@@ -856,22 +867,6 @@ class _HomePage extends State<HomePage> {
           ],
         ),
       ),
-    );
-  }
-}
-
-class SubjectDetailPage extends StatelessWidget {
-  final String subjectName;
-
-  const SubjectDetailPage({super.key, required this.subjectName});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(subjectName)),
-      body: Center(
-          child: Text('Đây là trang $subjectName nhưng giờ chưa có gì cả :)')),
-
     );
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../NavigationBar/NavigationBar.dart'; // Import MainNavigationScreen
+import '../Login/Register.dart';
+import '../Login/forgot_pw.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -73,6 +75,10 @@ class LoginPage extends StatelessWidget {
                 child: TextButton(
                   onPressed: () {
                     // Handle forgot password
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ForgotPasswordPage()),
+                    );
                   },
                   child: const Text(
                     'Forgot Password?',
@@ -116,6 +122,10 @@ class LoginPage extends StatelessWidget {
                   TextButton(
                     onPressed: () {
                       // Điều hướng đến màn hình đăng ký
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const RegisterPage()),
+                      );
                     },
                     child: const Text(
                       'Create a new account',
