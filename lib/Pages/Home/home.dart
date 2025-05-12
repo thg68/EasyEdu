@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../Login/Register.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:table_calendar/table_calendar.dart'
     show
         CalendarFormat,
@@ -190,28 +192,63 @@ class _HomePage extends State<HomePage> {
   }
 
   Widget _buildStudentProfile() {
-    return Column(
-      children: [
-        Container(
-          width: 60,
-          height: 60,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/images/40x40.png'),
-              fit: BoxFit.cover,
+    return FutureBuilder(
+      future: SharedPreferences.getInstance(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.done &&
+            snapshot.hasData) {
+          final prefs = snapshot.data as SharedPreferences;
+          final userName = prefs.getString('userName') ??
+              'Nguyễn Văn A'; // Giá trị mặc định nếu chưa có
+
+          return Column(
+            children: [
+              Container(
+                width: 60,
+                height: 60,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/40x40.png'),
+                    fit: BoxFit.cover,
+                  ),
+                  shape: BoxShape.circle,
+                ),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                userName, // Sử dụng tên từ SharedPreferences
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ],
+          );
+        }
+        return Column(
+          children: [
+            Container(
+              width: 60,
+              height: 60,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/40x40.png'),
+                  fit: BoxFit.cover,
+                ),
+                shape: BoxShape.circle,
+              ),
             ),
-            shape: BoxShape.circle,
-          ),
-        ),
-        const SizedBox(height: 8),
-        const Text(
-          'Nguyễn Văn A',
-          style: TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-      ],
+            const SizedBox(height: 8),
+            const Text(
+              'Đang tải...',
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 

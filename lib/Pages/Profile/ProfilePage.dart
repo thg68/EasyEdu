@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
-import '../Home/home.dart'; // Thay bằng đường dẫn đến HomePage
+import 'package:shared_preferences/shared_preferences.dart';
+import '../Home/home.dart';
 import '../Login/LoginPage.dart';
-import 'EditProfile.dart'; // Import trang EditProfilePage
+import 'EditProfile.dart';
 import 'Setting.dart';
 import 'AchievementProfile.dart';
 import 'TrackLearning.dart';
@@ -16,9 +17,23 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  String _name = "Nguyễn Văn A"; // Tên mặc định
-  String _className = "Học sinh lớp 12"; // Lớp mặc định
-  File? _avatarImage; // Ảnh đại diện mặc định (null)
+  String _name = "Nguyễn Văn A";
+  String _class = "Chưa chọn lớp";
+  File? _avatarImage;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadUserData();
+  }
+
+  Future<void> _loadUserData() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _name = prefs.getString('userName') ?? "Nguyễn Văn A";
+      _class = prefs.getString('userClass') ?? "Chưa chọn lớp";
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +48,10 @@ class _ProfilePageState extends State<ProfilePage> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            // Điều hướng về HomePage
             Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(builder: (context) => const HomePage()),
-              (route) => false, // Xóa tất cả các route trước đó
+              (route) => false,
             );
           },
         ),
@@ -45,12 +59,11 @@ class _ProfilePageState extends State<ProfilePage> {
       body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: [
-          // Avatar và tên người dùng
           Center(
             child: Column(
               children: [
                 GestureDetector(
-                  onTap: _pickImage, // Chọn ảnh khi nhấn vào avatar
+                  onTap: _pickImage,
                   child: CircleAvatar(
                     radius: 60,
                     backgroundImage: _avatarImage != null
@@ -75,22 +88,13 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
                 Text(
-                  _className,
+                  _class, // Hiển thị lớp học từ SharedPreferences
                   style: const TextStyle(color: Colors.grey),
                 ),
               ],
             ),
           ),
           const SizedBox(height: 20),
-          // Danh sách chức năng
-          // _buildProfileOption(
-          //   icon: Icons.book,
-          //   title: 'Khóa học của tôi',
-          //   color: Colors.orange,
-          //   onTap: () {
-          //     // Xử lý khi nhấn vào
-          //   },
-          // ),
           _buildProfileOption(
             icon: Icons.bar_chart,
             title: 'Theo dõi học tập',
@@ -117,29 +121,29 @@ class _ProfilePageState extends State<ProfilePage> {
             icon: Icons.edit,
             title: 'Chỉnh sửa trang cá nhân',
             color: Colors.red,
-            onTap: () {
-              // Điều hướng đến EditProfilePage
-              Navigator.push(
+            onTap: () async {
+              final result = await Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => EditProfilePage(
                     name: _name,
-                    className: _className,
-                    // Truyền avatar hiện tại sang EditProfile
+                    userClass: _class,
                     avatarUrl: _avatarImage?.path,
                   ),
                 ),
-              ).then((result) {
-                // Cập nhật thông tin nếu có dữ liệu trả về
-                if (result != null && result is Map<String, dynamic>) {
-                  setState(() {
-                    _name = result['name'] ?? _name;
-                    _className = result['className'] ?? _className;
-                    // Cập nhật avatarFile thay vì avatar
-                    _avatarImage = result['avatarFile'] ?? _avatarImage;
-                  });
-                }
-              });
+              );
+
+              if (result != null && result is Map<String, dynamic>) {
+                setState(() {
+                  _name = result['name'] ?? _name;
+                  _class = result['userClass'] ?? _class;
+                  _avatarImage = result['avatarFile'] ?? _avatarImage;
+                });
+
+                final prefs = await SharedPreferences.getInstance();
+                await prefs.setString('userName', _name);
+                await prefs.setString('userClass', _class);
+              }
             },
           ),
           _buildProfileOption(
@@ -154,17 +158,20 @@ class _ProfilePageState extends State<ProfilePage> {
             },
           ),
           const Divider(),
-          // Mục Đăng xuất
           _buildProfileOption(
             icon: Icons.logout,
             title: 'Đăng xuất',
             color: Colors.grey,
-            onTap: () {
-              // Điều hướng về màn hình LoginPage
+            onTap: () async {
+              final prefs = await SharedPreferences.getInstance();
+              await prefs.remove('userName');
+              await prefs.remove('userClass');
+              await prefs.remove('isLoggedIn');
+
               Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(builder: (context) => const LoginPage()),
-                (route) => false, // Xóa tất cả các route trước đó
+                (route) => false,
               );
             },
           ),

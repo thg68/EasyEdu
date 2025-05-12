@@ -77,7 +77,8 @@ class LoginPage extends StatelessWidget {
                     // Handle forgot password
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const ForgotPasswordPage()),
+                      MaterialPageRoute(
+                          builder: (context) => const ForgotPasswordPage()),
                     );
                   },
                   child: const Text(
@@ -124,7 +125,8 @@ class LoginPage extends StatelessWidget {
                       // Điều hướng đến màn hình đăng ký
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const RegisterPage()),
+                        MaterialPageRoute(
+                            builder: (context) => const RegisterPage()),
                       );
                     },
                     child: const Text(
