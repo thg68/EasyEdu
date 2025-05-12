@@ -115,7 +115,8 @@ class _SearchPageState extends State<SearchPage> {
                   ? const Center(child: Text('Không tìm thấy kết quả'))
                   : ListView.separated(
                       itemCount: filteredResults.length,
-                      separatorBuilder: (context, index) => const SizedBox(height: 16),
+                      separatorBuilder: (context, index) =>
+                          const SizedBox(height: 16),
                       itemBuilder: (context, index) {
                         return buildResultItem(context, filteredResults[index]);
                       },
@@ -149,7 +150,8 @@ class _SearchPageState extends State<SearchPage> {
             Expanded(
               child: Text(
                 title,
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
               ),
             ),
             const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey),

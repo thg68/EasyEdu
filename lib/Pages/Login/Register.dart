@@ -81,7 +81,7 @@ class _RegisterPageState extends State<RegisterPage> {
             TextField(
               controller: nameController,
               decoration: InputDecoration(
-                labelText: 'Full Name',
+                labelText: 'Họ và Tên',
                 border:
                     OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                 filled: true,
@@ -93,7 +93,7 @@ class _RegisterPageState extends State<RegisterPage> {
             TextField(
               controller: emailController,
               decoration: InputDecoration(
-                labelText: 'Email Address',
+                labelText: 'Email',
                 border:
                     OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                 filled: true,
@@ -106,7 +106,7 @@ class _RegisterPageState extends State<RegisterPage> {
               controller: passwordController,
               obscureText: true,
               decoration: InputDecoration(
-                labelText: 'Password',
+                labelText: 'Mật khẩu',
                 border:
                     OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                 filled: true,
