@@ -20,7 +20,7 @@ class ThemeProvider with ChangeNotifier {
   // Initialize settings
   Future<void> init() async {
     final prefs = await SharedPreferences.getInstance();
-    _fontSize = prefs.getDouble('fontSize') ?? 22.0;
+    _fontSize = prefs.getDouble('fontSize') ?? 16;
     _highContrast = prefs.getBool('highContrast') ?? false;
     _boldText = prefs.getBool('boldText') ?? false;
     _lineHeight = prefs.getDouble('lineHeight') ?? 1.2;
@@ -109,7 +109,7 @@ class ThemeProvider with ChangeNotifier {
     final prefs = await SharedPreferences.getInstance();
     await prefs.clear();
 
-    _fontSize = 22.0;
+    _fontSize = 16.0;
     _highContrast = false;
     _boldText = false;
     _lineHeight = 1.2;

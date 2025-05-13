@@ -1,4 +1,3 @@
-// detail_page.dart
 import 'package:flutter/material.dart';
 import 'LessonPage.dart';
 import '../TeacherPages/createlesson.dart';
@@ -30,7 +29,6 @@ class DetailPage extends StatelessWidget {
             padding: const EdgeInsets.only(right: 12.0),
             child: GestureDetector(
               onTap: () {
-                // TODO: xử lý khi bấm
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => CreateLessonPage()),
@@ -173,7 +171,7 @@ class DetailPage extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => Lessonpage(title: title)),
+          MaterialPageRoute(builder: (context) => LessonPage(title: title)),
         );
       },
       child: Container(

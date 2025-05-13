@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'ThemeProvider.dart'; // Import ThemeProvider
+import 'ThemeProvider.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -42,9 +42,9 @@ class _SettingsPageState extends State<SettingsPage> {
       padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
       margin: const EdgeInsets.only(bottom: 10.0),
       decoration: BoxDecoration(
-        color: Color(0xFF9575CD).withOpacity(0.1),
+        color: Color(0xFF9575CD),
         borderRadius: BorderRadius.circular(8.0),
-        border: Border.all(color: Color(0xFF9575CD).withOpacity(0.2)),
+        border: Border.all(color: Color(0xFF9575CD)),
       ),
       child: Text(
         'AaBbCc - Văn bản ví dụ',
@@ -112,7 +112,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               max: 32.0,
                               divisions: 10,
                               activeColor: Color(0xFF9575CD),
-                              inactiveColor: Color(0xFF9575CD).withOpacity(0.2),
+                              inactiveColor: Color(0xFF9575CD),
                               label: _formatFontSize(themeProvider.fontSize),
                               onChanged: (double value) {
                                 themeProvider.updateSettings(fontSize: value);
@@ -166,13 +166,13 @@ class _SettingsPageState extends State<SettingsPage> {
                               ),
                               IconButton(
                                 icon: const Icon(Icons.refresh),
-                                color: themeProvider.fontSize != 22.0
+                                color: themeProvider.fontSize != 16
                                     ? Color(0xFF9575CD)
                                     : Colors.grey,
-                                onPressed: themeProvider.fontSize != 22.0
+                                onPressed: themeProvider.fontSize != 16
                                     ? () {
                                         themeProvider.updateSettings(
-                                            fontSize: 22.0);
+                                            fontSize: 16);
                                       }
                                     : null,
                                 tooltip: 'Đặt lại kích thước mặc định',
