@@ -196,34 +196,6 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
                 },
               ),
               const SizedBox(height: 20),
-              TextFormField(
-                controller: _subjectController,
-                decoration: const InputDecoration(
-                  labelText: 'Môn học *',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Chưa có tên bài học';
-                  }
-                  return null;
-                },
-              ),
-              const SizedBox(height: 20),
-              TextFormField(
-                controller: _classController,
-                decoration: const InputDecoration(
-                  labelText: 'Lớp *',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Chưa có tên lớp';
-                  }
-                  return null;
-                },
-              ),
-              const SizedBox(height: 20),
               DropdownButtonFormField<String>(
                 value: _selectedLessonType,
                 decoration: const InputDecoration(

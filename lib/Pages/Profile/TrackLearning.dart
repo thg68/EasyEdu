@@ -179,7 +179,7 @@ class TrackLearning extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            backgroundColor: Colors.blue,
+            backgroundColor: Color(0xFF9575CD),
             foregroundColor: Colors.white,
             centerTitle: true,
             elevation: 1,
@@ -215,8 +215,9 @@ class TrackLearning extends StatelessWidget {
             const SizedBox(height: 16),
             LinearProgressIndicator(
               value: 0.7,
-              backgroundColor: Colors.blue.withOpacity(0.2),
-              valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
+              backgroundColor: Color(0xFF9575CD).withOpacity(0.2),
+              valueColor:
+                  const AlwaysStoppedAnimation<Color>(Color(0xFF9575CD)),
               minHeight: 10,
             ),
             const SizedBox(height: 8),
@@ -242,7 +243,7 @@ class TrackLearning extends StatelessWidget {
             'Thời gian\nhọc hôm nay',
             '2.5h',
             Icons.timer,
-            Colors.blue,
+            Color(0xFF9575CD),
             themeProvider,
           ),
           const SizedBox(width: 16),
@@ -462,7 +463,7 @@ class TrackLearning extends StatelessWidget {
               'Bắt đầu bài Giải tích',
               '5 phút trước',
               Icons.play_circle_fill,
-              Colors.blue,
+              Color(0xFF9575CD),
               themeProvider,
             ),
             _buildActivityItem(

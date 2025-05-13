@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../NavigationBar/NavigationBar.dart'; // Import MainNavigationScreen
+import '../../NavigationBar/NavigationBar.dart';
 import '../Login/Register.dart';
 import '../Login/forgot_pw.dart';
 
@@ -9,7 +9,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFFFEF7FF), // Màu nền tím nhạt
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -20,23 +20,23 @@ class LoginPage extends StatelessWidget {
               // Hình ảnh minh họa
               Center(
                 child: Image.asset(
-                  'assets/images/education.png', // Đường dẫn đến hình ảnh
+                  'assets/images/education.png',
                   height: 200,
                 ),
               ),
               const SizedBox(height: 30),
               // Tiêu đề
-              const Text(
-                'Welcome to EasyEdu',
+              Text(
+                'Chào mừng đến với EasyEdu',
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
-                  color: Colors.blue,
+                  color: Color(0xFF9575CD), // Màu tím chủ đạo
                 ),
               ),
               const SizedBox(height: 10),
               const Text(
-                'Sign in to continue your learning journey!',
+                'Vui lòng đăng nhập để cùng bước vào cuộc hành trình!',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 16, color: Colors.grey),
               ),
@@ -44,27 +44,48 @@ class LoginPage extends StatelessWidget {
               // Ô nhập Email
               TextField(
                 decoration: InputDecoration(
-                  labelText: 'Email Address',
+                  labelText: 'Email',
+                  labelStyle: TextStyle(color: Colors.grey),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(color: Color(0xFF9575CD)),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(color: Color(0xFF9575CD)),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(color: Color(0xFF9575CD), width: 2),
                   ),
                   filled: true,
-                  fillColor: Colors.grey[100],
-                  prefixIcon: const Icon(Icons.email),
+                  fillColor: Colors.white,
+                  prefixIcon: Icon(Icons.email, color: Color(0xFF9575CD)),
                 ),
               ),
               const SizedBox(height: 20),
               // Ô nhập Password
               TextField(
                 decoration: InputDecoration(
-                  labelText: 'Password',
+                  labelText: 'Mật khẩu',
+                  labelStyle: TextStyle(color: Colors.grey),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(color: Color(0xFF9575CD)),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(color: Color(0xFF9575CD)),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(color: Color(0xFF9575CD), width: 2),
                   ),
                   filled: true,
-                  fillColor: Colors.grey[100],
-                  prefixIcon: const Icon(Icons.lock),
-                  suffixIcon: const Icon(Icons.visibility_off),
+                  fillColor: Colors.white,
+                  prefixIcon: Icon(Icons.lock, color: Color(0xFF9575CD)),
+                  suffixIcon:
+                      Icon(Icons.visibility_off, color: Color(0xFF9575CD)),
                 ),
                 obscureText: true,
               ),
@@ -74,16 +95,15 @@ class LoginPage extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   onPressed: () {
-                    // Handle forgot password
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const ForgotPasswordPage()),
                     );
                   },
-                  child: const Text(
-                    'Forgot Password?',
-                    style: TextStyle(color: Colors.blue),
+                  child: Text(
+                    'Quên mật khẩu?',
+                    style: TextStyle(color: Color(0xFF9575CD)), // Màu tím
                   ),
                 ),
               ),
@@ -91,7 +111,6 @@ class LoginPage extends StatelessWidget {
               // Nút Đăng nhập
               ElevatedButton(
                 onPressed: () {
-                  // Điều hướng đến MainNavigationScreen
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -100,14 +119,15 @@ class LoginPage extends StatelessWidget {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Color(0xFF9575CD), // Màu tím chủ đạo
                   minimumSize: const Size(double.infinity, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
+                  elevation: 3,
                 ),
                 child: const Text(
-                  'SIGN IN',
+                  'Đăng nhập',
                   style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
               ),
@@ -117,21 +137,20 @@ class LoginPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'Don\'t have an account?',
+                    'Chưa có tài khoản?',
                     style: TextStyle(color: Colors.grey),
                   ),
                   TextButton(
                     onPressed: () {
-                      // Điều hướng đến màn hình đăng ký
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const RegisterPage()),
                       );
                     },
-                    child: const Text(
-                      'Create a new account',
-                      style: TextStyle(color: Colors.blue),
+                    child: Text(
+                      'Đăng ký',
+                      style: TextStyle(color: Color(0xFF9575CD)), // Màu tím
                     ),
                   ),
                 ],

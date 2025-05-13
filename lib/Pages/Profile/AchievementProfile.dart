@@ -19,7 +19,7 @@ class AchievementProfile extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            backgroundColor: Colors.blue,
+            backgroundColor: Color(0xFF9575CD),
             foregroundColor: Colors.white,
             centerTitle: true,
             elevation: 1,
@@ -32,7 +32,7 @@ class AchievementProfile extends StatelessWidget {
                 title: 'Bài học đã hoàn thành',
                 value: '12',
                 icon: Icons.book,
-                color: Colors.blue,
+                color: Color(0xFF9575CD),
                 themeProvider: themeProvider,
               ),
               _buildAchievementCard(
@@ -207,7 +207,7 @@ class AchievementProfile extends StatelessWidget {
             style: TextStyle(
               fontSize: themeProvider.fontSize * 1.1,
               fontWeight: FontWeight.bold,
-              color: Colors.blue.shade800,
+              color: Color.fromARGB(255, 138, 49, 165),
             ),
           ),
         ),

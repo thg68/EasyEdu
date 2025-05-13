@@ -6,7 +6,7 @@ class ForgotPasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Forgot Password')),
+      appBar: AppBar(title: const Text('Quên mật khẩu')),
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -14,20 +14,24 @@ class ForgotPasswordPage extends StatelessWidget {
           children: [
             const SizedBox(height: 30),
             const Text(
-              'Reset Your Password',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.blue),
+              'Đặt lại mật khẩu',
+              style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF9575CD)),
             ),
             const SizedBox(height: 20),
             const Text(
-              'Enter your email address and we will send you a link to reset your password.',
+              'Điền địa chỉ email của bạn để nhận liên kết đặt lại mật khẩu.',
               style: TextStyle(fontSize: 16, color: Colors.grey),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 30),
             TextField(
               decoration: InputDecoration(
-                labelText: 'Email Address',
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                labelText: 'Email',
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                 filled: true,
                 fillColor: Colors.grey[100],
                 prefixIcon: const Icon(Icons.email),
@@ -39,13 +43,14 @@ class ForgotPasswordPage extends StatelessWidget {
                 // TODO: Handle password reset logic
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
+                backgroundColor: Color(0xFF9575CD),
                 minimumSize: const Size(double.infinity, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
               ),
-              child: const Text('SEND RESET LINK', style: TextStyle(fontSize: 16, color: Colors.white)),
+              child: const Text('Gửi mã',
+                  style: TextStyle(fontSize: 16, color: Colors.white)),
             ),
           ],
         ),

@@ -63,18 +63,18 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(title: const Text('Create Account')),
+      appBar: AppBar(title: const Text('Đăng ký')),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             const SizedBox(height: 30),
             const Text(
-              'Create a New Account',
+              'Vui lòng điền đầy đủ thông tin',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.blue,
+                color: Color(0xFF9575CD),
               ),
             ),
             const SizedBox(height: 30),
@@ -146,13 +146,13 @@ class _RegisterPageState extends State<RegisterPage> {
             ElevatedButton(
               onPressed: _register,
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
+                backgroundColor: Color(0xFF9575CD),
                 minimumSize: const Size(double.infinity, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
               ),
-              child: const Text('REGISTER',
+              child: const Text('Đăng ký',
                   style: TextStyle(fontSize: 16, color: Colors.white)),
             ),
           ],

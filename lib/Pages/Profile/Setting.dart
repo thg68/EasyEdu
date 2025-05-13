@@ -42,9 +42,9 @@ class _SettingsPageState extends State<SettingsPage> {
       padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
       margin: const EdgeInsets.only(bottom: 10.0),
       decoration: BoxDecoration(
-        color: Colors.blue.withOpacity(0.1),
+        color: Color(0xFF9575CD).withOpacity(0.1),
         borderRadius: BorderRadius.circular(8.0),
-        border: Border.all(color: Colors.blue.withOpacity(0.2)),
+        border: Border.all(color: Color(0xFF9575CD).withOpacity(0.2)),
       ),
       child: Text(
         'AaBbCc - Văn bản ví dụ',
@@ -69,7 +69,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            backgroundColor: Colors.blue,
+            backgroundColor: Color(0xFF9575CD),
             foregroundColor: Colors.white,
             elevation: 1,
             centerTitle: true,
@@ -111,8 +111,8 @@ class _SettingsPageState extends State<SettingsPage> {
                               min: 12.0,
                               max: 32.0,
                               divisions: 10,
-                              activeColor: Colors.blue,
-                              inactiveColor: Colors.blue.withOpacity(0.2),
+                              activeColor: Color(0xFF9575CD),
+                              inactiveColor: Color(0xFF9575CD).withOpacity(0.2),
                               label: _formatFontSize(themeProvider.fontSize),
                               onChanged: (double value) {
                                 themeProvider.updateSettings(fontSize: value);
@@ -129,7 +129,7 @@ class _SettingsPageState extends State<SettingsPage> {
                             _formatFontSize(themeProvider.fontSize),
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: Colors.blue,
+                              color: Color(0xFF9575CD),
                             ),
                           ),
                           Row(
@@ -137,7 +137,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               IconButton(
                                 icon: const Icon(Icons.remove_circle_outline),
                                 color: themeProvider.fontSize > 12.0
-                                    ? Colors.blue
+                                    ? Color(0xFF9575CD)
                                     : Colors.grey,
                                 onPressed: themeProvider.fontSize > 12.0
                                     ? () {
@@ -152,7 +152,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               IconButton(
                                 icon: const Icon(Icons.add_circle_outline),
                                 color: themeProvider.fontSize < 32.0
-                                    ? Colors.blue
+                                    ? Color(0xFF9575CD)
                                     : Colors.grey,
                                 onPressed: themeProvider.fontSize < 32.0
                                     ? () {
@@ -167,7 +167,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               IconButton(
                                 icon: const Icon(Icons.refresh),
                                 color: themeProvider.fontSize != 22.0
-                                    ? Colors.blue
+                                    ? Color(0xFF9575CD)
                                     : Colors.grey,
                                 onPressed: themeProvider.fontSize != 22.0
                                     ? () {
@@ -186,7 +186,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         title: const Text('Độ tương phản cao'),
                         subtitle: const Text('Tăng độ tương phản màu sắc'),
                         value: themeProvider.highContrast,
-                        activeColor: Colors.blue,
+                        activeColor: Color(0xFF9575CD),
                         contentPadding: EdgeInsets.zero,
                         onChanged: (bool value) {
                           themeProvider.updateSettings(highContrast: value);
@@ -197,7 +197,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         title: const Text('Chữ đậm'),
                         subtitle: const Text('Hiển thị chữ đậm hơn'),
                         value: themeProvider.boldText,
-                        activeColor: Colors.blue,
+                        activeColor: Color(0xFF9575CD),
                         contentPadding: EdgeInsets.zero,
                         onChanged: (bool value) {
                           themeProvider.updateSettings(boldText: value);
@@ -230,7 +230,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         title: const Text('Đọc văn bản'),
                         subtitle: const Text('Bật tính năng đọc văn bản'),
                         value: _isTextToSpeechEnabled,
-                        activeColor: Colors.blue,
+                        activeColor: Color(0xFF9575CD),
                         contentPadding: EdgeInsets.zero,
                         onChanged: (bool value) {
                           setState(() {

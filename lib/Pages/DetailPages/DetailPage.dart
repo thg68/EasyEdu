@@ -1,6 +1,7 @@
 // detail_page.dart
 import 'package:flutter/material.dart';
 import 'LessonPage.dart';
+import '../TeacherPages/createlesson.dart';
 
 class DetailPage extends StatelessWidget {
   final String title;
@@ -24,6 +25,35 @@ class DetailPage extends StatelessWidget {
           ),
         ),
         centerTitle: true,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 12.0),
+            child: GestureDetector(
+              onTap: () {
+                // TODO: xử lý khi bấm
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CreateLessonPage()),
+                );
+              },
+              child: Container(
+                padding: EdgeInsets.all(2),
+                decoration: BoxDecoration(
+                  color: Colors.purple.shade100,
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black26,
+                      blurRadius: 4,
+                      offset: Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: Icon(Icons.add, color: Colors.purple, size: 24),
+              ),
+            ),
+          ),
+        ],
       ),
       body: SafeArea(
         child: Column(
