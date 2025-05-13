@@ -1,14 +1,45 @@
 import 'package:flutter/material.dart';
-import '../Home/home.dart'; // Thay bằng đường dẫn đến HomePage
+import 'dart:io';
+import 'package:image_picker/image_picker.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../Home/home.dart';
 import '../Login/LoginPage.dart';
+import 'EditProfile.dart';
+import 'Setting.dart';
+import 'AchievementProfile.dart';
+import 'TrackLearning.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
+
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  String _name = "Nguyễn Văn A";
+  String _class = "Chưa chọn lớp";
+  File? _avatarImage;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadUserData();
+  }
+
+  Future<void> _loadUserData() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _name = prefs.getString('userName') ?? "Nguyễn Văn A";
+      _class = prefs.getString('userClass') ?? "Chưa chọn lớp";
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: const Color(0xFF9575CD), // Màu tím chủ đạo
         title: const Text(
           'Trang Cá Nhân',
           style: TextStyle(color: Colors.white),
@@ -17,102 +48,138 @@ class ProfilePage extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            // Điều hướng về HomePage
             Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(builder: (context) => const HomePage()),
-              (route) => false, // Xóa tất cả các route trước đó
+              (route) => false,
             );
           },
         ),
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(16.0),
-        children: [
-          // Avatar và tên người dùng
-          Center(
-            child: Column(
-              children: [
-                CircleAvatar(
-                  radius: 60,
-                  backgroundImage: AssetImage(
-                    'assets/images/40x40.png',
-                  ), // Thay bằng đường dẫn ảnh của bạn
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  'Nguyễn Văn A',
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue,
+      body: Container(
+        color: const Color(0xFFFEF7FF), // Màu nền tím nhạt
+        child: ListView(
+          padding: const EdgeInsets.all(16.0),
+          children: [
+            Center(
+              child: Column(
+                children: [
+                  GestureDetector(
+                    onTap: _pickImage,
+                    child: CircleAvatar(
+                      radius: 60,
+                      backgroundColor: const Color(0xFF9575CD).withOpacity(0.1),
+                      backgroundImage: _avatarImage != null
+                          ? FileImage(_avatarImage!) as ImageProvider
+                          : const AssetImage('assets/images/profile_icon.png'),
+                      child: _avatarImage == null
+                          ? const Icon(
+                              Icons.camera_alt,
+                              size: 30,
+                              color: Color(0xFF9575CD),
+                            )
+                          : null,
+                    ),
                   ),
-                ),
-                const Text(
-                  'Học sinh lớp 12',
-                  style: TextStyle(fontSize: 16, color: Colors.grey),
-                ),
-              ],
+                  const SizedBox(height: 10),
+                  Text(
+                    _name,
+                    style: const TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF9575CD), // Màu tím chủ đạo
+                    ),
+                  ),
+                  Text(
+                    _class,
+                    style: const TextStyle(color: Colors.grey),
+                  ),
+                ],
+              ),
             ),
-          ),
-          const SizedBox(height: 20),
-          // Danh sách chức năng
-          _buildProfileOption(
-            icon: Icons.book,
-            title: 'Khóa học của tôi',
-            color: Colors.orange,
-            onTap: () {
-              // Xử lý khi nhấn vào
-            },
-          ),
-          _buildProfileOption(
-            icon: Icons.bar_chart,
-            title: 'Theo dõi học tập',
-            color: Colors.green,
-            onTap: () {
-              // Xử lý khi nhấn vào
-            },
-          ),
-          _buildProfileOption(
-            icon: Icons.emoji_events,
-            title: 'Thành tích',
-            color: Colors.purple,
-            onTap: () {
-              // Xử lý khi nhấn vào
-            },
-          ),
-          _buildProfileOption(
-            icon: Icons.edit,
-            title: 'Chỉnh sửa trang cá nhân',
-            color: Colors.red,
-            onTap: () {
-              // Xử lý khi nhấn vào
-            },
-          ),
-          _buildProfileOption(
-            icon: Icons.settings,
-            title: 'Cài đặt',
-            color: Colors.blueGrey,
-            onTap: () {
-              // Xử lý khi nhấn vào
-            },
-          ),
-          const Divider(),
-          // Mục Đăng xuất
-          _buildProfileOption(
-            icon: Icons.logout,
-            title: 'Đăng xuất',
-            color: Colors.grey,
-            onTap: () {
-              // Điều hướng về màn hình LoginPage
-              Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(builder: (context) => const LoginPage()),
-                (route) => false, // Xóa tất cả các route trước đó
-              );
-            },
-          ),
-        ],
+            const SizedBox(height: 20),
+            _buildProfileOption(
+              icon: Icons.bar_chart,
+              title: 'Theo dõi học tập',
+              color: const Color(0xFF9575CD), // Màu tím chủ đạo
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TrackLearning()),
+                );
+              },
+            ),
+            _buildProfileOption(
+              icon: Icons.emoji_events,
+              title: 'Thành tích',
+              color: const Color(0xFF9575CD), // Màu tím chủ đạo
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AchievementProfile()),
+                );
+              },
+            ),
+            _buildProfileOption(
+              icon: Icons.edit,
+              title: 'Chỉnh sửa trang cá nhân',
+              color: const Color(0xFF9575CD), // Màu tím chủ đạo
+              onTap: () async {
+                final result = await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => EditProfilePage(
+                      name: _name,
+                      userClass: _class,
+                      avatarUrl: _avatarImage?.path,
+                    ),
+                  ),
+                );
+
+                if (result != null && result is Map<String, dynamic>) {
+                  setState(() {
+                    _name = result['name'] ?? _name;
+                    _class = result['userClass'] ?? _class;
+                    _avatarImage = result['avatarFile'] ?? _avatarImage;
+                  });
+
+                  final prefs = await SharedPreferences.getInstance();
+                  await prefs.setString('userName', _name);
+                  await prefs.setString('userClass', _class);
+                }
+              },
+            ),
+            _buildProfileOption(
+              icon: Icons.settings,
+              title: 'Cài đặt',
+              color: const Color(0xFF9575CD), // Màu tím chủ đạo
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SettingsPage()),
+                );
+              },
+            ),
+            const Divider(color: Color(0xFFCAC4D0)), // Màu divider xám nhạt
+            _buildProfileOption(
+              icon: Icons.logout,
+              title: 'Đăng xuất',
+              color: Colors.grey,
+              onTap: () async {
+                final prefs = await SharedPreferences.getInstance();
+                await prefs.remove('userName');
+                await prefs.remove('userClass');
+                await prefs.remove('isLoggedIn');
+
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                  (route) => false,
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -127,6 +194,7 @@ class ProfilePage extends StatelessWidget {
       elevation: 3,
       margin: const EdgeInsets.symmetric(vertical: 8),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      color: Colors.white, // Nền trắng cho card
       child: ListTile(
         leading: CircleAvatar(
           backgroundColor: color.withOpacity(0.2),
@@ -134,11 +202,27 @@ class ProfilePage extends StatelessWidget {
         ),
         title: Text(
           title,
-          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+          style: const TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w500,
+            color: Colors.black87,
+          ),
         ),
         trailing: const Icon(Icons.arrow_forward_ios, color: Colors.grey),
         onTap: onTap,
       ),
     );
+  }
+
+  Future<void> _pickImage() async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? pickedFile =
+        await picker.pickImage(source: ImageSource.gallery);
+
+    if (pickedFile != null) {
+      setState(() {
+        _avatarImage = File(pickedFile.path);
+      });
+    }
   }
 }

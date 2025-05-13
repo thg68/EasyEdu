@@ -1,23 +1,80 @@
 import 'package:flutter/material.dart';
-import '../DetailPages/DetailPage.dart'; // Import DetailPage
+import '../DetailPages/DetailPage.dart';
 
-class SearchPage extends StatelessWidget {
-  final List<String> searchResults = [
+class SearchPage extends StatefulWidget {
+  const SearchPage({super.key});
+
+  @override
+  State<SearchPage> createState() => _SearchPageState();
+}
+
+class _SearchPageState extends State<SearchPage> {
+  final List<String> allSubjects = [
     'Giải Tích',
     'Đại Số',
     'Ngữ Văn',
+    'Lịch Sử',
+    'Địa Lý',
+    'Vật Lý',
+    'Hóa Học',
+    'Sinh Học',
+    'Tiếng Anh',
+    'Tin Học',
   ];
+
+  List<String> filteredResults = [];
+
+  final TextEditingController _searchController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    // Ban đầu chỉ hiển thị 3 môn
+    filteredResults = allSubjects.take(3).toList();
+
+    // Theo dõi thay đổi trong TextField để xử lý trường hợp người dùng xóa hết text
+    _searchController.addListener(() {
+      if (_searchController.text.isEmpty) {
+        setState(() {
+          filteredResults = allSubjects.take(3).toList();
+        });
+      }
+    });
+  }
+
+  void _filterResults(String query) {
+    if (query.isEmpty) {
+      // Nếu rỗng thì hiển thị lại 3 môn đầu tiên
+      setState(() {
+        filteredResults = allSubjects.take(3).toList();
+      });
+    } else {
+      final results = allSubjects.where((subject) {
+        return subject.toLowerCase().contains(query.toLowerCase());
+      }).toList();
+
+      setState(() {
+        filteredResults = results;
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF9F4FB),
+      backgroundColor: const Color(0xFFF9F4FB),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 1,
         centerTitle: true,
-        iconTheme: IconThemeData(color: Colors.black),
-        title: Text(
+        iconTheme: const IconThemeData(color: Colors.black),
+        title: const Text(
           'Tìm Kiếm',
           style: TextStyle(
             color: Colors.black,
@@ -25,11 +82,7 @@ class SearchPage extends StatelessWidget {
             fontSize: 20,
           ),
         ),
-        actions: [
-          SizedBox(
-              width:
-                  kToolbarHeight / 2), // thêm 1 SizedBox nhỏ cân lại nút Back
-        ],
+        actions: const [SizedBox(width: kToolbarHeight / 2)],
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -43,7 +96,9 @@ class SearchPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: TextField(
-                decoration: InputDecoration(
+                controller: _searchController,
+                onChanged: _filterResults,
+                decoration: const InputDecoration(
                   hintText: 'Nhập từ khóa...',
                   hintStyle: TextStyle(color: Colors.grey),
                   prefixIcon: Icon(Icons.search, color: Colors.grey),
@@ -56,13 +111,16 @@ class SearchPage extends StatelessWidget {
 
             // Result list
             Expanded(
-              child: ListView.separated(
-                itemCount: searchResults.length,
-                separatorBuilder: (context, index) => SizedBox(height: 16),
-                itemBuilder: (context, index) {
-                  return buildResultItem(context, searchResults[index]);
-                },
-              ),
+              child: filteredResults.isEmpty
+                  ? const Center(child: Text('Không tìm thấy kết quả'))
+                  : ListView.separated(
+                      itemCount: filteredResults.length,
+                      separatorBuilder: (context, index) =>
+                          const SizedBox(height: 16),
+                      itemBuilder: (context, index) {
+                        return buildResultItem(context, filteredResults[index]);
+                      },
+                    ),
             ),
           ],
         ),
@@ -73,14 +131,13 @@ class SearchPage extends StatelessWidget {
   Widget buildResultItem(BuildContext context, String title) {
     return InkWell(
       onTap: () {
-        // Chuyển sang trang chi tiết
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => DetailPage(title: title)),
         );
       },
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 18),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(color: Colors.purple.shade100, width: 1),
@@ -88,15 +145,16 @@ class SearchPage extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Icon(Icons.search, color: Colors.deepPurple),
-            SizedBox(width: 12),
+            const Icon(Icons.search, color: Colors.deepPurple),
+            const SizedBox(width: 12),
             Expanded(
               child: Text(
                 title,
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
               ),
             ),
-            Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey),
+            const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey),
           ],
         ),
       ),
