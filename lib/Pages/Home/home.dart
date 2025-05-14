@@ -717,7 +717,7 @@ class _HomePage extends State<HomePage> {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: (240/subjectGridSize).toInt(),
+          crossAxisCount: (240 / subjectGridSize).toInt(),
           childAspectRatio: 0.9,
           mainAxisSpacing: 12,
           crossAxisSpacing: 12,
@@ -744,7 +744,7 @@ class _HomePage extends State<HomePage> {
   }) {
     return InkWell(
       onTap: onTap ??
-              () {
+          () {
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -787,13 +787,13 @@ class _HomePage extends State<HomePage> {
               ),
             ),
             SizedBox(
-              width: subjectSize+10,
+              width: subjectSize + 10,
               child: Text(
                 subjectName,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: subjectSize/5,
+                  fontSize: subjectSize / 5,
                   fontFamily: 'Roboto',
                   fontWeight: FontWeight.w500,
                   height: 1.43,
