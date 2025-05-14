@@ -47,145 +47,145 @@ class Event {
 // List of subjects with icons
 final subjects = [
   {
-    'name': 'Đại số',
-    'tchr': 'Trần Thanh Hoa',
-    'romm': 'P301',
-    'bdng': 'C2',
-    'icon': 'assets/images/Algebra_icon.png'
+    "name": "Đại Số",
+    "tchr": "Trần Thanh Hoa",
+    "romm": "P301",
+    "bdng": "C2",
+    "icon": "assets/images/Algebra_icon.png"
   },
   {
-    'name': 'Giải tích',
-    'tchr': 'Lê Minh Tuấn',
-    'romm': 'P302',
-    'bdng': 'C2',
-    'icon': 'assets/images/Geometry_icon.png'
+    "name": "Giải Tích",
+    "tchr": "Lê Minh Tuấn",
+    "romm": "P302",
+    "bdng": "C2",
+    "icon": "assets/images/Geometry_icon.png"
   },
   {
-    'name': 'Ngữ văn',
-    'tchr': 'Phạm Thị Lan',
-    'romm': 'P201',
-    'bdng': 'B1',
-    'icon': 'assets/images/Literature_icon.png'
+    "name": "Ngữ Văn",
+    "tchr": "Phạm Thị Lan",
+    "romm": "P201",
+    "bdng": "B1",
+    "icon": "assets/images/Literature_icon.png"
   },
   {
-    'name': 'Tiếng Anh',
-    'tchr': 'Nguyễn Thị Lan Hạnh',
-    'romm': 'P202',
-    'bdng': 'B1',
-    'icon': 'assets/images/Spanish_icon.png'
+    "name": "Tiếng Anh",
+    "tchr": "Nguyễn Thị Lan Hạnh",
+    "romm": "P202",
+    "bdng": "B1",
+    "icon": "assets/images/Spanish_icon.png"
   },
   {
-    'name': 'Vật lý',
-    'tchr': 'Đỗ Văn Hùng',
-    'romm': 'P101',
-    'bdng': 'B2',
-    'icon': 'assets/images/Physics_icon.png'
+    "name": "Vật Lý",
+    "tchr": "Đỗ Văn Hùng",
+    "romm": "P101",
+    "bdng": "B2",
+    "icon": "assets/images/Physics_icon.png"
   },
   {
-    'name': 'Hóa học',
-    'tchr': 'Vũ Thu Thủy',
-    'romm': 'P102',
-    'bdng': 'B3',
-    'icon': 'assets/images/Chemistry_icon.png'
+    "name": "Hóa Học",
+    "tchr": "Vũ Thu Thủy",
+    "romm": "P102",
+    "bdng": "B3",
+    "icon": "assets/images/Chemistry_icon.png"
   },
   {
-    'name': 'Sinh học',
-    'tchr': 'Hoàng Văn Nam',
-    'romm': 'P201',
-    'bdng': 'B2',
-    'icon': 'assets/images/Biology_icon.png'
+    "name": "Sinh Học",
+    "tchr": "Hoàng Văn Nam",
+    "romm": "P201",
+    "bdng": "B2",
+    "icon": "assets/images/Biology_icon.png"
   },
   {
-    'name': 'Lịch sử',
-    'tchr': 'Bùi Kiều',
-    'romm': 'P104',
-    'bdng': 'B1',
-    'icon': 'assets/images/History_icon.png'
+    "name": "Lịch Sử",
+    "tchr": "Bùi Kiều",
+    "romm": "P104",
+    "bdng": "B1",
+    "icon": "assets/images/History_icon.png"
   },
   {
-    'name': 'Địa lý',
-    'tchr': 'Phan Tiến Đức',
-    'romm': 'P106',
-    'bdng': 'B1',
-    'icon': 'assets/images/Geography_icon.png'
+    "name": "Địa Lý",
+    "tchr": "Phan Tiến Đức",
+    "romm": "P106",
+    "bdng": "B1",
+    "icon": "assets/images/Geography_icon.png"
   },
   {
-    'name': 'Giáo dục công dân',
-    'tchr': 'Trịnh Thị Mai',
-    'romm': 'P107',
-    'bdng': 'B1',
-    'icon': 'assets/images/Civics_icon.png'
+    "name": "Giáo Dục Công Dân",
+    "tchr": "Trịnh Thị Mai",
+    "romm": "P107",
+    "bdng": "B1",
+    "icon": "assets/images/Civics_icon.png"
   },
   {
-    'name': 'Tin học',
-    'tchr': 'Trần Quốc Sơn',
-    'romm': 'PM203',
-    'bdng': 'Tech',
-    'icon': 'assets/images/Computer_Science_icon.png'
+    "name": "Tin Học",
+    "tchr": "Trần Quốc Sơn",
+    "romm": "PM203",
+    "bdng": "Tech",
+    "icon": "assets/images/Computer_Science_icon.png"
   },
   {
-    'name': 'Công nghệ',
-    'tchr': 'Lê Thị Thanh Phương',
-    'romm': 'PM202',
-    'bdng': 'Tech',
-    'icon': 'assets/images/Technology_icon.png'
+    "name": "Công Nghệ",
+    "tchr": "Lê Thị Thanh Phương",
+    "romm": "PM202",
+    "bdng": "Tech",
+    "icon": "assets/images/Technology_icon.png"
   },
   {
-    'name': 'Giáo dục thể chất',
-    'tchr': 'Nguyễn Đưc Bình',
-    'romm': 'Sân cỏ',
-    'bdng': 'Sân cỏ',
-    'icon': 'assets/images/Physical_Education_icon.png'
+    "name": "Giáo Dục Thể Chất",
+    "tchr": "Nguyễn Đưc Bình",
+    "romm": "Sân cỏ",
+    "bdng": "Sân cỏ",
+    "icon": "assets/images/Physical_Education_icon.png"
   },
   {
-    'name': 'Kinh tế và Pháp luật',
-    'tchr': 'Phạm Mai An',
-    'romm': 'P301',
-    'bdng': 'B1',
-    'icon': 'assets/images/Economics_icon.png'
+    "name": "Kinh Tế và Pháp Luật",
+    "tchr": "Phạm Mai An",
+    "romm": "P301",
+    "bdng": "B1",
+    "icon": "assets/images/Economics_icon.png"
   },
   {
-    'name': 'Mỹ thuật',
-    'tchr': 'Võ Huyền Ngọc',
-    'romm': 'P202',
-    'bdng': 'C1',
-    'icon': 'assets/images/Arts_icon.png'
+    "name": "Mỹ Thuật",
+    "tchr": "Võ Huyền Ngọc",
+    "romm": "P202",
+    "bdng": "C1",
+    "icon": "assets/images/Arts_icon.png"
   },
   {
-    'name': 'Âm nhạc',
-    'tchr': 'Nguyễn Thị Ly',
-    'romm': 'P201',
-    'bdng': 'C1',
-    'icon': 'assets/images/Music_icon.png'
+    "name": "Âm Nhạc",
+    "tchr": "Nguyễn Thị Ly",
+    "romm": "P201",
+    "bdng": "C1",
+    "icon": "assets/images/Music_icon.png"
   },
   {
-    'name': 'Tư duy phản biện',
-    'tchr': 'Hoàng Thị Hạnh',
-    'romm': 'R202',
-    'bdng': 'B2',
-    'icon': 'assets/images/Drama_icon.png'
+    "name": "Tư Duy Phản Biện",
+    "tchr": "Hoàng Thị Hạnh",
+    "romm": "R202",
+    "bdng": "B2",
+    "icon": "assets/images/Drama_icon.png"
   },
   {
-    'name': 'Trải nghiệm, hướng nghiệp',
-    'tchr': 'Lê Văn Quang',
-    'romm': 'P302',
-    'bdng': 'C3',
-    'icon': 'assets/images/Career_icon.png'
+    "name": "Trải Nghiệm Hướng Việc",
+    "tchr": "Lê Văn Quang",
+    "romm": "P302",
+    "bdng": "C3",
+    "icon": "assets/images/Career_icon.png"
   },
   {
-    'name': 'Giáo dục quốc phòng',
-    'tchr': 'Đặng Thị Ban Oanh',
-    'romm': 'Sân cỏ',
-    'bdng': 'Hola',
-    'icon': 'assets/images/Military_icon.png'
+    "name": "Giáo Dục Quốc Phòng",
+    "tchr": "Đặng Thị Ban Oanh",
+    "romm": "Sân cỏ",
+    "bdng": "Hola",
+    "icon": "assets/images/Military_icon.png"
   },
   {
-    'name': 'Giáo dục đặc biệt',
-    'tchr': 'Phan Thị Lan',
-    'romm': 'P103',
-    'bdng': 'B3',
-    'icon': 'assets/images/Special_Education_icon.png'
-  },
+    "name": "Giáo Dục Đặc Biệt",
+    "tchr": "Phan Thị Lan",
+    "romm": "P103",
+    "bdng": "B3",
+    "icon": "assets/images/Special_Education_icon.png"
+  }
 ];
 
 void addEventToCalendar(Event event, DateTime date) {
@@ -215,6 +215,20 @@ Event createLessonEvent({
     building: building,
     teacher: teacher,
   );
+}
+
+Future<void> deleteEventFromCalendar(Event event, DateTime date) async {
+  final eventDate = DateTime.utc(date.year, date.month, date.day);
+  if (kEvents.containsKey(eventDate)) {
+    kEvents[eventDate]!.removeWhere((e) =>
+        e.title == event.title &&
+        e.startTime == event.startTime &&
+        e.endTime == event.endTime);
+
+    if (kEvents[eventDate]!.isEmpty) {
+      kEvents.remove(eventDate);
+    }
+  }
 }
 
 int getHashCode(DateTime key) =>
@@ -262,7 +276,7 @@ void populateStudentSchedule() {
       final slot = morningSlots[0];
       addEventToCalendar(
         createLessonEvent(
-          title: '${subj['name']} Class',
+          title: 'Lớp ${subj['name']}',
           subject: subj['name']!,
           startTime: slot['start']!,
           endTime: slot['end']!,
@@ -278,7 +292,7 @@ void populateStudentSchedule() {
       final slotM = morningSlots[date.weekday % morningSlots.length];
       addEventToCalendar(
         createLessonEvent(
-          title: '${subjM['name']} Class',
+          title: 'Lớp ${subjM['name']}',
           subject: subjM['name']!,
           startTime: slotM['start']!,
           endTime: slotM['end']!,
@@ -292,7 +306,7 @@ void populateStudentSchedule() {
       final slotA = afternoonSlots[date.weekday % afternoonSlots.length];
       addEventToCalendar(
         createLessonEvent(
-          title: '${subjA['name']} Class',
+          title: 'Lớp ${subjA['name']}',
           subject: subjA['name']!,
           startTime: slotA['start']!,
           endTime: slotA['end']!,

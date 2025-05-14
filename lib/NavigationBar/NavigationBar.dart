@@ -48,7 +48,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           height: 65 * (themeProvider.fontSize / 16),
           labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
           indicatorColor: themeProvider.highContrast
-              ? Colors.white.withOpacity(0.1)
+              ? Colors.white.withValues(alpha: 0.1)
               : const Color(0xFFE8DEF8),
           destinations: [
             _buildNavigationDestination(
@@ -117,7 +117,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           padding: EdgeInsets.all(padding),
           decoration: ShapeDecoration(
             color: themeProvider.highContrast
-                ? Colors.white.withOpacity(0.1)
+                ? Colors.white.withValues(alpha: 0.1)
                 : const Color(0xFFE8DEF8),
             shape: RoundedRectangleBorder(
               borderRadius:

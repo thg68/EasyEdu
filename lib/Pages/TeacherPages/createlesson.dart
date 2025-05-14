@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:file_picker/file_picker.dart';
 
 import '../../Utils/event.dart';
 
@@ -141,7 +140,7 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
           building: _buildingController.text.isNotEmpty
               ? _buildingController.text
               : null,
-          subject: _subjectController.text,
+          subject: _nameController.text,
           teacher: _teacherController.text.isNotEmpty
               ? _teacherController.text
               : null,
@@ -397,15 +396,16 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
                 maxLines: 3,
               ),
               const SizedBox(height: 20),
-              _nameController.text.isNotEmpty &&
-                      _subjectController.text.isNotEmpty
+              _nameController.text.isNotEmpty
                   ? Column(
                       children: [
                         const SizedBox(height: 20),
                         CalendarEventPreview(
                           title:
                               "$_selectedLessonType: ${_nameController.text}",
-                          subject: _subjectController.text,
+                          subject: _nameController.text.isEmpty
+                              ? null
+                              : _nameController.text,
                           startTime: _startDateTime != null
                               ? DateFormat('HH:mm').format(_startDateTime!)
                               : null,
@@ -450,7 +450,7 @@ class _CreateLessonPageState extends State<CreateLessonPage> {
 
 class CalendarEventPreview extends StatelessWidget {
   final String title;
-  final String subject;
+  final String? subject;
   final String? startTime;
   final String? endTime;
   final String? room;
@@ -460,7 +460,7 @@ class CalendarEventPreview extends StatelessWidget {
   const CalendarEventPreview({
     super.key,
     required this.title,
-    required this.subject,
+    this.subject,
     this.startTime,
     this.endTime,
     this.room,
@@ -506,7 +506,7 @@ class CalendarEventPreview extends StatelessWidget {
             children: [
               const Icon(Icons.subject, size: 16),
               const SizedBox(width: 5),
-              Text(subject, style: const TextStyle(fontSize: 14)),
+              Text(subject!, style: const TextStyle(fontSize: 14)),
             ],
           ),
           if (startTime != null && endTime != null)

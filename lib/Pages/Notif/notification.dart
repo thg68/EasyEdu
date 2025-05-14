@@ -99,7 +99,15 @@ class _NotificationPageState extends State<NotificationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Thông báo'),
+        title: const Text(
+          'Thông báo',
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
+        ),
+        centerTitle: true,
         actions: [
           IconButton(icon: const Icon(Icons.refresh), onPressed: _loadEvents),
         ],
@@ -232,7 +240,7 @@ class _NotificationPageState extends State<NotificationPage> {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 content: Text(
-                                  'Reminder set for ${event.title}',
+                                  'Đã đặt nhắc nhở cho môn này',
                                 ),
                                 duration: const Duration(seconds: 2),
                               ),
@@ -254,29 +262,29 @@ class _NotificationPageState extends State<NotificationPage> {
   Color _getEventColor(Event event) {
     if (event.subject == null) return Colors.white10;
 
-    final subject = event.subject!;
+    final subject = event.subject!.toLowerCase();
 
-    if (subject.contains('Đại số')) return Colors.blue;
-    if (subject.contains('Giải tích')) return Colors.cyan;
-    if (subject.contains('Ngữ văn')) return Colors.green;
-    if (subject.contains('Tiếng Anh')) return Colors.deepPurple;
-    if (subject.contains('Vật lý')) return Colors.teal;
-    if (subject.contains('Hóa học')) return Colors.orange;
-    if (subject.contains('Sinh học')) return Colors.pink;
-    if (subject.contains('Lịch sử')) return Colors.red;
-    if (subject.contains('Địa lý')) return Colors.purple;
+    if (subject.contains('đại số')) return Colors.blue;
+    if (subject.contains('giải tích')) return Colors.cyan;
+    if (subject.contains('ngữ văn')) return Colors.green;
+    if (subject.contains('tiếng anh')) return Colors.deepPurple;
+    if (subject.contains('vật lý')) return Colors.teal;
+    if (subject.contains('hóa học')) return Colors.orange;
+    if (subject.contains('sinh học')) return Colors.pink;
+    if (subject.contains('lịch sử')) return Colors.red;
+    if (subject.contains('địa lý')) return Colors.purple;
 
-    if (subject.contains('Giáo dục công dân')) return Colors.amber;
-    if (subject.contains('Tin học')) return Colors.lightBlue;
-    if (subject.contains('Công nghệ')) return Colors.indigo;
-    if (subject.contains('Giáo dục thể chất')) return Colors.lime;
-    if (subject.contains('Kinh tế và Pháp luật')) return Colors.deepOrange;
-    if (subject.contains('Mỹ thuật')) return Colors.purpleAccent;
-    if (subject.contains('Âm nhạc')) return Colors.lightGreen;
-    if (subject.contains('Tư duy phản biện')) return Colors.black54;
-    if (subject.contains('Trải nghiệm, hướng nghiệp')) return Colors.grey;
-    if (subject.contains('Giáo dục quốc phòng') ||
-        subject.contains('Giáo dục đặc biệt')) {
+    if (subject.contains('giáo dục công dân')) return Colors.amber;
+    if (subject.contains('tin học')) return Colors.lightBlue;
+    if (subject.contains('công nghệ')) return Colors.indigo;
+    if (subject.contains('giáo dục thể chất')) return Colors.lime;
+    if (subject.contains('kinh tế và pháp luật')) return Colors.deepOrange;
+    if (subject.contains('mỹ thuật')) return Colors.purpleAccent;
+    if (subject.contains('âm nhạc')) return Colors.lightGreen;
+    if (subject.contains('tư duy phản biện')) return Colors.black54;
+    if (subject.contains('trải nghiệm')) return Colors.grey;
+    if (subject.contains('giáo dục quốc phòng') ||
+        subject.contains('giáo dục đặc biệt')) {
       return Colors.brown;
     }
 
@@ -286,44 +294,31 @@ class _NotificationPageState extends State<NotificationPage> {
   IconData _getEventIcon(Event event) {
     if (event.subject == null) return Icons.event;
 
-    final subject = event.subject!;
+    final subject = event.subject!.toLowerCase();
 
-    if (subject.contains('physics')) return Icons.science;
-    if (subject.contains('chemistry')) return Icons.science;
-    if (subject.contains('biology')) return Icons.biotech;
-    if (subject.contains('history')) return Icons.history_edu;
-    if (subject.contains('english') || subject.contains('literature')) {
-      return Icons.menu_book;
-    }
-    if (subject.contains('geography')) return Icons.public;
-    if (subject.contains('art')) return Icons.palette;
-    if (subject.contains('music')) return Icons.music_note;
-    if (subject.contains('pe') || subject.contains('physical')) {
-      return Icons.sports_basketball;
-    }
-    if (subject.contains('Đại số')) return Icons.calculate;
-    if (subject.contains('Giải tích')) return Icons.functions;
-    if (subject.contains('Ngữ văn')) return Icons.menu_book;
-    if (subject.contains('Tiếng Anh')) return Icons.translate;
-    if (subject.contains('Vật lý')) return Icons.lightbulb_rounded;
-    if (subject.contains('Hóa học')) return Icons.science;
-    if (subject.contains('Sinh học')) return Icons.biotech;
-    if (subject.contains('Lịch sử')) return Icons.history_edu;
-    if (subject.contains('Địa lý')) return Icons.public;
+    if (subject.contains('đại số')) return Icons.calculate;
+    if (subject.contains('giải tích')) return Icons.functions;
+    if (subject.contains('ngữ văn')) return Icons.menu_book;
+    if (subject.contains('tiếng anh')) return Icons.translate;
+    if (subject.contains('vật lý')) return Icons.lightbulb_rounded;
+    if (subject.contains('hóa học')) return Icons.science;
+    if (subject.contains('sinh học')) return Icons.biotech;
+    if (subject.contains('lịch sử')) return Icons.history_edu;
+    if (subject.contains('địa lý')) return Icons.public;
 
-    if (subject.contains('Giáo dục công dân')) return Icons.gavel;
-    if (subject.contains('Tin học')) return Icons.computer;
-    if (subject.contains('Công nghệ')) return Icons.build;
-    if (subject.contains('Giáo dục thể chất')) return Icons.sports_soccer;
-    if (subject.contains('Kinh tế và Pháp luật')) return Icons.account_balance;
-    if (subject.contains('Mỹ thuật')) return Icons.palette;
-    if (subject.contains('Âm nhạc')) return Icons.music_note;
-    if (subject.contains('Tư duy phản biện')) return Icons.psychology;
-    if (subject.contains('Trải nghiệm, hướng nghiệp')) {
+    if (subject.contains('giáo dục công dân')) return Icons.gavel;
+    if (subject.contains('tin học')) return Icons.computer;
+    if (subject.contains('công nghệ')) return Icons.build;
+    if (subject.contains('giáo dục thể chất')) return Icons.sports_soccer;
+    if (subject.contains('kinh tế và pháp luật')) return Icons.account_balance;
+    if (subject.contains('mỹ thuật')) return Icons.palette;
+    if (subject.contains('âm nhạc')) return Icons.music_note;
+    if (subject.contains('tư duy phản biện')) return Icons.psychology;
+    if (subject.contains('trải nghiệm')) {
       return Icons.work_outline;
     }
-    if (subject.contains('Giáo dục quốc phòng')) return Icons.military_tech;
-    if (subject.contains('Giáo dục đặc biệt')) return Icons.accessibility;
+    if (subject.contains('giáo dục quốc phòng')) return Icons.military_tech;
+    if (subject.contains('giáo dục đặc biệt')) return Icons.accessibility;
 
     return Icons.event;
   }
@@ -391,6 +386,7 @@ class _NotificationPageState extends State<NotificationPage> {
                     label: const Text('Đặt nhắc nhở'),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: _getEventColor(event),
+                      foregroundColor: Colors.white,
                     ),
                     onPressed: () {
                       Navigator.pop(context);
@@ -403,16 +399,24 @@ class _NotificationPageState extends State<NotificationPage> {
                     },
                   ),
                   ElevatedButton.icon(
-                    icon: const Icon(Icons.share),
-                    label: const Text('Chia sẻ'),
-                    onPressed: () {
+                    icon: const Icon(Icons.delete),
+                    label: const Text('Xóa'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.black87,
+                      foregroundColor: Colors.white,
+                    ),
+                    onPressed: () async {
                       Navigator.pop(context);
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Chức năng sẽ được cập nhật sau'),
-                          duration: Duration(seconds: 2),
-                        ),
-                      );
+                      await deleteEventFromCalendar(event, eventDate);
+                      setState(() {});
+                      if (context.mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('Đã xóa ${event.title}'),
+                            duration: const Duration(seconds: 2),
+                          ),
+                        );
+                      }
                     },
                   ),
                 ],

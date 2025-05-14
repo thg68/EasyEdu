@@ -29,6 +29,7 @@ class _HomePage extends State<HomePage> {
   DateTime? _rangeStart;
   DateTime? _rangeEnd;
   late final ValueNotifier<List<Event>> _selectedEvents;
+  final double subjectGridSize = 80; //scale at 60-110, 80 looks best
 
   @override
   void initState() {
@@ -49,7 +50,7 @@ class _HomePage extends State<HomePage> {
       setState(() {
         _selectedDay = selectedDay;
         _focusedDay = focusedDay;
-        _rangeStart = null; // Important to clean those
+        _rangeStart = null;
         _rangeEnd = null;
         _rangeSelectionMode = RangeSelectionMode.toggledOff;
       });
@@ -77,7 +78,6 @@ class _HomePage extends State<HomePage> {
   }
 
   List<Event> _getEventsForDay(DateTime day) {
-    // Implementation example
     return kEvents[day] ?? [];
   }
 
@@ -120,12 +120,13 @@ class _HomePage extends State<HomePage> {
       children: [
         // App Bar
         Container(
-          padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 16),
+          padding: const EdgeInsets.fromLTRB(16, 14, 16, 2),
           child: const Text(
             'Trang Chủ',
             style: TextStyle(
-              fontSize: 20,
+              color: Colors.black,
               fontWeight: FontWeight.bold,
+              fontSize: 20,
             ),
           ),
         ),
@@ -315,7 +316,6 @@ class _HomePage extends State<HomePage> {
       eventLoader: _getEventsForDay,
       startingDayOfWeek: StartingDayOfWeek.monday,
       calendarStyle: const CalendarStyle(
-        // Use `CalendarStyle` to customize the UI
         outsideDaysVisible: false,
         markerSize: 6,
       ),
@@ -710,40 +710,40 @@ class _HomePage extends State<HomePage> {
   }
 
   Widget _buildSubjectsGrid() {
-    final subjects = [
-      {'name': 'Đại số', 'icon': 'assets/images/Algebra_icon.png'},
-      {'name': 'Giải tích', 'icon': 'assets/images/Geometry_icon.png'},
-      {'name': 'Ngữ văn', 'icon': 'assets/images/Literature_icon.png'},
+    final defaultSubjects = [
+      {'name': 'Đại Số', 'icon': 'assets/images/Algebra_icon.png'},
+      {'name': 'Giải Tích', 'icon': 'assets/images/Geometry_icon.png'},
+      {'name': 'Ngữ Văn', 'icon': 'assets/images/Literature_icon.png'},
       {'name': 'Tiếng Anh', 'icon': 'assets/images/Spanish_icon.png'},
-      {'name': 'Vật lý', 'icon': 'assets/images/Physics_icon.png'},
-      {'name': 'Hóa học', 'icon': 'assets/images/Chemistry_icon.png'},
-      {'name': 'Sinh học', 'icon': 'assets/images/Biology_icon.png'},
-      {'name': 'Lịch sử', 'icon': 'assets/images/History_icon.png'},
-      {'name': 'Địa lý', 'icon': 'assets/images/Geography_icon.png'},
-      {'name': 'Giáo dục công dân', 'icon': 'assets/images/Civics_icon.png'},
-      {'name': 'Tin học', 'icon': 'assets/images/Computer_Science_icon.png'},
-      {'name': 'Công nghệ', 'icon': 'assets/images/Technology_icon.png'},
+      {'name': 'Vật Lý', 'icon': 'assets/images/Physics_icon.png'},
+      {'name': 'Hóa Học', 'icon': 'assets/images/Chemistry_icon.png'},
+      {'name': 'Sinh Học', 'icon': 'assets/images/Biology_icon.png'},
+      {'name': 'Lịch Sử', 'icon': 'assets/images/History_icon.png'},
+      {'name': 'Địa Lý', 'icon': 'assets/images/Geography_icon.png'},
+      {'name': 'Giáo Dục Công Dân', 'icon': 'assets/images/Civics_icon.png'},
+      {'name': 'Tin Học', 'icon': 'assets/images/Computer_Science_icon.png'},
+      {'name': 'Công Nghệ', 'icon': 'assets/images/Technology_icon.png'},
       {
-        'name': 'Giáo dục thể chất',
+        'name': 'Giáo Dục Thể Chất',
         'icon': 'assets/images/Physical_Education_icon.png'
       },
       {
-        'name': 'Kinh tế và Pháp luật',
+        'name': 'Kinh Tế và Pháp Luật',
         'icon': 'assets/images/Economics_icon.png'
       },
-      {'name': 'Mỹ thuật', 'icon': 'assets/images/Arts_icon.png'},
-      {'name': 'Âm nhạc', 'icon': 'assets/images/Music_icon.png'},
-      {'name': 'Tư duy phản biện', 'icon': 'assets/images/Drama_icon.png'},
+      {'name': 'Mỹ Thuật', 'icon': 'assets/images/Arts_icon.png'},
+      {'name': 'Âm Nhạc', 'icon': 'assets/images/Music_icon.png'},
+      {'name': 'Tư Duy Phản Biện', 'icon': 'assets/images/Drama_icon.png'},
       {
-        'name': 'Trải nghiệm, hướng nghiệp',
+        'name': 'Trải Nghiệm Hướng Việc',
         'icon': 'assets/images/Career_icon.png'
       },
       {
-        'name': 'Giáo dục quốc phòng',
+        'name': 'Giáo Dục Quốc Phòng',
         'icon': 'assets/images/Military_icon.png'
       },
       {
-        'name': 'Giáo dục đặc biệt',
+        'name': 'Giáo Dục Đặc Biệt',
         'icon': 'assets/images/Special_Education_icon.png'
       },
     ];
@@ -753,18 +753,19 @@ class _HomePage extends State<HomePage> {
       child: GridView.builder(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: (240 / subjectGridSize).toInt(),
           childAspectRatio: 0.9,
           mainAxisSpacing: 12,
           crossAxisSpacing: 12,
         ),
-        itemCount: subjects.length,
+        itemCount: defaultSubjects.length,
         itemBuilder: (context, index) {
           return _buildSubjectItem(
             context: context,
             subjectName: subjects[index]['name']!,
             assetLocation: subjects[index]['icon']!,
+            subjectSize: subjectGridSize,
           );
         },
       ),
@@ -775,7 +776,7 @@ class _HomePage extends State<HomePage> {
     required BuildContext context,
     required String subjectName,
     required String assetLocation,
-    double subjectSize = 60.0,
+    required double subjectSize,
     VoidCallback? onTap,
   }) {
     return InkWell(
@@ -791,7 +792,7 @@ class _HomePage extends State<HomePage> {
       borderRadius: BorderRadius.circular(8),
       child: SizedBox(
         width: subjectSize,
-        height: subjectSize + 20,
+        height: subjectSize,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -799,8 +800,8 @@ class _HomePage extends State<HomePage> {
           children: [
             const SizedBox(height: 5),
             Container(
-              width: subjectSize - 20,
-              height: subjectSize - 20,
+              width: subjectSize - 10,
+              height: subjectSize - 10,
               clipBehavior: Clip.antiAlias,
               decoration: const BoxDecoration(),
               child: Stack(
@@ -809,8 +810,8 @@ class _HomePage extends State<HomePage> {
                     left: 0,
                     top: 0,
                     child: Container(
-                      width: subjectSize - 20,
-                      height: subjectSize - 20,
+                      width: subjectSize - 10,
+                      height: subjectSize - 10,
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(assetLocation),
@@ -823,13 +824,13 @@ class _HomePage extends State<HomePage> {
               ),
             ),
             SizedBox(
-              width: subjectSize,
+              width: subjectSize + 10,
               child: Text(
                 subjectName,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.black,
-                  fontSize: 14,
+                  fontSize: subjectSize / 5,
                   fontFamily: 'Roboto',
                   fontWeight: FontWeight.w500,
                   height: 1.43,

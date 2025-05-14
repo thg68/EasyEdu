@@ -42,7 +42,11 @@ class _ProfilePageState extends State<ProfilePage> {
         backgroundColor: const Color(0xFF9575CD), // Màu tím chủ đạo
         title: const Text(
           'Trang Cá Nhân',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
         ),
         centerTitle: true,
         leading: IconButton(
@@ -197,7 +201,7 @@ class _ProfilePageState extends State<ProfilePage> {
       color: Colors.white, // Nền trắng cho card
       child: ListTile(
         leading: CircleAvatar(
-          backgroundColor: color.withOpacity(0.2),
+          backgroundColor: color.withValues(alpha: 0.2),
           child: Icon(icon, color: color),
         ),
         title: Text(
