@@ -215,7 +215,7 @@ class TrackLearning extends StatelessWidget {
             const SizedBox(height: 16),
             LinearProgressIndicator(
               value: 0.7,
-              backgroundColor: Color(0xFF9575CD).withOpacity(0.2),
+              backgroundColor: Color(0xFF9575CD).withValues(alpha: 0.2),
               valueColor:
                   const AlwaysStoppedAnimation<Color>(Color(0xFF9575CD)),
               minHeight: 10,

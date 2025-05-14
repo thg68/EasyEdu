@@ -72,7 +72,8 @@ class _ProfilePageState extends State<ProfilePage> {
                     onTap: _pickImage,
                     child: CircleAvatar(
                       radius: 60,
-                      backgroundColor: const Color(0xFF9575CD).withOpacity(0.1),
+                      backgroundColor:
+                          const Color(0xFF9575CD).withValues(alpha: 0.1),
                       backgroundImage: _avatarImage != null
                           ? FileImage(_avatarImage!) as ImageProvider
                           : const AssetImage('assets/images/profile_icon.png'),
@@ -175,11 +176,13 @@ class _ProfilePageState extends State<ProfilePage> {
                 await prefs.remove('userClass');
                 await prefs.remove('isLoggedIn');
 
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LoginPage()),
-                  (route) => false,
-                );
+                if (context.mounted) {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LoginPage()),
+                    (route) => false,
+                  );
+                }
               },
             ),
           ],
@@ -198,7 +201,8 @@ class _ProfilePageState extends State<ProfilePage> {
       elevation: 3,
       margin: const EdgeInsets.symmetric(vertical: 8),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      color: Colors.white, // Nền trắng cho card
+      color: Colors.white,
+      // Nền trắng cho card
       child: ListTile(
         leading: CircleAvatar(
           backgroundColor: color.withValues(alpha: 0.2),

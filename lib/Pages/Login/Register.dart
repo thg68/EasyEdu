@@ -53,10 +53,12 @@ class _RegisterPageState extends State<RegisterPage> {
     await prefs.setString('userClass', _selectedClass!);
     await prefs.setBool('isLoggedIn', true);
 
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => const MainNavigationScreen()),
-    );
+    if (mounted) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const MainNavigationScreen()),
+      );
+    }
   }
 
   @override

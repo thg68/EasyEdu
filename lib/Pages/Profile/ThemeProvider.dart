@@ -11,10 +11,15 @@ class ThemeProvider with ChangeNotifier {
 
   // Getters
   double get fontSize => _fontSize;
+
   bool get highContrast => _highContrast;
+
   bool get boldText => _boldText;
+
   double get lineHeight => _lineHeight;
+
   Color get textColor => _textColor;
+
   Color get backgroundColor => _backgroundColor;
 
   // Initialize settings
@@ -26,8 +31,9 @@ class ThemeProvider with ChangeNotifier {
     _lineHeight = prefs.getDouble('lineHeight') ?? 1.2;
 
     // Load colors
-    int textColorValue = prefs.getInt('textColor') ?? Colors.black.value;
-    int bgColorValue = prefs.getInt('backgroundColor') ?? Colors.white.value;
+    int textColorValue = prefs.getInt('textColor') ?? Colors.black.toARGB32();
+    int bgColorValue =
+        prefs.getInt('backgroundColor') ?? Colors.white.toARGB32();
     _textColor = Color(textColorValue);
     _backgroundColor = Color(bgColorValue);
 
@@ -69,8 +75,8 @@ class ThemeProvider with ChangeNotifier {
         _backgroundColor = Colors.white;
       }
 
-      await prefs.setInt('textColor', _textColor.value);
-      await prefs.setInt('backgroundColor', _backgroundColor.value);
+      await prefs.setInt('textColor', _textColor.toARGB32());
+      await prefs.setInt('backgroundColor', _backgroundColor.toARGB32());
     }
 
     if (boldText != null) {
@@ -85,12 +91,12 @@ class ThemeProvider with ChangeNotifier {
 
     if (textColor != null && !_highContrast) {
       _textColor = textColor;
-      await prefs.setInt('textColor', textColor.value);
+      await prefs.setInt('textColor', textColor.toARGB32());
     }
 
     if (backgroundColor != null && !_highContrast) {
       _backgroundColor = backgroundColor;
-      await prefs.setInt('backgroundColor', backgroundColor.value);
+      await prefs.setInt('backgroundColor', backgroundColor.toARGB32());
     }
 
     notifyListeners();

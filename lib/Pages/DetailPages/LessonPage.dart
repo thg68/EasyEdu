@@ -5,17 +5,17 @@ import '../Profile/ThemeProvider.dart';
 class LessonPage extends StatefulWidget {
   final String title;
 
-  const LessonPage({required this.title, Key? key}) : super(key: key);
+  const LessonPage({required this.title, super.key});
 
   @override
-  _LessonPageState createState() => _LessonPageState();
+  LessonPageState createState() => LessonPageState();
 }
 
-class _LessonPageState extends State<LessonPage> {
+class LessonPageState extends State<LessonPage> {
   double _getFontSize(BuildContext context) {
-  return Provider.of<ThemeProvider>(context, listen: true).fontSize;
-}
-  
+    return Provider.of<ThemeProvider>(context, listen: true).fontSize;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

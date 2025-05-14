@@ -6,7 +6,6 @@ import '../Pages/Profile/profilePage.dart';
 import 'package:provider/provider.dart';
 import '../Pages/Profile/ThemeProvider.dart';
 
-
 class MainNavigationScreen extends StatefulWidget {
   const MainNavigationScreen({super.key});
 
