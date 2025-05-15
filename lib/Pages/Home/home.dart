@@ -28,7 +28,7 @@ class _HomePage extends State<HomePage> {
   DateTime? _rangeStart;
   DateTime? _rangeEnd;
   late final ValueNotifier<List<Event>> _selectedEvents;
-  final double subjectGridSize = 80; //scale at 60-110, 80 looks best
+  final double subjectGridSize = 68; //scale at 60-110, 80 looks best
 
   @override
   void initState() {

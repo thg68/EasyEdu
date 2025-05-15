@@ -125,13 +125,30 @@ class LessonPageState extends State<LessonPage> {
                 _showAnswer(context, 'Bài 3');
               },
             ),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              child: ElevatedButton.icon(
+                icon: const Icon(Icons.check_circle, color: Colors.white),
+                label: _buildText('Hoàn thành bài học', 'default', Colors.white),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildText(String content, [String? header]) {
+  Widget _buildText(String content, [String? header, Color? color]) {
     double fontSize = _getFontSize(context);
     if (header == 'header1') {
       fontSize += 2;
@@ -139,7 +156,10 @@ class LessonPageState extends State<LessonPage> {
 
     return Text(
       content,
-      style: TextStyle(fontSize: fontSize),
+      style: TextStyle(
+        fontSize: fontSize,
+        color: color ?? Colors.black,
+      ),
     );
   }
 

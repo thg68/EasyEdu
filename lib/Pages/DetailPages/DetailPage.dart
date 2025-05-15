@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'LessonPage.dart';
+import 'ExamPage.dart';
 import '../TeacherPages/createlesson.dart';
 
 class DetailPage extends StatelessWidget {
@@ -108,7 +109,7 @@ class DetailPage extends StatelessWidget {
 
   Widget _buildLessonSection() {
     final lessons = [
-      {'name': 'Bài 1: Hàm số', 'status': 'Chưa học'},
+      {'name': 'Bài 1: Hàm số', 'status': 'Đã học'},
       {'name': 'Bài 2: Giới hạn hàm số', 'status': 'Đang học'},
       {'name': 'Bài kiểm tra số 1', 'status': 'Bài kiểm tra'},
       {'name': 'Bài 3: Vô cùng lớn, vô cùng bé', 'status': 'Đã học'},
@@ -126,6 +127,46 @@ class DetailPage extends StatelessWidget {
       {'name': 'Bài kiểm tra số 4', 'status': 'Bài kiểm tra'}
     ];
 
+    final algebraLessons = [
+      {'name': 'Bài 1: Hàm số và các bài toán liên quan', 'status': 'Đã học'},
+      {
+        'name': 'Bài 2: Hàm số lũy thừa, hàm số mũ và hàm số logarit',
+        'status': 'Đã học'
+      },
+      {
+        'name': 'Bài 3: Phương trình mũ và phương trình logarit',
+        'status': 'Đang học'
+      },
+      {
+        'name': 'Bài 4: Bất phương trình mũ và bất phương trình logarit',
+        'status': 'Chưa học'
+      },
+      {
+        'name': 'Bài 5: Ứng dụng đạo hàm để khảo sát và vẽ đồ thị hàm số',
+        'status': 'Đang học'
+      },
+      {
+        'name': 'Bài 6: Giá trị lớn nhất và nhỏ nhất của hàm số',
+        'status': 'Đang học'
+      },
+      {'name': 'Bài 7: Khối đa diện', 'status': 'Đã học'},
+      {'name': 'Bài 8: Thể tích của khối đa diện', 'status': 'Đang học'},
+      {'name': 'Bài 9: Mặt cầu, mặt trụ, mặt nón', 'status': 'Đã học'},
+      {'name': 'Bài kiểm tra số 1', 'status': 'Bài kiểm tra'},
+      {'name': 'Bài 10: Tổ hợp và xác suất', 'status': 'Chưa học'},
+      {'name': 'Bài 11: Nhị thức Newton', 'status': 'Đã học'},
+      {'name': 'Bài 12: Số phức', 'status': 'Đã học'},
+      {'name': 'Bài kiểm tra số 2', 'status': 'Bài kiểm tra'},
+      {'name': 'Bài 13: Ôn tập học kỳ I', 'status': 'Đã học'},
+      {'name': 'Bài kiểm tra học kỳ I', 'status': 'Bài kiểm tra'},
+      {'name': 'Bài 14: Khái niệm về nguyên hàm', 'status': 'Đang học'},
+      {'name': 'Bài 15: Tích phân và ứng dụng', 'status': 'Chưa học'},
+      {'name': 'Bài 16: Số phức (phần nâng cao)', 'status': 'Chưa học'},
+      {'name': 'Bài kiểm tra số 3', 'status': 'Bài kiểm tra'},
+      {'name': 'Bài 17: Ôn tập cuối năm', 'status': 'Chưa học'},
+      {'name': 'Bài kiểm tra học kỳ II', 'status': 'Bài kiểm tra'},
+    ];
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -134,9 +175,13 @@ class DetailPage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           shrinkWrap: true,
           physics: NeverScrollableScrollPhysics(),
-          itemCount: lessons.length,
+          itemCount: title == 'Đại Số' ? algebraLessons.length : lessons.length,
           separatorBuilder: (context, index) => SizedBox(height: 16),
           itemBuilder: (context, index) {
+            if (title == 'Đại Số') {
+              return buildLessonItem(context, algebraLessons[index]['name']!,
+                  algebraLessons[index]['status']!);
+            }
             return buildLessonItem(
                 context, lessons[index]['name']!, lessons[index]['status']!);
           },
@@ -169,10 +214,17 @@ class DetailPage extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => LessonPage(title: title)),
-        );
+        if (status == 'Bài kiểm tra') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ExamPage(title: title)),
+          );
+        } else {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => LessonPage(title: title)),
+          );
+        }
       },
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 18),
