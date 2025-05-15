@@ -28,7 +28,7 @@ class _HomePage extends State<HomePage> {
   DateTime? _rangeStart;
   DateTime? _rangeEnd;
   late final ValueNotifier<List<Event>> _selectedEvents;
-  final double subjectGridSize = 68; //scale at 60-110, 80 looks best
+  final double subjectGridSize = 80; //scale at 60-110, 80 looks best
 
   @override
   void initState() {
@@ -273,6 +273,62 @@ class _HomePage extends State<HomePage> {
         ),
       ],
     );
+  }
+
+  Widget _tempCreateLesson(String title, String value) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const CreateLessonPage(),
+          ),
+        );
+      },
+      child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: 100,
+              height: 22.22,
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14,
+                  fontFamily: 'Roboto',
+                  fontWeight: FontWeight.w500,
+                  height: 1.43,
+                  letterSpacing: 0.10,
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 100,
+              height: 22.22,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    value,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 22,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w400,
+                      height: 1.27,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
   }
 
   Widget _buildHDivider() {
@@ -829,76 +885,12 @@ class _HomePage extends State<HomePage> {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: subjectSize / 5,
+                  fontSize: subjectSize / 5 - 2,
                   fontFamily: 'Roboto',
                   fontWeight: FontWeight.w500,
                   height: 1.43,
                   letterSpacing: 0.10,
                 ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _tempCreateLesson(String title, String value) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const CreateLessonPage(),
-          ),
-        );
-      },
-      child: Container(
-        width: 100,
-        height: 100,
-        decoration: BoxDecoration(
-          color: Colors.transparent,
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              width: 100,
-              height: 22.22,
-              child: Text(
-                title,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 14,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w500,
-                  height: 1.43,
-                  letterSpacing: 0.10,
-                ),
-              ),
-            ),
-            SizedBox(
-              width: 100,
-              height: 22.22,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    value,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 22,
-                      fontFamily: 'Roboto',
-                      fontWeight: FontWeight.w400,
-                      height: 1.27,
-                    ),
-                  ),
-                ],
               ),
             ),
           ],

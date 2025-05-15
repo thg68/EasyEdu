@@ -18,7 +18,7 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   String _name = "Nguyễn Văn A";
-  String _class = "Chưa chọn lớp";
+  String _class = "Lớp 12";
   File? _avatarImage;
 
   @override
@@ -31,7 +31,7 @@ class _ProfilePageState extends State<ProfilePage> {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
       _name = prefs.getString('userName') ?? "Nguyễn Văn A";
-      _class = prefs.getString('userClass') ?? "Chưa chọn lớp";
+      _class = prefs.getString('userClass') ?? "Lớp 12";
     });
   }
 
@@ -76,12 +76,12 @@ class _ProfilePageState extends State<ProfilePage> {
                           const Color(0xFF9575CD).withValues(alpha: 0.1),
                       backgroundImage: _avatarImage != null
                           ? FileImage(_avatarImage!) as ImageProvider
-                          : const AssetImage('assets/images/profile_icon.png'),
+                          : const AssetImage('assets/images/40x40.png'),
                       child: _avatarImage == null
-                          ? const Icon(
+                          ? Icon(
                               Icons.camera_alt,
                               size: 30,
-                              color: Color(0xFF9575CD),
+                              color: Color(0xFF9575CD).withValues(alpha: 0.8),
                             )
                           : null,
                     ),
